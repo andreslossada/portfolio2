@@ -1,0 +1,40 @@
+<div class="bento-grid">
+  <div class="bento-section project-1 bg-slate-400"></div>
+  <div class="bento-section project-2 bg-yellow-300"></div>
+  <div class="bento-section project-3 bg-blue-400"></div>
+  <div class="bento-section project-4 bg-red-400"></div>
+</div>
+<style>
+  .bento-grid {
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 300px 300px;
+    grid-template-areas:
+      " project-2 project-2 project-1"
+      " project-3 project-4 project-1";
+    grid-gap: 15px;
+    width: 70%;
+    /* border: 4px solid aqua; */
+    margin: 0 auto;
+  }
+
+  .bento-section {
+    /* padding: 205px; */
+    border-radius: 6px;
+  }
+
+  .project-1 {
+    grid-area: project-1;
+  }
+  .project-2 {
+    grid-area: project-2;
+  }
+  .project-3 {
+    grid-area: project-3;
+  }
+  .project-4 {
+    grid-area: project-4;
+  }
+</style>

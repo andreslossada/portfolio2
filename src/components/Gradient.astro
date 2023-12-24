@@ -1,0 +1,57 @@
+---
+import Granim from "granim";
+---
+
+<h1>Animated Gradients Using Granim.js</h1>
+<div class="wrapper">
+  <canvas id="first"></canvas>
+  <canvas id="second"></canvas>
+</div>
+<style>
+  body {
+    margin: 20px auto;
+    font-family: "Lato";
+    font-weight: 300;
+    width: 80%;
+    text-align: center;
+  }
+
+  canvas {
+    display: block;
+    width: 100%;
+    height: 300px;
+    border: 10px double black;
+    margin: 50px 0;
+  }
+</style>
+
+<script>
+  var firstGranim = new Granim({
+    element: "#first",
+    name: "first-gradient",
+    direction: "diagonal",
+    opacity: [1, 1],
+    states: {
+      "default-state": {
+        gradients: [["#8BC34A", "#FF9800"]],
+      },
+    },
+  });
+
+  var secondGranim = new Granim({
+    element: "#second",
+    name: "second-gradient",
+    elToSetClassOn: ".wrapper",
+    direction: "top-bottom",
+    opacity: [1, 1],
+    states: {
+      "default-state": {
+        gradients: [
+          ["#9C27B0", "#E91E63"],
+          ["#009688", "#8BC34A"],
+        ],
+        transitionSpeed: 2000,
+      },
+    },
+  });
+</script>
