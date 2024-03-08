@@ -1,5 +1,11 @@
-<ul>
-  <li style="--accent-color:#41516C">
+---
+import Title from "./Title.astro";
+
+---
+<div class=" bg-[--bg-color] bottom py-20">
+  <Title text="Experience" />
+<ul class="mt-20">
+  <li style="--accent-color:var(--color-1)">
     <div class="date">2017</div>
     <div class="title">Nueva Esparta University</div>
     <div class="subtitle">Assistant Software Engineer</div>
@@ -12,7 +18,7 @@
     </div>
     <footer>Skills: PHP · pgAdmin · PostgreSQL</footer>
   </li>
-  <li style="--accent-color:#4CADAD">
+  <li style="--accent-color:var(--color-2)">
     <div class="date">2018</div>
     <div class="title">Hack Academy</div>
     <div class="subtitle">Web Development</div>
@@ -28,7 +34,7 @@
     </div>
     <footer>Skills: HTML · JavaScript · CSS</footer>
   </li>
-  <li style="--accent-color:#FBCA3E">
+  <li style="--accent-color:var(--color-3)">
     <div class="date">2021</div>
     <div class="title">Foodwize</div>
     <div class="subtitle">Frontend Developer</div>
@@ -41,7 +47,7 @@
     </div>
     <footer>Skills: HTML5 · React.js · JavaScript</footer>
   </li>
-  <li style="--accent-color:#E24A68">
+  <li style="--accent-color:var(--color-4)">
     <div class="date">2022</div>
     <div class="title">Cloudnonic Corp.</div>
     <div class="subtitle">Fullstack Developer</div>
@@ -60,7 +66,7 @@
       Redux.js
     </footer>
   </li>
-  <li style="--accent-color:#1B5F8C">
+  <li style="--accent-color:var(--color-5)">
     <div class="date">2023</div>
     <div class="title">Scale AI</div>
     <div class="subtitle">AI Trainer</div>
@@ -76,21 +82,16 @@
     <footer>Skills: TypeScript · JavaScript</footer>
   </li>
 </ul>
+</div>
+
 
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
 
-  body {
+  :root {
     --color: rgba(30, 30, 30);
     --bgColor: rgba(245, 245, 245);
-    min-height: 100vh;
-    display: grid;
-    align-content: center;
-    gap: 2rem;
-    /* padding: 2rem; */
-    font-family: "Poppins", sans-serif;
-    color: var(--color);
-    /* background: var(--bgColor); */
+
   }
 
   h1 {
@@ -193,6 +194,7 @@
     background: var(--bgColor);
     position: relative;
     padding-inline: 1.5rem;
+    /* border-radius: 0 0 20px 20px; */
   }
   ul li .title {
     overflow: hidden;

@@ -1,326 +1,333 @@
-<div class="container">
-  <div class="row">
-    <div class="cell size-10"></div>
-    <div class="cell size-5"></div>
-    <div class="cell size-7"></div>
-    <div class="cell size-7"></div>
-    <div class="cell size-6 letter-d"></div>
-    <div class="cell size-6"></div>
-    <div class="cell size-12"></div>
-    <div class="cell size-10"></div>
-    <div class="cell size-7"></div>
-  </div>
-  <div class="row">
-    <div class="cell size-6"></div>
-    <div class="cell size-7"></div>
-    <div class="cell size-12"></div>
-    <div class="cell size-5"></div>
-    <div class="cell size-10"></div>
-    <div class="cell size-2 letter-d"></div>
-    <div class="cell size-3 letter-d"></div>
-    <div class="cell size-9"></div>
-    <div class="cell size-9"></div>
-    <div class="cell size-12"></div>
-    <div class="cell size-9"></div>
-    <div class="cell size-7"></div>
+---
+import { atom } from "nanostores";
+import ThemeIcon from "./icons/ThemeIcon.astro";
+import { ThemeMenu } from "./Theme.jsx";
+---
+
+<header
+  class="relative h-[calc(100vh+40px)] w-full bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.25),rgba(255,255,255,0))] bg-[--bg-color] top mb-14"
+>
+  <!-- <ThemeIcon class="absolute h-6 bottom-16 left-5 text-white z-50"/> -->
+  <!-- <div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div> -->
+  <div
+    class="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"
+  >
   </div>
 
-  <div class="row">
-    <!-- row 3 -->
-    <div class="cell size-12"></div>
-    <div class="cell size-6"></div>
-    <div class="cell size-8"></div>
-    <div class="cell size-12"></div>
-    <div class="cell size-7"></div>
-    <div class="cell size-1 letter-d"></div>
-    <div class="cell size-4 letter-d"></div>
-    <div class="cell size-8"></div>
-    <div class="cell size-12"></div>
-    <div class="cell size-7"></div>
-    <div class="cell size-9"></div>
-    <div class="cell size-6"></div>
-    <div class="cell size-4"></div>
-    <div class="cell size-3"></div>
-  </div>
-  <div class="row">
-    <!-- row 4 -->
-    <div class="cell size-4"></div>
-    <div class="cell size-5 letter-a"></div>
-    <div class="cell size-4 letter-a"></div>
-    <div class="cell size-1"></div>
-    <div class="cell size-5 letter-n"></div>
-    <div class="cell size-1"></div>
-    <div class="cell size-5 letter-n"></div>
-    <div class="cell size-2"></div>
-    <div class="cell size-4"></div>
-    <div class="cell size-5 letter-d"></div>
-    <div class="cell size-1"></div>
-    <div class="cell size-6 letter-d"></div>
-    <div class="cell size-5 letter-r"></div>
-    <div class="cell size-1"></div>
-    <div class="cell size-6 letter-r"></div>
-    <div class="cell size-4"></div>
-    <div class="cell size-8 letter-e"></div>
-    <div class="cell size-4"></div>
-    <div class="cell size-4"></div>
-    <div class="cell size-9 letter-s"></div>
-    <div class="cell size-4"></div>
-  </div>
-  <div class="row">
-    <!-- row 5 -->
-    <div class="cell size-5"></div>
-    <div class="cell size-5 letter-a"></div>
-    <div class="cell size-8 letter-a"></div>
-    <div class="cell size-2 letter-n"></div>
-    <div class="cell size-2 letter-n"></div>
-    <div class="cell size-9 letter-n"></div>
-    <div class="cell size-3"></div>
-    <div class="cell size-2 letter-d"></div>
-    <div class="cell size-10 letter-d"></div>
-    <div class="cell size-2 letter-d"></div>
-    <div class="cell size-7 letter-r"></div>
-    <div class="cell size-5 letter-r"></div>
-    <div class="cell size-1 letter-r"></div>
-    <div class="cell size-1"></div>
-    <div class="cell size-7 letter-e"></div>
-    <div class="cell size-5 letter-e"></div>
-    <div class="cell size-4"></div>
-    <div class="cell size-9 letter-s"></div>
-    <div class="cell size-4 letter-s"></div>
-    <div class="cell size-4"></div>
-  </div>
-  <div class="row">
-    <!-- row 6 -->
-    <div class="cell size-7"></div>
-    <div class="cell size-4 letter-a"></div>
-    <div class="cell size-4"></div>
-    <div class="cell size-5 letter-a"></div>
-    <div class="cell size-5 letter-n"></div>
-    <div class="cell size-5 letter-n"></div>
-    <div class="cell size-4 letter-n"></div>
-    <div class="cell size-1"></div>
-    <div class="cell size-7 letter-d"></div>
-    <div class="cell size-9 letter-d"></div>
-    <div class="cell size-4 letter-r"></div>
-    <div class="cell size-3 letter-r"></div>
-    <div class="cell size-6 letter-r"></div>
-    <div class="cell size-2 letter-e"></div>
-    <div class="cell size-3 letter-e"></div>
-    <div class="cell size-2"></div>
-    <div class="cell size-6 letter-e"></div>
-    <div class="cell size-1"></div>
-    <div class="cell size-6 letter-s"></div>
-    <div class="cell size-3"></div>
-    <div class="cell size-2 letter-s"></div>
-    <div class="cell size-2 letter-s"></div>
-    <div class="cell size-7"></div>
-  </div>
-  <div class="row">
-    <!-- row 7 -->
-    <div class="cell size-4"></div>
-    <div class="cell size-5"></div>
-    <div class="cell size-4"></div>
-    <div class="cell size-1 letter-a"></div>
-    <div class="cell size-3 letter-a"></div>
-    <div class="cell size-6 letter-n"></div>
-    <div class="cell size-3"></div>
-    <div class="cell size-6 letter-n"></div>
-    <div class="cell size-5 letter-d"></div>
-    <div class="cell size-5"></div>
-    <div class="cell size-1 letter-d"></div>
-    <div class="cell size-4 letter-d"></div>
-    <div class="cell size-6 letter-r"></div>
-    <div class="cell size-5"></div>
-    <div class="cell size-2"></div>
-    <div class="cell size-5 letter-e"></div>
-    <div class="cell size-5"></div>
-    <div class="cell size-2 letter-e"></div>
-    <div class="cell size-2 letter-e"></div>
-    <div class="cell size-5 letter-s"></div>
-    <div class="cell size-2 letter-s"></div>
-    <div class="cell size-4"></div>
-    <div class="cell size-6"></div>
-    <div class="cell size-2"></div>
-  </div>
-  <div class="row">
-    <!-- row 8 -->
-    <div class="cell size-11"></div>
-    <div class="cell size-7 letter-a"></div>
-    <div class="cell size-6 letter-a"></div>
-    <div class="cell size-5 letter-n"></div>
-    <div class="cell size-3"></div>
-    <div class="cell size-1"></div>
-    <div class="cell size-1 letter-n"></div>
-    <div class="cell size-3 letter-n"></div>
-    <div class="cell size-4 letter-d"></div>
-    <div class="cell size-7"></div>
-    <div class="cell size-5 letter-d"></div>
-    <div class="cell size-3 letter-r"></div>
-    <div class="cell size-2 letter-r"></div>
-    <div class="cell size-7"></div>
-    <div class="cell size-19 letter-e"></div>
-    <div class="cell size-1"></div>
-    <div class="cell size-14 letter-s"></div>
-    <div class="cell size-2"></div>
-    <div class="cell size-7"></div>
-  </div>
-  <div class="row">
-    <!-- row 9 -->
-    <div class="cell size-10"></div>
-    <div class="cell size-7 letter-a"></div>
-    <div class="cell size-7 letter-a"></div>
-    <div class="cell size-2 letter-n"></div>
-    <div class="cell size-2 letter-n"></div>
-    <div class="cell size-5"></div>
-    <div class="cell size-5 letter-n"></div>
-    <div class="cell size-5 letter-d"></div>
-    <div class="cell size-5"></div>
-    <div class="cell size-3 letter-d"></div>
-    <div class="cell size-2 letter-d"></div>
-    <div class="cell size-6 letter-r"></div>
-    <div class="cell size-4"></div>
-    <div class="cell size-2"></div>
-    <div class="cell size-6 letter-e"></div>
-    <div class="cell size-5"></div>
-    <div class="cell size-2"></div>
-    <div class="cell size-1"></div>
-    <div class="cell size-1"></div>
-    <div class="cell size-9"></div>
-    <div class="cell size-7 letter-s"></div>
-    <div class="cell size-9"></div>
-  </div>
-  <div class="row">
-    <!-- TODO: arreglar N -->
-    <!-- row 10 -->
-    <div class="cell size-8"></div>
-    <div class="cell size-5 letter-a"></div>
-    <div class="cell size-4"></div>
-    <div class="cell size-2 letter-a"></div>
-    <div class="cell size-2 letter-a"></div>
-    <div class="cell size-1 letter-n"></div>
-    <div class="cell size-3 letter-n"></div>
-    <div class="cell size-1"></div>
-    <div class="cell size-3"></div>
-    <div class="cell size-2 letter-n"></div>
-    <div class="cell siz e-2 letter-n"></div>
-    <div class="cell size-3 letter-d"></div>
-    <div class="cell size-4 letter-d"></div>
-    <div class="cell size-9 letter-d"></div>
-    <div class="cell size-2 letter-r"></div>
-    <div class="cell size-3 letter-r"></div>
-    <div class="cell size-3"></div>
-    <div class="cell size-2"></div>
-    <div class="cell size-1"></div>
-    <div class="cell size-3 letter-e"></div>
-    <div class="cell size-2 letter-e"></div>
-    <div class="cell size-3"></div>
-    <div class="cell size-6 letter-e"></div>
-    <div class="cell size-6 letter-s"></div>
-    <div class="cell size-4"></div>
-    <div class="cell size-6 letter-s"></div>
-    <div class="cell size-8"></div>
-  </div>
-  <div class="row">
-    <!-- row 11 -->
-    <div class="cell size-7"></div>
-    <div class="cell size-5 letter-a"></div>
-    <div class="cell size-3 letter-a"></div>
-    <div class="cell size-5 letter-a"></div>
-    <div class="cell size-5 letter-n"></div>
-    <div class="cell size-2"></div>
-    <div class="cell size-2"></div>
-    <div class="cell size-3 letter-n"></div>
-    <div class="cell size-1 letter-n"></div>
-    <div class="cell size-1"></div>
-    <div class="cell size-7 letter-d"></div>
-    <div class="cell size-5 letter-d"></div>
-    <div class="cell size-2 letter-d"></div>
-    <div class="cell size-3 letter-r"></div>
-    <div class="cell size-2 letter-r"></div>
-    <div class="cell size-9"></div>
-    <div class="cell size-8 letter-e"></div>
-    <div class="cell size-6 letter-e"></div>
-    <div class="cell size-2"></div>
-    <div class="cell size-3 letter-s"></div>
-    <div class="cell size-3 letter-s"></div>
-    <div class="cell size-7 letter-s"></div>
-    <div class="cell size-7"></div>
-  </div>
-  <div class="row">
-    <!-- row 12-->
-    <div class="cell size-10"></div>
-    <div class="cell size-7 letter-a"></div>
-    <div class="cell size-5 letter-a"></div>
-    <div class="cell size-3 letter-n"></div>
-    <div class="cell size-1 letter-n"></div>
-    <div class="cell size-5"></div>
-    <div class="cell size-5 letter-n"></div>
-    <div class="cell size-4"></div>
-    <div class="cell size-5 letter-d"></div>
-    <div class="cell size-1"></div>
-    <div class="cell size-5 letter-d"></div>
-    <div class="cell size-6 letter-r"></div>
-    <div class="cell size-12"></div>
-    <div class="cell size-4 letter-e"></div>
-    <div class="cell size-5 letter-e"></div>
-    <div class="cell size-5"></div>
-    <div class="cell size-1"></div>
-    <div class="cell size-6 letter-s"></div>
-    <div class="cell size-3 letter-s"></div>
-    <div class="cell size-10"></div>
-  </div>
-  <div class="row">
-    <!-- row 13 -->
+  <div class="container">
+    <div class="row">
+      <div class="cell size-10"></div>
+      <div class="cell size-5"></div>
+      <div class="cell size-7"></div>
+      <div class="cell size-7"></div>
+      <div class="cell size-6 letter-d"></div>
+      <div class="cell size-6"></div>
+      <div class="cell size-12"></div>
+      <div class="cell size-10"></div>
+      <div class="cell size-7"></div>
+    </div>
+    <div class="row">
+      <div class="cell size-6"></div>
+      <div class="cell size-7"></div>
+      <div class="cell size-12"></div>
+      <div class="cell size-5"></div>
+      <div class="cell size-10"></div>
+      <div class="cell size-2 letter-d"></div>
+      <div class="cell size-3 letter-d"></div>
+      <div class="cell size-9"></div>
+      <div class="cell size-9"></div>
+      <div class="cell size-12"></div>
+      <div class="cell size-9"></div>
+      <div class="cell size-7"></div>
+    </div>
+    <div class="row">
+      <!-- row 3 -->
+      <div class="cell size-12"></div>
+      <div class="cell size-6"></div>
+      <div class="cell size-8"></div>
+      <div class="cell size-12"></div>
+      <div class="cell size-7"></div>
+      <div class="cell size-1 letter-d"></div>
+      <div class="cell size-4 letter-d"></div>
+      <div class="cell size-8"></div>
+      <div class="cell size-12"></div>
+      <div class="cell size-7"></div>
+      <div class="cell size-9"></div>
+      <div class="cell size-6"></div>
+      <div class="cell size-4"></div>
+      <div class="cell size-3"></div>
+    </div>
+    <div class="row">
+      <!-- row 4 -->
+      <div class="cell size-4"></div>
+      <div class="cell size-5 letter-a"></div>
+      <div class="cell size-4 letter-a"></div>
+      <div class="cell size-1"></div>
+      <div class="cell size-5 letter-n"></div>
+      <div class="cell size-1"></div>
+      <div class="cell size-5 letter-n"></div>
+      <div class="cell size-2"></div>
+      <div class="cell size-4"></div>
+      <div class="cell size-5 letter-d"></div>
+      <div class="cell size-1"></div>
+      <div class="cell size-6 letter-d"></div>
+      <div class="cell size-5 letter-r"></div>
+      <div class="cell size-1"></div>
+      <div class="cell size-6 letter-r"></div>
+      <div class="cell size-4"></div>
+      <div class="cell size-8 letter-e"></div>
+      <div class="cell size-4"></div>
+      <div class="cell size-4"></div>
+      <div class="cell size-9 letter-s"></div>
+      <div class="cell size-4"></div>
+    </div>
+    <div class="row">
+      <!-- row 5 -->
+      <div class="cell size-5"></div>
+      <div class="cell size-5 letter-a"></div>
+      <div class="cell size-8 letter-a"></div>
+      <div class="cell size-2 letter-n"></div>
+      <div class="cell size-2 letter-n"></div>
+      <div class="cell size-9 letter-n"></div>
+      <div class="cell size-3"></div>
+      <div class="cell size-2 letter-d"></div>
+      <div class="cell size-10 letter-d"></div>
+      <div class="cell size-2 letter-d"></div>
+      <div class="cell size-7 letter-r"></div>
+      <div class="cell size-5 letter-r"></div>
+      <div class="cell size-1 letter-r"></div>
+      <div class="cell size-1"></div>
+      <div class="cell size-7 letter-e"></div>
+      <div class="cell size-5 letter-e"></div>
+      <div class="cell size-4"></div>
+      <div class="cell size-9 letter-s"></div>
+      <div class="cell size-4 letter-s"></div>
+      <div class="cell size-4"></div>
+    </div>
+    <div class="row">
+      <!-- row 6 -->
+      <div class="cell size-7"></div>
+      <div class="cell size-4 letter-a"></div>
+      <div class="cell size-4"></div>
+      <div class="cell size-5 letter-a"></div>
+      <div class="cell size-5 letter-n"></div>
+      <div class="cell size-5 letter-n"></div>
+      <div class="cell size-4 letter-n"></div>
+      <div class="cell size-1"></div>
+      <div class="cell size-7 letter-d"></div>
+      <div class="cell size-9 letter-d"></div>
+      <div class="cell size-4 letter-r"></div>
+      <div class="cell size-3 letter-r"></div>
+      <div class="cell size-6 letter-r"></div>
+      <div class="cell size-2 letter-e"></div>
+      <div class="cell size-3 letter-e"></div>
+      <div class="cell size-2"></div>
+      <div class="cell size-6 letter-e"></div>
+      <div class="cell size-1"></div>
+      <div class="cell size-6 letter-s"></div>
+      <div class="cell size-3"></div>
+      <div class="cell size-2 letter-s"></div>
+      <div class="cell size-2 letter-s"></div>
+      <div class="cell size-7"></div>
+    </div>
+    <div class="row">
+      <!-- row 7 -->
+      <div class="cell size-4"></div>
+      <div class="cell size-5"></div>
+      <div class="cell size-4"></div>
+      <div class="cell size-1 letter-a"></div>
+      <div class="cell size-3 letter-a"></div>
+      <div class="cell size-6 letter-n"></div>
+      <div class="cell size-3"></div>
+      <div class="cell size-6 letter-n"></div>
+      <div class="cell size-5 letter-d"></div>
+      <div class="cell size-5"></div>
+      <div class="cell size-1 letter-d"></div>
+      <div class="cell size-4 letter-d"></div>
+      <div class="cell size-6 letter-r"></div>
+      <div class="cell size-5"></div>
+      <div class="cell size-2"></div>
+      <div class="cell size-5 letter-e"></div>
+      <div class="cell size-5"></div>
+      <div class="cell size-2 letter-e"></div>
+      <div class="cell size-2 letter-e"></div>
+      <div class="cell size-5 letter-s"></div>
+      <div class="cell size-2 letter-s"></div>
+      <div class="cell size-4"></div>
+      <div class="cell size-6"></div>
+      <div class="cell size-2"></div>
+    </div>
+    <div class="row">
+      <!-- row 8 -->
+      <div class="cell size-11"></div>
+      <div class="cell size-7 letter-a"></div>
+      <div class="cell size-6 letter-a"></div>
+      <div class="cell size-5 letter-n"></div>
+      <div class="cell size-3"></div>
+      <div class="cell size-1"></div>
+      <div class="cell size-1 letter-n"></div>
+      <div class="cell size-3 letter-n"></div>
+      <div class="cell size-4 letter-d"></div>
+      <div class="cell size-7"></div>
+      <div class="cell size-5 letter-d"></div>
+      <div class="cell size-3 letter-r"></div>
+      <div class="cell size-2 letter-r"></div>
+      <div class="cell size-7"></div>
+      <div class="cell size-19 letter-e"></div>
+      <div class="cell size-1"></div>
+      <div class="cell size-14 letter-s"></div>
+      <div class="cell size-2"></div>
+      <div class="cell size-7"></div>
+    </div>
+    <div class="row">
+      <!-- row 9 -->
+      <div class="cell size-10"></div>
+      <div class="cell size-7 letter-a"></div>
+      <div class="cell size-7 letter-a"></div>
+      <div class="cell size-2 letter-n"></div>
+      <div class="cell size-2 letter-n"></div>
+      <div class="cell size-5"></div>
+      <div class="cell size-5 letter-n"></div>
+      <div class="cell size-5 letter-d"></div>
+      <div class="cell size-5"></div>
+      <div class="cell size-3 letter-d"></div>
+      <div class="cell size-2 letter-d"></div>
+      <div class="cell size-6 letter-r"></div>
+      <div class="cell size-4"></div>
+      <div class="cell size-2"></div>
+      <div class="cell size-6 letter-e"></div>
+      <div class="cell size-5"></div>
+      <div class="cell size-2"></div>
+      <div class="cell size-1"></div>
+      <div class="cell size-1"></div>
+      <div class="cell size-9"></div>
+      <div class="cell size-7 letter-s"></div>
+      <div class="cell size-9"></div>
+    </div>
+    <div class="row">
+      <!-- TODO: arreglar N -->
+      <!-- row 10 -->
+      <div class="cell size-8"></div>
+      <div class="cell size-5 letter-a"></div>
+      <div class="cell size-4"></div>
+      <div class="cell size-2 letter-a"></div>
+      <div class="cell size-2 letter-a"></div>
+      <div class="cell size-1 letter-n"></div>
+      <div class="cell size-3 letter-n"></div>
+      <div class="cell size-1"></div>
+      <div class="cell size-3"></div>
+      <div class="cell size-2 letter-n"></div>
+      <div class="cell siz e-2 letter-n"></div>
+      <div class="cell size-3 letter-d"></div>
+      <div class="cell size-4 letter-d"></div>
+      <div class="cell size-9 letter-d"></div>
+      <div class="cell size-1 letter-r"></div>
+      <div class="cell size-4 letter-r"></div>
+      <div class="cell size-3"></div>
+      <div class="cell size-2"></div>
+      <div class="cell size-1"></div>
+      <div class="cell size-3 letter-e"></div>
+      <div class="cell size-2 letter-e"></div>
+      <div class="cell size-3"></div>
+      <div class="cell size-6 letter-e"></div>
+      <div class="cell size-6 letter-s"></div>
+      <div class="cell size-4"></div>
+      <div class="cell size-6 letter-s"></div>
+      <div class="cell size-8"></div>
+    </div>
+    <div class="row">
+      <!-- row 11 -->
+      <div class="cell size-7"></div>
+      <div class="cell size-5 letter-a"></div>
+      <div class="cell size-3 letter-a"></div>
+      <div class="cell size-5 letter-a"></div>
+      <div class="cell size-5 letter-n"></div>
+      <div class="cell size-2"></div>
+      <div class="cell size-2"></div>
+      <div class="cell size-3 letter-n"></div>
+      <div class="cell size-1 letter-n"></div>
+      <div class="cell size-1"></div>
+      <div class="cell size-7 letter-d"></div>
+      <div class="cell size-5 letter-d"></div>
+      <div class="cell size-2 letter-d"></div>
+      <div class="cell size-3 letter-r"></div>
+      <div class="cell size-2 letter-r"></div>
+      <div class="cell size-9"></div>
+      <div class="cell size-8 letter-e"></div>
+      <div class="cell size-6 letter-e"></div>
+      <div class="cell size-2"></div>
+      <div class="cell size-3 letter-s"></div>
+      <div class="cell size-3 letter-s"></div>
+      <div class="cell size-7 letter-s"></div>
+      <div class="cell size-7"></div>
+    </div>
+    <div class="row">
+      <!-- row 12-->
+      <div class="cell size-10"></div>
+      <div class="cell size-7 letter-a"></div>
+      <div class="cell size-5 letter-a"></div>
+      <div class="cell size-3 letter-n"></div>
+      <div class="cell size-1 letter-n"></div>
+      <div class="cell size-5"></div>
+      <div class="cell size-5 letter-n"></div>
+      <div class="cell size-4"></div>
+      <div class="cell size-5 letter-d"></div>
+      <div class="cell size-1"></div>
+      <div class="cell size-5 letter-d"></div>
+      <div class="cell size-6 letter-r"></div>
+      <div class="cell size-12"></div>
+      <div class="cell size-4 letter-e"></div>
+      <div class="cell size-5 letter-e"></div>
+      <div class="cell size-5"></div>
+      <div class="cell size-1"></div>
+      <div class="cell size-6 letter-s"></div>
+      <div class="cell size-3 letter-s"></div>
+      <div class="cell size-10"></div>
+    </div>
+    <div class="row">
+      <!-- row 13 -->
 
-    <div class="cell size-5"></div>
-    <div class="cell size-7"></div>
-    <div class="cell size-2"></div>
-    <div class="cell size-10"></div>
-    <div class="cell size-4"></div>
-    <div class="cell size-4"></div>
-    <div class="cell size-5"></div>
-    <div class="cell size-12"></div>
-    <div class="cell size-5"></div>
-    <div class="cell size-4"></div>
-    <div class="cell size-10"></div>
-    <div class="cell size-8"></div>
-    <div class="cell size-6"></div>
-    <div class="cell size-2"></div>
-    <div class="cell size-8"></div>
-    <div class="cell size-8"></div>
+      <div class="cell size-5"></div>
+      <div class="cell size-7"></div>
+      <div class="cell size-2"></div>
+      <div class="cell size-10"></div>
+      <div class="cell size-4"></div>
+      <div class="cell size-4"></div>
+      <div class="cell size-5"></div>
+      <div class="cell size-12"></div>
+      <div class="cell size-5"></div>
+      <div class="cell size-4"></div>
+      <div class="cell size-10"></div>
+      <div class="cell size-8"></div>
+      <div class="cell size-6"></div>
+      <div class="cell size-2"></div>
+      <div class="cell size-8"></div>
+      <div class="cell size-8"></div>
+    </div>
   </div>
-</div>
-
+</header>
+<!-- TODO: add offset px -->
 <style>
-  :root {
-    --letter-a: #f6af65;
-    --letter-n: #00c2d1;
-    --letter-d: #ec4848;
-    --letter-r: #6de66d;
-    --letter-e: #ee5bc4;
-    --letter-s: #e1d74d;
-    --gray: #334651;
-    --unit: 10px;
-    --container-width: 1650px;
-    --initial-time: 2s;
-    --slide-out-time: 3s;
-    --slide-in-time: 4s;
-  }
+  /* TODO: pick vscode theme */
 
-  body {
-    display: grid;
-    place-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-
-  .container {
-    position: relative;
-    width: var(--container-width);
+  header {
     display: flex;
+    place-items: center;
+    padding-bottom: 40px;
+    --unit: 10px;
+    --container-width: 100dvw;
+    --initial-time: 1s;
+    --slide-out-time: 1.5s;
+    --slide-in-time: 3s;
+  }
+  .container {
+    /* cursor: pointer; */
+    min-width: 100%;
+    display: flex;
+
     flex-direction: column;
     gap: var(--unit);
-    overflow: hidden;
+    /* overflow: hidden; */
   }
 
   .row {
@@ -415,22 +422,22 @@
   }
 
   .cell.letter-a {
-    background-color: var(--letter-a);
+    background-color: var(--color-1);
   }
   .cell.letter-n {
-    background-color: var(--letter-n);
+    background-color: var(--color-2);
   }
   .cell.letter-d {
-    background-color: var(--letter-d);
+    background-color: var(--color-3);
   }
   .cell.letter-r {
-    background-color: var(--letter-r);
+    background-color: var(--color-4);
   }
   .cell.letter-e {
-    background-color: var(--letter-e);
+    background-color: var(--color-5);
   }
   .cell.letter-s {
-    background-color: var(--letter-s);
+    background-color: var(--color-6);
   }
 
   .row:nth-child(1) {
@@ -532,9 +539,14 @@
     --direction: 1;
   }
 
-  @media (width < 1300px) {
+  /* @media (width > 1300px) {
     :root {
-      --unit: 7px;
+      --unit: 9px;
+    }
+  } */
+  @media (width < 1690px) {
+    :root {
+      --unit: 10px;
     }
   }
 
@@ -550,18 +562,18 @@
   }
 </style>
 <script>
-  const container = document.querySelector(".container");
-  const cloneContainer = container.cloneNode(true);
-  cloneContainer.classList.add("duplicate");
-  container.append(cloneContainer);
+  // const container = document.querySelector(".container");
+  // const cloneContainer = container.cloneNode(true);
+  // cloneContainer.classList.add("duplicate");
+  // container.append(cloneContainer);
 
-  container.addEventListener("click", () => {
-    container.classList.add("slide", "no-load");
-    const rows = container.querySelectorAll(".row");
+  // container.addEventListener("click", () => {
+  //   container.classList.add("slide", "no-load");
+  //   const rows = container.querySelectorAll(".row");
 
-    const lastRow = rows[rows.length - 1];
-    lastRow.addEventListener("animationend", () => {
-      container.classList.remove("slide");
-    });
-  });
+  //   const lastRow = rows[rows.length - 1];
+  //   lastRow.addEventListener("animationend", () => {
+  //     container.classList.remove("slide");
+  //   });
+  // });
 </script>
