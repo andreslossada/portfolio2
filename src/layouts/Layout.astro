@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import CodeBackground from "/public/code.jpg";
+import CodeBackground from "/public/bg-code.png";
 
 import SmoothScroll from "../components/SmoothScroll.astro";
 import "app/globals.css";
@@ -14,7 +14,10 @@ const { title } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Web Development - Andres Lossada - Fullstack" />
+    <meta
+      name="description"
+      content="Web Development - Andres Lossada - Fullstack"
+    />
     <meta name="viewport" content="width=device-width" />
     <!-- TODO: add favicon -->
     <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
@@ -29,17 +32,32 @@ const { title } = Astro.props;
     </main>
   </body>
   <style is:global>
-    /* #78dce8 */
+    /* #--78dce8 */
     :root {
-      /* --letter-a: #f92672;
+      /* Dark One Pro Darker Colors */
+      --chalky: #e5c07b;
+      --coral: #ef596f;
+      --dark: #5c6370;
+      --error: #f44747;
+      --fountainBlue: #2bbac5;
+      --green: #89ca78;
+      --white: #ffffff;
+      --LightDark: #7f848e;
+      --lightWhite: #abb2bf;
+      --malibu: #61afef;
+      --purple: #d55fde;
+      --whiskey: #d19a66;
+      --deepRed: #be5046;
+      --bg-color: #24262e;
+    }
+    /* --letter-a: #f92672;
     --letter-n: #a6e22e;
     --letter-d: #66d9ef;
     --letter-r: #fd971f;
      --letter-e: #ae81ff; 
     --letter-e: #d6d6d6;
     --letter-s: #e1d74d; 
-    --gray: #5e5e5e; */
-      --bg-color: #24262e;
+    --gray: #5e5e5e; 
       --gray: rgb(227, 227, 227);
       --color-1: #ff6188;
       --color-2: #e87d3e;
@@ -47,7 +65,7 @@ const { title } = Astro.props;
       --color-4: #a9dc76;
       --color-5: #ab9df2;
       --color-6: #78dce8;
-    }
+      */
     *,
     *::before,
     *::after {
@@ -121,7 +139,8 @@ const { title } = Astro.props;
     }
 
     body {
-      background-image: url("/code.jpg");
+      background-image: url("/bg-code.png ");
+      background-size: cover;
       /* transform: translateZ(-10px) scale(2); */
     }
   </style>
