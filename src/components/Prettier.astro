@@ -561,25 +561,21 @@ import { ThemeMenu } from "./Theme.jsx";
     --direction: 1;
   }
 
-  /* @media (width > 1300px) {
-    :root {
-      --unit: 9px;
-    }
-  } */
-  @media (width < 1690px) {
-    :root {
-      --unit: 10px;
+
+  @media (width < 1400px) {
+    header {
+      --unit: 8px;
     }
   }
 
   @media (width < 1080px) {
-    :root {
-      --unit: 5px;
+    header {
+      --unit: 6px;
     }
   }
   @media (width < 780px) {
-    :root {
-      --unit: 4px;
+    header {
+      --unit: 5px;
     }
   }
 </style>
