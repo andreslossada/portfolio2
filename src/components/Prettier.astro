@@ -5,19 +5,20 @@ import { ThemeMenu } from "./Theme.jsx";
 ---
 
 <header
-  class="relative h-[calc(100vh+77px)] w-full bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.25),rgba(255,255,255,0))] bg-[--bg-color] top   drop-shadow-lg  "
+  class="relative h-[calc(100vh+77px)] w-full bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.25),rgba(255,255,255,0))] bg-[--bg-color] top drop-shadow-lg"
 >
   <!-- <ThemeIcon class="absolute h-6 bottom-16 left-5 text-white z-50"/> -->
   <!-- <div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div> -->
   <div
-    class="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] "
+    class="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"
   >
   </div>
   <div
-    style="overflow:hidden;margin-left:auto;margin-right:auto;border-radius:10px;width:100%;max-width:440.98px"
-    class="snippify "
+    class="snippify"
   >
-    <div style="width:100%;padding-bottom:92.35339471177831%" class=""></div><iframe
+    <div >
+    </div ><iframe
+    
       width="440.98"
       height="407.26"
       title=""
@@ -25,10 +26,10 @@ import { ThemeMenu } from "./Theme.jsx";
       allow="clipboard-write"
       allowfullscreen=""
       loading="lazy"
-      style="background:#ffffff00;position:absolute;left:0;top:0;width:100%"
+      style="background:#ffffff00;"
       frameborder="0"></iframe>
   </div>
-  <div class="container ">
+  <div class="container">
     <div class="row">
       <div class="cell size-10"></div>
       <div class="cell size-5"></div>
@@ -325,9 +326,11 @@ import { ThemeMenu } from "./Theme.jsx";
   /* TODO: pick vscode theme */
   .snippify {
     position: absolute;
-    z-index: 99999999;
-    top: 30px;
+    /* z-index: 9; */
+    top: 0;
     left: 20%;
+    width: 100%;
+    max-width: 440.98px;
   }
   header {
     display: flex;
