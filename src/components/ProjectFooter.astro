@@ -1,0 +1,35 @@
+---
+import JSIcon from "./icons/JSIcon.astro";
+import HTMLIcon from "./icons/HTMLIcon.astro";
+import CSSIcon from "./icons/CSSIcon.astro";
+import GitHubIcon from "./icons/GitHubIcon.astro";
+import LinkIcon from "./icons/LinkIcon.astro";
+import ReactIcon from "./icons/ReactIcon.astro";
+
+const { project } = Astro.props;
+---
+
+<footer class="flex justify-between absolute bottom-1 h-[37px] w-full px-5">
+  <section class="flex gap-3 drop-shadow-xl">
+    <a
+      href={project.github}
+      target="_blank"
+      class="h-[37px] w-[37px] hover:scale-110 hover:drop-shadow-lg duration-200"
+    >
+      <GitHubIcon />
+    </a>
+    <a
+      href={project.link}
+      target="_blank"
+      class="h-[37px] w-[37px] hover:scale-110 hover:drop-shadow-lg duration-200"
+    >
+      <LinkIcon />
+    </a>
+  </section>
+  <section class="flex gap-1 items-end">
+    <HTMLIcon />
+    <CSSIcon />
+    <JSIcon />
+    {project.tech.includes("React") && <ReactIcon />}
+  </section>
+</footer>

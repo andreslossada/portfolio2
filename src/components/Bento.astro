@@ -1,89 +1,74 @@
 ---
 import { Image } from "astro:assets";
 import OmnifoodIcon from "./icons/omnifood-logo.png";
-import JSIcon from "./icons/JSIcon.astro";
-import HTMLIcon from "./icons/HTMLIcon.astro";
-import CSSIcon from "./icons/CSSIcon.astro";
-import GitHubIcon from "./icons/GitHubIcon.astro";
-import LinkIcon from "./icons/LinkIcon.astro";
 import CrwnIcon from "./icons/CrwnIcon.astro";
 import ForkifyIcon from "./icons/forkify-icon.png";
-import ReactIcon from "./icons/ReactIcon.astro";
 import PathFinderIcon from "./icons/PathIcon.astro";
 import Title from "./Title.astro";
+import ProjectFooter from "./ProjectFooter.astro";
 
-const projects = [
-  {
+const projects = {
+  omnifood: {
     title: "Omnifood",
     description:
       "Elevate your health journey with a captivating landing page design for a fictional healthy delivery service – where wellness meets seamless online experience.",
     tech: ["HTML", "CSS", "JS"],
-    link: "link",
-    github: "github",
+    link: "https://andres-omnifood.netlify.app/",
+    github: "https://github.com/dresan22/omnifood-lp",
     image: OmnifoodIcon,
   },
-  {
+  crwn: {
     title: "Crwn",
     description:
       "Dynamic E-commerce Platform: Elevating Fashion Trends Online – A sleek and intuitive shopping website offering a curated collection of modern, trend-setting clothing for a seamless and stylish online shopping experience",
     tech: ["HTML", "CSS", "JS"],
-    link: "link",
-    github: "github",
+    link: "crwn-clothing-dresan22.vercel.app",
+    github: "https://github.com/dresan22/crwn-clothing",
     image: CrwnIcon,
   },
-  {
+  pathfinder: {
     title: "Path Finder",
     description:
       "AI-powered Career Navigator: A cutting-edge web platform that leverages artificial intelligence to analyze individual skills, preferences, and market trends, guiding users towards personalized and fulfilling career paths.",
     tech: ["HTML", "CSS", "JS"],
-    link: "link",
-    github: "github",
-    image: CrwnIcon,
+    link: "findmypath.vercel.app",
+    github: "https://github.com/dresan22/PathFinder",
+    image: PathFinderIcon,
   },
-  {
+  forkify: {
     title: "Forkify",
     description:
       "Engaging React-powered project for a interactive recipe platform, featuring seamless navigation, and a modern UI for an enhanced culinary experience.",
     tech: ["HTML", "CSS", "JS", "React"],
-    link: "link",
-    github: "github",
+    link: "https://forkify-andres.netlify.app/",
+    github: "https://github.com/dresan22/forkify-andres",
     image: ForkifyIcon,
   },
-];
+};
 ---
 
-<div class="bg-[--bg-color]  py-40  middle bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.25),rgba(255,255,255,0))] relative">
-    <div
-    class="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] "
+<div
+  class="bg-[--bg-color] py-40 middle bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.25),rgba(255,255,255,0))] relative"
+>
+  <div
+    class="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"
   >
   </div>
   <Title text="Projects" />
   <section
     class="w-full max-w-[65vw]
     grid lg:grid-cols-10 auto-rows-[35vh] gap-6
-    mx-auto  pt-20 pb-40 text-white h-full place-content-center  "
+    mx-auto pt-20 pb-40 text-white h-full place-content-center"
   >
     <!-- OMNIFOOD ----------------------------------------------->
     <article
-      class="grid grid-cols-1 place-content-center relative rounded-xl backdrop-blur-md p-5 col-span-10 md:col-span-4 bg-gradient-to-r from-orange-200 via-amber-100 to-slate-100 gap-3 overflow-hidden"
+      class="grid grid-cols-1 place-content-center relative rounded-xl backdrop-blur-md p-5 col-span-10 md:col-span-4 bg-gradient-to-r from-orange-200 via-amber-100 to-slate-100 gap-3 overflow-hidden text-[#e67e22]"
     >
-      <Image src={OmnifoodIcon} alt="Omnifood logo" class="drop-shadow-lg" />
+      <Image src={projects.omnifood.image} alt="Omnifood logo" class="drop-shadow-lg" />
       <p class="font-['Rubik system-ui'] text-[#333] font-semibold text-pretty">
-        {projects[0].description}
+        {projects.omnifood.description}
       </p>
-      <footer
-        class="flex justify-between absolute bottom-1 h-[37px] w-full px-5"
-      >
-        <section class="flex gap-3 text-[#e67e22] drop-shadow-xl">
-          <GitHubIcon />
-          <LinkIcon />
-        </section>
-        <section class="flex gap-1">
-          <HTMLIcon />
-          <CSSIcon />
-          <JSIcon />
-        </section>
-      </footer>
+      <ProjectFooter project={projects.omnifood} />
     </article>
     <!-- CRWN -------------------------------------------------->
     <article
@@ -91,32 +76,19 @@ const projects = [
     >
       <h2 class="text-6xl drop-shadow-lg">Crwn</h2>
       <div class="h-full absolute w-full -z-10 -left-24 -top-6">
-        <CrwnIcon />
+        <projects.crwn.image />
       </div>
       <p class="font-['Rubik system-ui'] font-semibold">
-        {projects[1].description}
+        {projects.crwn.description}
       </p>
-      <footer
-        class="flex justify-between absolute bottom-1 h-[37px] w-full px-5"
-      >
-        <section class="flex gap-3 drop-shadow-xl">
-          <GitHubIcon />
-          <LinkIcon />
-        </section>
-        <section class="flex gap-1">
-          <HTMLIcon />
-          <CSSIcon />
-          <JSIcon />
-          <ReactIcon />
-        </section>
-      </footer>
+      <ProjectFooter project={projects.crwn} />
     </article>
     <!-- FINDER -------------------------------------------------->
     <article
       class=`grid grid-cols-1 place-content-center	 relative rounded-xl backdrop-blur-md   bg-slate-800 p-5 col-span-10 md:col-span-6 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-900 via-indigo-900 to-teal-900  gap-3   overflow-hidden`
     >
       <div class="h-full absolute -z-10 left-24 -top-6 rotate-90 opacity-40">
-        <PathFinderIcon />
+        <projects.pathfinder.image />
       </div>
       <h1
         class="bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text font-extrabold text-transparent tracking-wide text-5xl drop-shadow-dark drop-shadow-lg"
@@ -124,51 +96,19 @@ const projects = [
         Path Finder
       </h1>
       <p class="font-['Rubik system-ui'] font-semibold">
-        {projects[2].description}
+        {projects.pathfinder.description}
       </p>
-      <footer
-        class="flex justify-between absolute bottom-1 h-[37px] w-full px-5"
-      >
-        <section class="flex gap-3">
-          <a
-            href=""
-            class="h-[37px] w-[37px] hover:scale-105 hover:drop-shadow-glow active:drop-shadow-glower focus:drop-shadow-glow duration-200"
-          >
-            <GitHubIcon />
-          </a>
-          <LinkIcon />
-        </section>
-        <section class="flex gap-1">
-          <HTMLIcon />
-          <CSSIcon />
-          <JSIcon />
-          <ReactIcon />
-        </section>
-      </footer>
+      <ProjectFooter project={projects.pathfinder} />
     </article>
     <!-- FORK -------------------------------------------------->
     <article
       class=`grid grid-cols-1 place-content-center	 relative rounded-xl backdrop-blur-md   bg-slate-800 p-5 col-span-10 md:col-span-4 bg-gradient-to-l from-orange-200 via-yellow-200 to-amber-100  gap-3  text-[#333] overflow-hidden`
     >
-      <Image src={ForkifyIcon} alt="Omnifood logo" class="drop-shadow-xl" />
+      <Image src={projects.forkify.image} alt="Omnifood logo" class="drop-shadow-xl" />
       <p class="font-['system-ui'] font-semibold text-right">
-        {projects[3].description}
+        {projects.forkify.description}
       </p>
-      <footer
-        class="flex justify-between absolute bottom-1 h-[37px] w-full px-5"
-      >
-        <section class="flex gap-3">
-          <GitHubIcon />
-          <LinkIcon />
-        </section>
-        <section class="flex gap-1 drop-shadow-xl">
-          <HTMLIcon />
-          <CSSIcon />
-          <JSIcon />
-
-          <ReactIcon />
-        </section>
-      </footer>
+      <ProjectFooter project={projects.forkify} />
     </article>
   </section>
 </div>
