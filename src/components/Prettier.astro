@@ -1,14 +1,11 @@
-
 <header
   class="relative h-[calc(100vh+77px)] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.25),rgba(255,255,255,0))] bg-[--bg-color] top grid place-content-center pb-11"
 >
-  <!-- <ThemeIcon class="absolute h-6 bottom-16 left-5 text-white z-50"/> -->
-  <!-- <div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div> -->
   <div
-    class="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"
+    class="absolute -z-10 inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"
   >
   </div>
-  <div class="snippify">
+  <!-- <div class="snippify">
     <div></div><iframe
       width="440.98"
       height="407.26"
@@ -19,7 +16,7 @@
       loading="lazy"
       style="background:#ffffff00;"
       frameborder="0"></iframe>
-  </div>
+  </div> -->
   <div class="container">
     <div class="row">
       <div class="cell size-10"></div>
@@ -311,13 +308,12 @@
       <div class="cell size-8"></div>
     </div>
   </div>
-  <h2 class="text-center text-white text-6xl  absolute w-full bottom-[30%]">
+  <h2 class="text-center text-white text-6xl absolute w-full bottom-[30%]">
     Web Development
   </h2>
 </header>
 <!-- TODO: add offset px -->
 <style>
-  /* TODO: pick vscode theme */
   .snippify {
     position: absolute;
     z-index: 9;
@@ -328,37 +324,55 @@
   }
   header {
     --unit: 10px;
-    --container-width: 100dvw;
+    --container-width: 100vw;
     --initial-time: 1s;
-    --slide-out-time: 1.5s;
     --slide-in-time: 3s;
   }
   .container {
-    /* cursor: pointer; */
+    gap: var(--unit);
     min-width: 100%;
     display: flex;
-
+    cursor: pointer;
     flex-direction: column;
-    gap: var(--unit);
-    /* overflow: hidden; */
   }
 
   .row {
     height: var(--unit);
-    display: flex;
-    justify-content: center;
     gap: var(--unit);
     translate: var(--offset);
+    display: flex;
+    justify-content: center;
+    /* animation: animation-name time time type */
+    /* animation: load-row var(--initial-time) calc(var(--delay) * 100ms + 500ms) */
+    /* forwards; */
   }
 
-  :not(.duplicate) > .row {
+  .scramble {
+    animation: unload-row 500ms calc(var(--delay) * 25ms) both;
+  }
+
+  .order {
+    animation: load-row .5s calc(var(--delay) * 50ms) forwards;
+  }
+  .first-order {
+    /* animation: animation-name animation-time animation-delay animation-fill-mode */
     animation: load-row var(--initial-time) calc(var(--delay) * 100ms + 500ms)
       forwards;
   }
 
-  .container.no-load:not(.slide) .row {
-    animation: none;
-    translate: 0;
+  @keyframes load-row {
+    100% {
+      translate: 0%;
+    }
+  }
+  @keyframes unload-row {
+    0% {
+      translate: 0%;
+    }
+
+    100% {
+      translate: var(--offset);
+    }
   }
   .cell {
     height: 100%;
@@ -455,101 +469,55 @@
 
   .row:nth-child(1) {
     --delay: 1;
-    --offset: 10%;
+    --offset: 14%;
   }
   .row:nth-child(2) {
     --delay: 2;
-    --offset: -100px;
+    --offset: -10%;
   }
   .row:nth-child(3) {
     --delay: 3;
-    --offset: 200px;
+    --offset: 14%;
   }
   .row:nth-child(4) {
     --delay: 4;
-    --offset: -100px;
+    --offset: -11%;
   }
   .row:nth-child(5) {
     --delay: 5;
-    --offset: 200px;
+    --offset: 12%;
   }
   .row:nth-child(6) {
     --delay: 6;
-    --offset: -50px;
+    --offset: -5%;
   }
   .row:nth-child(7) {
     --delay: 7;
-    --offset: 150px;
+    --offset: 8%;
   }
   .row:nth-child(8) {
     --delay: 8;
-    --offset: -100px;
+    --offset: -14%;
   }
   .row:nth-child(9) {
     --delay: 9;
-    --offset: 50px;
+    --offset: 18%;
   }
   .row:nth-child(10) {
     --delay: 10;
-    --offset: -150px;
+    --offset: -10%;
   }
   .row:nth-child(11) {
     --delay: 11;
-    --offset: 150px;
+    --offset: 11%;
   }
   .row:nth-child(12) {
     --delay: 12;
-    --offset: 250px;
+    --offset: -4%;
   }
   .row:nth-child(13) {
     --delay: 13;
-    --offset: -250px;
-  }
-
-  @keyframes load-row {
-    100% {
-      translate: 0;
-    }
-  }
-
-  .container.slide:not(.duplicate) > .row {
-    animation: slide var(--slide-out-time) calc((var(--delay) - 1) * 100ms)
-      ease-out both;
-  }
-
-  .row:nth-child(2n) {
-    --direction: -1;
-  }
-
-  @keyframes slide {
-    0% {
-      translate: 0;
-    }
-
-    100% {
-      translate: calc(var(--container-width) * var(--direction, 1));
-    }
-  }
-
-  .container.duplicate {
-    position: absolute;
-  }
-
-  .container.duplicate .row {
-    translate: var(--container-width);
-  }
-
-  .container.slide .container.duplicate .row {
-    animation: slide var(--slide-in-time)
-      calc((var(--delay) - 1) * 100ms - 150ms) ease-in reverse both;
-  }
-
-  .container.slide .container.duplicate .row:nth-child(2n-1) {
-    --direction: -1;
-  }
-
-  .container.slide .container.duplicate .row:nth-child(2n) {
-    --direction: 1;
+    --offset: 15%;
   }
 
   @media (width < 1650px) {
@@ -565,24 +533,39 @@
   }
   @media (width < 780px) {
     header {
-      --unit: 5px;
+      --unit: 4px;
+    }
+  }
+  @media (width < 570px) {
+    header {
+      --unit: 3px;
     }
   }
 </style>
 <script>
-  // const container = document.querySelector(".container");
-  // const cloneContainer = container.cloneNode(true);
-  // cloneContainer.classList.add("duplicate");
-  // container.append(cloneContainer);
+  const container = document.querySelector(".container");
+  const rows = document.querySelectorAll(".row");
+  const lastRow = rows[rows.length - 1];
+  let isAnimating = true;
+  rows.forEach((row) => {
+    row.classList.add("first-order");
+  });
+  container.addEventListener("click", () => {
+    if (!isAnimating) {
+      rows.forEach((row) => {
+        if (!row.classList.contains("scramble")) {
+          row.classList.remove("first-order","order");
+          row.classList.add("scramble");
+        } else {
+          row.classList.remove("first-order", "scramble");
+          row.classList.add("order");
+        }
+      });
+    }
+    isAnimating = true;
+  });
 
-  // container.addEventListener("click", () => {
-  //   container.classList.add("slide", "no-load");
-  //   const rows = container.querySelectorAll(".row");
-
-  //   const lastRow = rows[rows.length - 1];
-  //   lastRow.addEventListener("animationend", () => {
-  //     container.classList.remove("slide");
-  //   });
-  // });
-
+  lastRow.addEventListener("animationend", () => {
+    isAnimating = false;
+  });
 </script>
