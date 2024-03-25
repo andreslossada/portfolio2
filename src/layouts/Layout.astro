@@ -48,9 +48,9 @@ const { title } = Astro.props;
       --purple: #d55fde;
       --whiskey: #d19a66;
       --deepRed: #be5046;
-      /* --bg-color: #24262e; */
+      --bg-color: #24262e;
       /* --bg-color: #1e2235; */
-      --bg-color: #0a0d1d;
+      /* --bg-color: #0a0d1d; */
       /* --bg-color: #000000; */
     }
     /* --letter-a: #f92672;
@@ -92,11 +92,10 @@ const { title } = Astro.props;
       overflow-x: hidden;
       /* width: 100vw; */
       /* height: 100%; */
-
+      
       --sb-track-color: rgba(45, 65, 74, 0.1);
       --sb-thumb-color: #334651;
       /* --sb-size: 10px; */
-
       /* scrollbar-color: var(--sb-thumb-color) var(--sb-track-color); */
     }
     body::-webkit-scrollbar {
@@ -115,7 +114,6 @@ const { title } = Astro.props;
 
     .top {
       clip-path: polygon(0 0,100% 0,100% calc(100% - 77px),50% 100%,0 calc(100% - 77px));
-      
     }
 
     .bottom {
@@ -140,6 +138,7 @@ const { title } = Astro.props;
       height: 100%;
       transform-style: preserve-3d;
       z-index: -1;
+      filter: drop-shadow(0px 16px 18px rgba(0, 0, 0, 0.51));
     }
 
     body {
