@@ -1,0 +1,65 @@
+<div class="circle bg-slate-700"></div>
+<div class="center bg-slate-700"></div>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root {
+    --radius: 500px;
+  }
+
+  .center {
+    position: absolute;
+    border: 2px solid white;
+    top: 50%;
+    left: 50%;
+    height: calc(var(--radius));
+    width: calc(var(--radius));
+    border-radius: 50%;
+    translate: -50% -50%;
+    z-index: 1000;
+  }
+
+  .circle {
+    border: 2px solid white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: var(--radius);
+    width: var(--radius);
+    border-radius: 0 100% 0 0;
+    translate: 0 calc(-1 * var(--radius));
+    transform-origin: bottom left;
+    &:hover {
+      background-color: #222;
+    }
+  }
+
+  .circle:focus {
+    background-color: #999;
+  }
+
+  body {
+    background-color: #555;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const originalDiv = document.querySelector(".circle");
+    // const height = originalDiv.offsetHeight
+    for (let j = 0; j < 6; j++) {
+      for (let i = 0; i <= 31; i++) {
+        let clone = originalDiv.cloneNode(true);
+        clone.style.rotate = i * 8.71 + "deg";
+        // doesnt use gpu
+        // clone.style.scale = 1 - (j*.1)
+        clone.style.transform = `scale3d(${1 - j * 0.1}, ${1 - j * 0.1}, 1)`;
+        // using height instead of scale
+        // clone.style.height = height + (j*30) + 'px'
+        // clone.style.width = height + (j*30) + 'px'
+        // clone.style.translate = `0 -${height + (j*30)}px`
+        // clone.style.zIndex = j
+        document.body.appendChild(clone);
+      }
+    }
+  });
+</script>
