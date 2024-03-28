@@ -306,14 +306,6 @@ import Socials from "./Socials.astro";
 </header>
 <!-- TODO: add offset px -->
 <style>
-  .snippify {
-    position: absolute;
-    z-index: 9;
-    top: 0;
-    left: 20%;
-    width: 100%;
-    max-width: 440.98px;
-  }
   header {
     --unit: 10px;
     --container-width: 100vw;
@@ -334,6 +326,7 @@ import Socials from "./Socials.astro";
     translate: var(--offset);
     display: flex;
     justify-content: center;
+    
     /* animation: animation-name time time type */
     /* animation: load-row var(--initial-time) calc(var(--delay) * 100ms + 500ms) */
     /* forwards; */
@@ -371,12 +364,13 @@ import Socials from "./Socials.astro";
     width: calc(var(--size, 2) * var(--unit));
     background-color: var(--dark);
     border-radius: 444px;
+    box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.4);
   }
 
   .cell.size-1 {
     --size: 1;
   }
-  .cell.size-2 {
+    .cell.size-2 {
     --size: 2;
   }
   .cell.size-3 {

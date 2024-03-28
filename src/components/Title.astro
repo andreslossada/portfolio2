@@ -2,35 +2,14 @@
 const { text } = Astro.props;
 ---
 
-<div class="title">
-  <h1 class="">{text}</h1>
+<div class="title grid place-content-center text-white font-bold drop-shadow-[0px_0px_20px_#00000094] font-sans">
+  <h2 class="">{text}</h2>
 </div>
 
 <style>
-  .title {
-    /* background: #000; */
-    /* line-height: 1; */
-    /* min-height: 100%; */
-    /* margin: 90px; */
-    /* padding: 80px; */
-    /* padding-: 100px; */
-    /* padding-bottom: 100px; */
-    display: grid;
-    place-items: start center;
-    /* min-height: calc(100vh - 16px); */
-  }
-
-  h1 {
-    font-family: "Exo", sans-serif;
+  h2 {
     font-size: 70px;
-    font-weight: 700;
-    text-shadow: rgba(255, 255, 255, 0.178) 0px 0px 20px;
-    color: white;
-    /* width: -webkit-min-content; */
-    /* width: -moz-min-content; */
-    /* width: min-content; */
-    /* margin: auto; */
-    /* text-transform: lowercase; */
+    text-shadow: rgba(21, 21, 21, 0.256) 0px 0px 20px;
+    /* background-color: #00000094; */
   }
 </style>
-

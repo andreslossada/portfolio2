@@ -1,77 +1,97 @@
+---
+import Title from "./Title.astro";
+---
+
 <div
-  class="bg-[--bg-color] py-40 bottom bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.25),rgba(255,255,255,0))] relative h-screen content-center text-white"
+  class="bg-[#0a0d1d] py-40 bottom bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.25),rgba(255,255,255,0))] relative h-[calc(100dvh+77px)] text-white w-screen"
 >
   <div
     class="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"
   >
   </div>
-  <section
-    class="bg-[#24262e] overflow-hidden h-[300px] w-[500px] mx-[auto] rounded-md drop-shadow-[0px_10px_15px_gray]"
-  >
-    <header class="h-[50px] w-full bg-[#515565] flex justify-between">
-      <!-- TAB -->
-      <div
-        class="relative px-3 bg-[#24262e] h-full r ml-8 mt-1 flex items-center rounded-t-lg"
-      >
-        <div>
-          <div class="absolute bg-[#24262e] bottom-[4px] -left-[16px] size-4">
-          </div>
-          <div
-            class="absolute bg-[#515565] bottom-[4px] -left-[16px] size-4 rounded-br-lg"
-          >
-          </div>
-          <div class="absolute bg-[#24262e] bottom-[4px] -right-[16px] size-4">
-          </div>
-          <div
-            class="absolute bg-[#515565] bottom-[4px] -right-[16px] size-4 rounded-bl-lg"
-          >
-          </div>
-        </div>
-        <svg
-          stroke="currentColor"
-          fill="rgb(237, 198, 36)"
-          stroke-width="0"
-          viewBox="0 0 512 512"
-          class=""
-          height="1em"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
+  <Title text="Contact Me" />
+  <div class="h-full content-center">
+    <section
+      class="bg-[#24262e] overflow-hidden h-[50dvh] w-[50dvw] mx-[auto] rounded-md drop-shadow-[0px_10px_25px_black] contect-center"
+    >
+      <header class="h-[50px] w-full bg-[#515565] flex justify-between">
+        <!-- TAB -->
+        <div
+          class="relative px-3 bg-[#24262e] h-full r ml-8 mt-1 flex items-center rounded-t-lg"
         >
-          <path
-            d="M208 88.001h-80v212.498c0 52.58-18.032 67.261-49.412 67.261-14.705 0-27.948-2.521-38.25-6.063L32 423.904C46.7 428.966 69.259 432 86.907 432 158.955 432 208 398.129 208 301.02V88.001zM382.463 80C305.02 80 256 123.998 256 182.154c0 50.083 37.751 81.44 92.641 101.665 39.7 14.158 55.392 26.808 55.392 47.539 0 22.756-18.139 37.425-52.448 37.425-31.863 0-60.789-10.64-80.394-21.255v-.021L256 410.727c18.639 10.638 53.441 21.255 91.167 21.255C437.854 431.98 480 383.43 480 326.284c0-48.55-26.958-79.9-85.278-102.163-43.139-17.191-61.27-26.795-61.27-48.542 0-17.2 15.688-32.869 48.043-32.869 31.846 0 53.744 10.707 66.505 17.291l19.125-64C447.125 87.22 420.188 80 382.463 80z"
+          <div>
+            <div class="absolute bg-[#24262e] bottom-[4px] -left-[16px] size-4">
+            </div>
+            <div
+              class="absolute bg-[#515565] bottom-[4px] -left-[16px] size-4 rounded-br-lg"
+            >
+            </div>
+            <div
+              class="absolute bg-[#24262e] bottom-[4px] -right-[16px] size-4"
+            >
+            </div>
+            <div
+              class="absolute bg-[#515565] bottom-[4px] -right-[16px] size-4 rounded-bl-lg"
+            >
+            </div>
+          </div>
+          <svg
+            stroke="currentColor"
+            fill="rgb(237, 198, 36)"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            class=""
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
           >
-          </path>
-        </svg>
-        <div class="mb-1 pl-1 pr-3">contact.js</div>
+            <path
+              d="M208 88.001h-80v212.498c0 52.58-18.032 67.261-49.412 67.261-14.705 0-27.948-2.521-38.25-6.063L32 423.904C46.7 428.966 69.259 432 86.907 432 158.955 432 208 398.129 208 301.02V88.001zM382.463 80C305.02 80 256 123.998 256 182.154c0 50.083 37.751 81.44 92.641 101.665 39.7 14.158 55.392 26.808 55.392 47.539 0 22.756-18.139 37.425-52.448 37.425-31.863 0-60.789-10.64-80.394-21.255v-.021L256 410.727c18.639 10.638 53.441 21.255 91.167 21.255C437.854 431.98 480 383.43 480 326.284c0-48.55-26.958-79.9-85.278-102.163-43.139-17.191-61.27-26.795-61.27-48.542 0-17.2 15.688-32.869 48.043-32.869 31.846 0 53.744 10.707 66.505 17.291l19.125-64C447.125 87.22 420.188 80 382.463 80z"
+            >
+            </path>
+          </svg>
+          <div class="mb-1 pl-1 pr-3">contact.js</div>
+        </div>
+        <!-- CLOSE BUTTONS -->
+        <div class="h-full content-center mr-6">
+          <svg viewBox="0 0 420 100" focusable="false" class="h-4 c">
+            <circle fill="#ff5f57" cx="50" cy="50" r="50"></circle>
+            <circle fill="#febc2e" cx="210" cy="50" r="50"></circle>
+            <circle fill="#28c840" cx="370" cy="50" r="50"></circle>
+          </svg>
+        </div>
+      </header>
+      <!-- CONTENT -->
+      <div class="h-[calc(100%-50px)] py-5 ">
+        <form class="relative px-5 h-full">
+          <div class=" grid content-start self-start">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="rounded my-2 self-start " />
+          </div>
+          <div class=" content-stretch">
+            <label for="message">Message:</label>
+            <textarea
+              id="message"
+              name="message"
+              class="rounded resize-none my-2 w-full h-[calc(100%-60px)]"></textarea>
+          </div>
+          <div class=" self-end">
+            <input
+              disabled
+              type="submit"
+              value="Submit"
+              class="rounded-md bg-blue-500 px-6 py-2 self-end"
+            />
+          </div>
+        </form>
       </div>
-      <!-- CLOSE BUTTONS -->
-      <div class="h-full content-center mr-6">
-        <svg viewBox="0 0 420 100" focusable="false" class="h-4 c">
-          <circle fill="#ff5f57" cx="50" cy="50" r="50"></circle>
-          <circle fill="#febc2e" cx="210" cy="50" r="50"></circle>
-          <circle fill="#28c840" cx="370" cy="50" r="50"></circle>
-        </svg>
-      </div>
-    </header>
-    <!-- CONTENT -->
-    <div class="h-full py-5">
-      <form class="relative h-[calc(100%-50px)] px-5">
-        <label for="email">Email:</label><br />
-        <input type="email" id="email" name="email" class="rounded my-2" /><br
-        />
-        <label for="message">Message:</label><br />
-        <textarea
-          id="message"
-          name="message"
-          class="rounded resize-none my-2"
-          rows="2"
-          cols="59"></textarea><br />
-        <input
-          type="submit"
-          value="Submit"
-          class="rounded-md bg-blue-500 px-6 py-2 absolute bottom-0"
-        />
-      </form>
-    </div>
-  </section>
+    </section>
+  </div>
 </div>
+
+<style>
+  form {
+    display: grid;
+    grid-template-rows: 14% auto 14%;
+  }
+</style>
