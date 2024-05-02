@@ -62,22 +62,31 @@ import Title from "./Title.astro";
         </div>
       </header>
       <!-- CONTENT -->
-      <div class="h-[calc(100%-50px)] py-5 ">
-        <form class="relative px-5 h-full">
-          <div class=" grid content-start self-start">
+      <div class="h-[calc(100%-50px)] py-5">
+        <form
+          class="relative px-5 h-full"
+          action="https://formspree.io/f/mzbnoayq"
+          method="POST"
+        >
+          <div class="grid content-start self-start">
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" class="rounded my-2 self-start " />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="rounded my-2 self-start text-black"
+            />
           </div>
-          <div class=" content-stretch">
+          <div class="content-stretch">
             <label for="message">Message:</label>
             <textarea
               id="message"
               name="message"
-              class="rounded resize-none my-2 w-full h-[calc(100%-60px)]"></textarea>
+              class="rounded resize-none my-2 w-full h-[calc(100%-60px)] text-black"
+            ></textarea>
           </div>
-          <div class=" self-end">
+          <div class="self-end">
             <input
-              disabled
               type="submit"
               value="Submit"
               class="rounded-md bg-blue-500 px-6 py-2 self-end"
