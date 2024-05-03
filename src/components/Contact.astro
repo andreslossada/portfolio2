@@ -64,7 +64,7 @@ import Title from "./Title.astro";
       <!-- CONTENT -->
       <div class="h-[calc(100%-50px)] p-5">
         <form
-          class="relative px-5 h-full"
+          class="relative px-5 h-full grid gap-7"
           action="https://formspree.io/f/mzbnoayq"
           method="POST"
         >
@@ -74,7 +74,8 @@ import Title from "./Title.astro";
               type="email"
               id="email"
               name="email"
-              class="rounded my-2 self-start text-black w-1/2"
+              class="rounded my-2 self-start w-1/2 bg-gray-700 p-2 outline-none"
+              required
             />
           </div>
           <div class="content-stretch">
@@ -82,14 +83,14 @@ import Title from "./Title.astro";
             <textarea
               id="message"
               name="message"
-              class="rounded resize-none my-2 w-full h-[calc(100%-60px)] text-black"
-            ></textarea>
+              class="rounded resize-none my-2 w-full h-[calc(100%-60px)] bg-gray-700 p-3 outline-none"
+              required></textarea>
           </div>
           <div class="self-end">
             <input
               type="submit"
               value="Submit"
-              class="rounded-md bg-blue-500 px-6 py-2 self-end"
+              class="rounded-md bg-[--green] text-black px-6 py-2 self-end mb-5"
             />
           </div>
         </form>
