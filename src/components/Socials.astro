@@ -13,12 +13,32 @@ import EmailIcon from "./icons/EmailIcon.astro";
     <LinkedInIcon />
   </a>
 
-  <button class="size-10">
+  <button class="size-10" onclick="showToast()">
     <EmailIcon />
   </button>
   <a href="https://github.com/dresan22" target="_blank" class="size-10">
     <GitHubIcon />
   </a>
 </div>
-
-<style></style>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"
+></script>
+<script type="text/javascript">
+  function copyToClipboard(text) {
+    navigator.clipboard.writeText(text);
+  }
+  function showToast() {
+    Toastify({
+      text: "Email copied",
+      duration: 1500,
+      close: false,
+      gravity: "bottom",
+      position: "right",
+      onClick: copyToClipboard("andres.lu22@gmail.com"),
+      style: {
+        background: "white",
+        color: "black",
+        borderRadius: "8px",
+      },
+    }).showToast();
+  }
+</script>
