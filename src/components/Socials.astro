@@ -13,7 +13,12 @@ import EmailIcon from "./icons/EmailIcon.astro";
     <LinkedInIcon />
   </a>
 
-  <button class="size-10 hover:scale-110 transition" onclick="showToast()">
+  <button
+    class="size-10 hover:scale-110 transition"
+    id="confetti-button"
+    onclick="showToast()"
+    data-confetti-button
+  >
     <EmailIcon />
   </button>
   <a
@@ -26,18 +31,54 @@ import EmailIcon from "./icons/EmailIcon.astro";
 </div>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"
 ></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"
+></script>
 <script type="text/javascript">
-  function copyToClipboard(text) {
-    navigator.clipboard.writeText(text);
+  var count = 200;
+  var defaults = {
+    origin: { y: 0.7 },
+    colors: ["#e5c07b", "#ef596f", "#61afef", "#2bbac5", "#d55fde", "#89ca78"],
+  };
+
+  function fire(particleRatio, opts) {
+    confetti({
+      ...defaults,
+      ...opts,
+      particleCount: Math.floor(count * particleRatio),
+    });
   }
+
   function showToast() {
+    fire(0.25, {
+      spread: 26,
+      startVelocity: 55,
+    });
+    fire(0.2, {
+      spread: 60,
+    });
+    fire(0.35, {
+      spread: 100,
+      decay: 0.91,
+      scalar: 0.8,
+    });
+    fire(0.1, {
+      spread: 120,
+      startVelocity: 25,
+      decay: 0.92,
+      scalar: 1.2,
+    });
+    fire(0.1, {
+      spread: 120,
+      startVelocity: 45,
+    });
     Toastify({
       text: "Email copied",
-      duration: 1500,
+      duration: 2000,
       close: false,
       gravity: "bottom",
       position: "right",
-      onClick: copyToClipboard("andres.lu22@gmail.com"),
+      onClick: navigator.clipboard.writeText("andres.lu22@gmail.com"),
       style: {
         background: "white",
         color: "black",
