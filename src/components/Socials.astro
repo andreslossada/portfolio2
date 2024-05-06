@@ -25,10 +25,21 @@ import EmailIcon from "./icons/EmailIcon.astro";
     href="https://github.com/dresan22"
     target="_blank"
     class="size-10 hover:scale-110 transition"
+    data-tooltip="We are Pennstate!"
   >
     <GitHubIcon />
   </a>
 </div>
+<style>
+  [data-tooltip]:hover::after {
+    display: block;
+    position: absolute;
+    content: attr(data-tooltip);
+    border: 1px solid black;
+    background: #eee;
+    padding: 0.25em;
+  }
+</style>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"
 ></script>
 <script
