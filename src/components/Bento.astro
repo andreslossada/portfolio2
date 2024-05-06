@@ -48,7 +48,7 @@ const projects = {
 ---
 
 <div
-  class="bg-[--bg-color] py-40 middle bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.25),rgba(255,255,255,0))] relative "
+  class="bg-[--bg-color-1] py-40 middle bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.25),rgba(255,255,255,0))] relative"
 >
   <div
     class="absolute -z-20 inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"
@@ -62,7 +62,7 @@ const projects = {
   >
     <!-- OMNIFOOD ----------------------------------------------->
     <article
-      class="grid grid-cols-1 place-content-center relative rounded-xl backdrop-blur-md p-5 col-span-10 md:col-span-4 bg-gradient-to-r from-orange-200 via-amber-100 to-slate-100 gap-3 overflow-hidden text-[#e67e22]  hover:drop-shadow-[0px_0px_15px_#f59e0b] duration-300"
+      class="grid grid-cols-1 place-content-center relative rounded-xl backdrop-blur-md p-5 col-span-10 md:col-span-4 bg-gradient-to-r from-orange-200 via-amber-100 to-slate-100 gap-3 overflow-hidden text-[#e67e22] hover:drop-shadow-[0px_0px_15px_#f59e0b] duration-300"
     >
       <Image src={projects.omnifood.image} alt="Omnifood logo" class="" />
       <p class="font-['Rubik system-ui'] text-[#333] font-semibold text-pretty">
@@ -104,8 +104,12 @@ const projects = {
     <article
       class=`grid grid-cols-1 place-content-center	 relative rounded-xl backdrop-blur-md   bg-slate-800 p-5 col-span-10 md:col-span-4 bg-gradient-to-l from-orange-200 via-yellow-200 to-amber-100  gap-3  text-[#333] overflow-hidden hover:drop-shadow-[0px_0px_15px_#f59e0b] duration-300`
     >
-      <Image src={projects.forkify.image} alt="Omnifood logo" class="drop-shadow-xl w-[60%] lg:w-[80%] mx-auto " />
-      <p class="font-['system-ui'] font-semibold text-right  leading-none">
+      <Image
+        src={projects.forkify.image}
+        alt="Omnifood logo"
+        class="drop-shadow-xl w-[60%] lg:w-[80%] mx-auto"
+      />
+      <p class="font-['system-ui'] font-semibold text-right leading-none">
         {projects.forkify.description}
       </p>
       <ProjectFooter project={projects.forkify} />
