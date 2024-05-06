@@ -46,9 +46,10 @@ import EmailIcon from "./icons/EmailIcon.astro";
   src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"
 ></script>
 <script type="text/javascript">
+  const angle = 125;
   var count = 200;
   var defaults = {
-    origin: { y: 0.7 },
+    origin: { y: 1, x: 1 },
     colors: ["#e5c07b", "#ef596f", "#61afef", "#2bbac5", "#d55fde", "#89ca78"],
   };
 
@@ -64,16 +65,20 @@ import EmailIcon from "./icons/EmailIcon.astro";
     fire(0.25, {
       spread: 26,
       startVelocity: 55,
+      angle: angle,
     });
     fire(0.2, {
+      angle: angle,
       spread: 60,
     });
     fire(0.35, {
+      angle: angle,
       spread: 100,
       decay: 0.91,
       scalar: 0.8,
     });
     fire(0.1, {
+      angle: angle,
       spread: 120,
       startVelocity: 25,
       decay: 0.92,
@@ -81,6 +86,7 @@ import EmailIcon from "./icons/EmailIcon.astro";
     });
     fire(0.1, {
       spread: 120,
+      angle: angle,
       startVelocity: 45,
     });
     Toastify({
