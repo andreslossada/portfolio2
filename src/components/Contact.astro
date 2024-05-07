@@ -86,11 +86,11 @@ import Title from "./Title.astro";
               class="rounded resize-none my-2 w-full h-[calc(100%-60px)] bg-gray-700 p-3 outline-none"
               required></textarea>
           </div>
-          <div class="self-end">
+          <div class="flex">
             <input
               type="submit"
-              value="Submit"
-              class="rounded-md bg-[--fountainBlue] text-black px-6 py-2 self-end mb-5"
+              value="Send"
+              class="rounded-md bg-[--green] px-6 text-slate-800 py-2 ml-auto self-start cursor-pointer hover:shadow-slate-500 hover:shadow-lg duration-100 drop-shadow hover:scale-105"
             />
           </div>
         </form>
@@ -102,6 +102,6 @@ import Title from "./Title.astro";
 <style>
   form {
     display: grid;
-    grid-template-rows: 14% auto 14%;
+    grid-template-rows: 14% auto 45px;
   }
 </style>
