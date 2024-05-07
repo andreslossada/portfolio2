@@ -58,14 +58,14 @@ const projects = {
   <section
     class="w-full max-w-[70vw]
     grid lg:grid-cols-10 auto-rows-[35vh] gap-5
-    mx-auto pt-20 pb-40 text-white h-full place-content-center text-sm xl:text-lg [&>article]:grid [&>article]:grid-cols-1 [&>article]:place-content-center [&>article]:rounded-xl [&>article]:backdrop-blur-md [&>article]:p-5 [&>article]:gap-3 [&>article]:duration-100 [&>article]:overflow-hidden [&>article>p]:text-sm [&>article>p]:md:text-[18px] [&>article>p]:leading-5"
+    mx-auto pt-20 pb-40 text-white h-full place-content-center text-sm xl:text-lg [&>article]:grid [&>article]:grid-cols-1 [&>article]:place-content-center [&>article]:rounded-xl [&>article]:backdrop-blur-md [&>article]:p-5 [&>article]:gap-3 [&>article]:duration-100 [&>article]:overflow-hidden [&>article>p]:text-sm [&>article>p]:md:text-[18px] [&>article>p]:leading-5 [&>article>p]:font-normal"
   >
     <!-- OMNIFOOD ----------------------------------------------->
     <article
       class="md:col-span-4 bg-gradient-to-r from-orange-200 via-amber-100 to-slate-100 text-[#e67e22] hover:shadow-[0px_0px_15px_#f59e0b]"
     >
       <Image src={projects.omnifood.image} alt="Omnifood logo" class="" />
-      <p class="font-['Rubik system-ui'] text-[#333] font-semibold text-pretty">
+      <p class="font-['Rubik system-ui'] text-[#333] text-pretty">
         {projects.omnifood.description}
       </p>
       <ProjectFooter project={projects.omnifood} />
@@ -79,7 +79,7 @@ const projects = {
       </div>
       <div>
         <h2 class="text-3xl md:text-6xl drop-shadow-lg">Crwn</h2>
-        <p class="font-['Rubik system-ui'] font-semibold">
+        <p class="font-['Rubik system-ui']">
           {projects.crwn.description}
         </p>
       </div>
@@ -100,7 +100,7 @@ const projects = {
         >
           Path Finder
         </h2>
-        <p class="font-['Rubik system-ui'] font-semibold">
+        <p class="font-['Rubik system-ui']">
           {projects.pathfinder.description}
         </p>
       </div>
@@ -115,7 +115,7 @@ const projects = {
         alt="Omnifood logo"
         class="drop-shadow-xl w-[60%] lg:w-[80%] mx-auto"
       />
-      <p class="font-['system-ui'] font-semibold text-right">
+      <p class="font-['system-ui'] text-right">
         {projects.forkify.description}
       </p>
       <ProjectFooter project={projects.forkify} />
