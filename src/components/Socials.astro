@@ -4,48 +4,72 @@ import LinkedInIcon from "./icons/LinkedIn.astro";
 import EmailIcon from "./icons/EmailIcon.astro";
 ---
 
-<div class="flex justify-center text-white gap-5 test">
+<footer class="flex justify-center text-white gap-5 test">
   <a
     href="https://www.linkedin.com/in/andres-lossada22/"
     target="_blank"
-    class="size-10 hover:scale-110 transition"
+    class="size-10 hover:scale-110 transition tippyGroup"
+    id="linkedin"
   >
     <LinkedInIcon />
   </a>
-
   <button
-    class="size-10 hover:scale-110 transition"
-    id="confetti-button"
+    class="size-10 hover:scale-110 transition tippyGroup"
+    id="email"
     onclick="showToast()"
     data-confetti-button
   >
     <EmailIcon />
   </button>
+
   <a
     href="https://github.com/dresan22"
     target="_blank"
-    class="size-10 hover:scale-110 transition"
-    data-tooltip="We are Pennstate!"
+    class="size-10 hover:scale-110 transition tippyGroup"
+    id="github"
   >
     <GitHubIcon />
   </a>
-</div>
-<style>
-  [data-tooltip]:hover::after {
-    display: block;
-    position: absolute;
-    content: attr(data-tooltip);
-    border: 1px solid black;
-    background: #eee;
-    padding: 0.25em;
-  }
-</style>
+</footer>
+<style></style>
+<!-- toastify -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"
 ></script>
+<!-- tippy -->
+
+<script>
+  import tippy, { createSingleton } from "tippy.js";
+  import "tippy.js/dist/tippy.css";
+
+  const linkedin = document.getElementById("linkedin");
+  const email = document.getElementById("email");
+  const github = document.getElementById("github");
+
+  const tippy1 = tippy(linkedin, {
+    content: "Go to my LinkedIn",
+  });
+
+  const tippy2 = tippy(email, {
+    content: "Copy Email",
+  });
+
+  const tippy3 = tippy(github, {
+    content: "Go to my Github",
+  });
+
+  createSingleton([tippy1, tippy2, tippy3], {
+    offset: [0, 20],
+    delay: 300,
+    placement: "bottom",
+    moveTransition: "transform 0.2s ease-out",
+  });
+</script>
+<!-- confetti -->
 <script
   src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"
 ></script>
 <script type="text/javascript">
+  // CONFETTI
   const angle = 125;
   var count = 200;
   var defaults = {
