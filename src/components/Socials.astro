@@ -2,6 +2,9 @@
 import GitHubIcon from "./icons/GitHubIcon.astro";
 import LinkedInIcon from "./icons/LinkedIn.astro";
 import EmailIcon from "./icons/EmailIcon.astro";
+import "tippy.js/dist/tippy.css";
+import "tippy.js/themes/light-border.css";
+import "tippy.js/themes/translucent.css";
 ---
 
 <footer class="flex justify-center text-white gap-5 test">
@@ -31,7 +34,36 @@ import EmailIcon from "./icons/EmailIcon.astro";
     <GitHubIcon />
   </a>
 </footer>
-<style></style>
+<style is:global>
+  :root {
+    --bg-tooltip: gray;
+    --color-border: white;
+  }
+  .tippy-box[data-theme~="tomato"] {
+    background-color: var(--bg-color-0);
+    color: white;
+    /* padding-inline: 5px;
+    padding-block: 4px; */
+    border: 0px solid var(--color-border);
+    box-shadow: 0px 0px 0px 2px white inset;
+  }
+  .tippy-box[data-theme~="tomato"][data-placement^="top"]
+    > .tippy-arrow::before {
+    border-top-color: var(--color-border);
+  }
+  .tippy-box[data-theme~="tomato"][data-placement^="bottom"]
+    > .tippy-arrow::before {
+    border-bottom-color: var(--color-border);
+  }
+  .tippy-box[data-theme~="tomato"][data-placement^="left"]
+    > .tippy-arrow::before {
+    border-left-color: var(--color-border);
+  }
+  .tippy-box[data-theme~="tomato"][data-placement^="right"]
+    > .tippy-arrow::before {
+    border-right-color: var(--color-border);
+  }
+</style>
 <!-- toastify -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"
 ></script>
@@ -39,7 +71,6 @@ import EmailIcon from "./icons/EmailIcon.astro";
 
 <script>
   import tippy, { createSingleton } from "tippy.js";
-  import "tippy.js/dist/tippy.css";
 
   const linkedin = document.getElementById("linkedin");
   const email = document.getElementById("email");
@@ -61,6 +92,8 @@ import EmailIcon from "./icons/EmailIcon.astro";
     offset: [0, 20],
     delay: 300,
     placement: "bottom",
+    theme: "tomato",
+
     moveTransition: "transform 0.2s ease-out",
   });
 </script>
