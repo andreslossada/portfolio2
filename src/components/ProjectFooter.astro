@@ -9,19 +9,21 @@ import ReactIcon from "./icons/ReactIcon.astro";
 const { project } = Astro.props;
 ---
 
-<footer class="flex justify-between absolute bottom-1 h-[37px] w-full px-5 mb-2">
-  <section class="flex gap-3 drop-shadow-xl">
+<footer
+  class="flex justify-between absolute bottom-1 h-[37px] w-full px-5 mb-2"
+>
+  <section class="flex gap-3 drop-shadow-xl mt-auto">
     <a
       href={project.github}
       target="_blank"
-      class="h-[37px] w-[37px] hover:scale-110 hover:drop-shadow-lg duration-200"
+      class="h-[28px] w-[28px] md:h-[37px] md:w-[37px] hover:scale-110 hover:drop-shadow-lg duration-200"
     >
       <GitHubIcon />
     </a>
     <a
       href={project.link}
       target="_blank"
-      class="h-[37px] w-[37px] hover:scale-110 hover:drop-shadow-lg duration-200"
+      class="h-[28px] w-[28px] md:h-[37px] md:w-[37px] hover:scale-110 hover:drop-shadow-lg duration-200"
     >
       <LinkIcon />
     </a>
