@@ -58,7 +58,7 @@ const projects = {
   <section
     class="w-full max-w-[70vw]
     grid lg:grid-cols-10 auto-rows-[35vh] gap-5
-    mx-auto pt-20 pb-40 text-white h-full place-content-center text-sm xl:text-lg [&>article]:grid [&>article]:grid-cols-1 [&>article]:place-content-start [&>article]:2xl:place-content-center [&>article]:rounded-xl [&>article]:backdrop-blur-md [&>article]:p-5 [&>article]:md:p-10 [&>article]:gap-3 [&>article]:duration-100 [&>article]:overflow-hidden [&>article>p]:text-sm [&>article>p]:md:text-[18px] [&>article>p]:leading-5 [&>article>p]:font-normal"
+    mx-auto pt-20 pb-40 text-white h-full place-content-center [&>article]:grid [&>article]:grid-cols-1 [&>article]:place-content-center [&>article]3xl:place-content-center [&>article]:rounded-xl [&>article]:backdrop-blur-md [&>article]:p-5 [&>article]:md:p-10 [&>article]:gap-3 [&>article]:duration-100 [&>article]:overflow-hidden [&_p]:text-xs [&_p]:lg:text-sm [&_p]:2xl:text-lg [&>article>p]:font-normal"
   >
     <!-- OMNIFOOD ----------------------------------------------->
     <article
@@ -110,15 +110,17 @@ const projects = {
     <article
       class=`	      bg-slate-800   md:col-span-4 bg-gradient-to-l from-orange-200 via-yellow-200 to-amber-100    text-[#333]  hover:shadow-[0px_0px_15px_#f59e0b] place-content-start`
     >
-      <Image
-        src={projects.forkify.image}
-        alt="Omnifood logo"
-        class="drop-shadow-xl w-[80%] mx-auto"
-      />
-      <p class="font-['system-ui'] text-right">
-        {projects.forkify.description}
-      </p>
-      <ProjectFooter project={projects.forkify} />
+      <div class="mb-1 grid gap-1">
+        <Image
+          src={projects.forkify.image}
+          alt="Omnifood logo"
+          class="drop-shadow-xl w-[80%] mx-auto"
+        />
+        <p class="font-['system-ui'] text-right">
+          {projects.forkify.description}
+        </p>
+        <ProjectFooter project={projects.forkify} />
+      </div>
     </article>
   </section>
 </div>
