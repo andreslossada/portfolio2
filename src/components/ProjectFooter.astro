@@ -12,7 +12,7 @@ const { project } = Astro.props;
 <footer
   class="flex justify-between absolute bottom-1 h-[37px] w-full px-5 mb-2"
 >
-  <section class="flex gap-3 drop-shadow-xl mt-auto">
+  <section class="flex gap-3 drop-shadow-xl mt-auto z-10">
     <a
       href={project.github}
       target="_blank"
@@ -28,7 +28,7 @@ const { project } = Astro.props;
       <LinkIcon />
     </a>
   </section>
-  <section class="flex gap-1 items-end">
+  <section class="flex gap-1 items-end z-10">
     <HTMLIcon />
     <CSSIcon />
     <JSIcon />
