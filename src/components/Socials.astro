@@ -103,13 +103,42 @@ import "tippy.js/themes/translucent.css";
   src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"
 ></script>
 <script type="text/javascript">
+  var word = "andres";
+  var colorObj = {};
+
+  function rgbToHex(rgb) {
+    var a = rgb.split("(")[1].split(")")[0];
+    a = a.split(",");
+    var b = a.map(function (x) {
+      x = parseInt(x).toString(16);
+      return x.length == 1 ? "0" + x : x;
+    });
+    return "#" + b.join("");
+  }
+
+  for (var i = 0; i < word.length; i++) {
+    var letter = word[i];
+    var element = document.querySelector(".letter-" + letter);
+    var style = window.getComputedStyle(element, null);
+    var color = style.getPropertyValue("background-color");
+    color = rgbToHex(color);
+    colorObj["letter-" + letter] = color;
+  }
+
   // CONFETTI
   const angle = 125;
   var count = 200;
   var defaults = {
     origin: { y: 1, x: 1 },
-    colors: ["#e5c07b", "#ef596f", "#61afef", "#2bbac5", "#d55fde", "#89ca78"],
+    // colors: ["#e5c07b", "#ef596f", "#61afef", "#2bbac5", "#d55fde", "#89ca78"],
+    colors: [],
   };
+  for (var key in colorObj) {
+    if (colorObj.hasOwnProperty(key)) {
+      defaults.colors.push(colorObj[key]);
+    }
+  }
+  console.log(`🚀 ~ defaults:`, defaults);
 
   function fire(particleRatio, opts) {
     confetti({
