@@ -72,6 +72,7 @@ import "tippy.js/themes/translucent.css";
   const emailButton = document.getElementById("email");
 
   emailButton.addEventListener("click", () => {
+    navigator.clipboard.writeText("andres.lu22@gmail.com");
     fireAll();
     showToast();
   });

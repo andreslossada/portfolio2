@@ -21,6 +21,5 @@ createSingleton([tippy1, tippy2, tippy3], {
   delay: 300,
   placement: "bottom",
   theme: "tomato",
-
   moveTransition: "transform 0.2s ease-out",
 });
