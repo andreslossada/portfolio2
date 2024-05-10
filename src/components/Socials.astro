@@ -12,15 +12,14 @@ import "tippy.js/themes/translucent.css";
   <a
     href="https://www.linkedin.com/in/andres-lossada22/"
     target="_blank"
-    class="size-10 hover:scale-110 transition tippyGroup"
+    class="size-10 hover:scale-110 transition"
     id="linkedin"
   >
     <LinkedInIcon />
   </a>
   <button
-    class="size-10 hover:scale-110 transition tippyGroup"
+    class="size-10 hover:scale-110 transition"
     id="email"
-    onclick="showToast()"
     data-confetti-button
   >
     <EmailIcon />
@@ -29,7 +28,7 @@ import "tippy.js/themes/translucent.css";
   <a
     href="https://github.com/dresan22"
     target="_blank"
-    class="size-10 hover:scale-110 transition tippyGroup"
+    class="size-10 hover:scale-110 transition"
     id="github"
   >
     <GitHubIcon />
@@ -65,129 +64,15 @@ import "tippy.js/themes/translucent.css";
     border-right-color: var(--color-border);
   }
 </style>
-<!-- toastify -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"
-></script>
-<!-- tippy -->
-
+<script src="../utils/tooltip"></script>
 <script>
-  import tippy, { createSingleton } from "tippy.js";
+  import { fireAll } from "../utils/confetti";
+  import { showToast } from "../utils/toaster";
 
-  const linkedin = document.getElementById("linkedin");
-  const email = document.getElementById("email");
-  const github = document.getElementById("github");
+  const emailButton = document.getElementById("email");
 
-  const tippy1 = tippy(linkedin, {
-    content: "Open my LinkedIn",
+  emailButton.addEventListener("click", () => {
+    fireAll();
+    showToast();
   });
-
-  const tippy2 = tippy(email, {
-    content: "Copy Email",
-  });
-
-  const tippy3 = tippy(github, {
-    content: "Open my Github",
-  });
-
-  createSingleton([tippy1, tippy2, tippy3], {
-    offset: [0, 20],
-    delay: 300,
-    placement: "bottom",
-    theme: "tomato",
-
-    moveTransition: "transform 0.2s ease-out",
-  });
-</script>
-<!-- confetti -->
-<script
-  src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"
-></script>
-<script type="text/javascript">
-  var word = "andres";
-  var colorObj = {};
-
-  function rgbToHex(rgb) {
-    var a = rgb.split("(")[1].split(")")[0];
-    a = a.split(",");
-    var b = a.map(function (x) {
-      x = parseInt(x).toString(16);
-      return x.length == 1 ? "0" + x : x;
-    });
-    return "#" + b.join("");
-  }
-
-  for (var i = 0; i < word.length; i++) {
-    var letter = word[i];
-    var element = document.querySelector(".letter-" + letter);
-    var style = window.getComputedStyle(element, null);
-    var color = style.getPropertyValue("background-color");
-    color = rgbToHex(color);
-    colorObj["letter-" + letter] = color;
-  }
-
-  // CONFETTI
-  const angle = 125;
-  var count = 200;
-  var defaults = {
-    origin: { y: 1, x: 1 },
-    // colors: ["#e5c07b", "#ef596f", "#61afef", "#2bbac5", "#d55fde", "#89ca78"],
-    colors: [],
-  };
-  for (var key in colorObj) {
-    if (colorObj.hasOwnProperty(key)) {
-      defaults.colors.push(colorObj[key]);
-    }
-  }
-  console.log(`🚀 ~ defaults:`, defaults);
-
-  function fire(particleRatio, opts) {
-    confetti({
-      ...defaults,
-      ...opts,
-      particleCount: Math.floor(count * particleRatio),
-    });
-  }
-
-  function showToast() {
-    fire(0.25, {
-      spread: 26,
-      startVelocity: 55,
-      angle: angle,
-    });
-    fire(0.2, {
-      angle: angle,
-      spread: 60,
-    });
-    fire(0.35, {
-      angle: angle,
-      spread: 100,
-      decay: 0.91,
-      scalar: 0.8,
-    });
-    fire(0.1, {
-      angle: angle,
-      spread: 120,
-      startVelocity: 25,
-      decay: 0.92,
-      scalar: 1.2,
-    });
-    fire(0.1, {
-      spread: 120,
-      angle: angle,
-      startVelocity: 45,
-    });
-    Toastify({
-      text: "Email copied",
-      duration: 2000,
-      close: false,
-      gravity: "bottom",
-      position: "right",
-      onClick: navigator.clipboard.writeText("andres.lu22@gmail.com"),
-      style: {
-        background: "white",
-        color: "black",
-        borderRadius: "8px",
-      },
-    }).showToast();
-  }
 </script>

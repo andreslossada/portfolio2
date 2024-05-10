@@ -21,6 +21,7 @@
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
     "astro": "^3.6.2",
+    "canvas-confetti": "^1.9.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "highlight.js": "^11.9.0",
@@ -31,6 +32,7 @@
     "tailwind-merge": "^2.2.1",
     "tailwindcss": "^3.4.1",
     "tailwindcss-animate": "^1.0.7",
-    "tippy.js": "^6.3.7"
+    "tippy.js": "^6.3.7",
+    "toastify-js": "^1.12.0"
   }
 }
