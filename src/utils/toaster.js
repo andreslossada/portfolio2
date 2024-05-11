@@ -1,6 +1,5 @@
 import Toastify from "toastify-js";
 import colorObj from "./colors";
-console.log(`🚀 ~ colorObj:`, colorObj);
 
 const colors = [];
 
@@ -14,11 +13,10 @@ function getRandomColor() {
   var index = Math.floor(Math.random() * colors.length);
   return colors[index];
 }
-console.log(`🚀 ~ getRandomColor:`, getRandomColor());
 
-export function showToast() {
+export function showToast(text) {
   Toastify({
-    text: "Email copied",
+    text: text,
     duration: 2000,
     close: false,
     gravity: "bottom",
@@ -27,7 +25,7 @@ export function showToast() {
       background: "white",
       color: "black",
       borderRadius: "8px",
-      border: `4px solid ${getRandomColor()}`,
+      boxShadow: `0px 0px 15px 0px ${getRandomColor()}`,
     },
   }).showToast();
 }

@@ -8,72 +8,153 @@ import "tippy.js/themes/translucent.css";
 ---
 
 <!-- TODO: add a limiter to confetti like "we get it" -->
-<footer class="flex justify-center text-white gap-5 test">
-  <a
-    href="https://www.linkedin.com/in/andres-lossada22/"
-    target="_blank"
-    class="size-10 hover:scale-110 transition"
-    id="linkedin"
-  >
-    <LinkedInIcon />
-  </a>
-  <button
-    class="size-10 hover:scale-110 transition"
-    id="email"
-    data-confetti-button
-  >
-    <EmailIcon />
-  </button>
-
-  <a
-    href="https://github.com/dresan22"
-    target="_blank"
-    class="size-10 hover:scale-110 transition"
-    id="github"
-  >
-    <GitHubIcon />
-  </a>
+<footer>
+  <nav class="">
+    <ul
+      class="flex justify-center text-white relative [&>li]:size-10 [&>li]:p-6"
+    >
+      <li class="hover:scale-110 box-content">
+        <a
+          href="https://www.linkedin.com/in/andres-lossada22/"
+          target="_blank"
+          class=""
+          id="linkedin"
+        >
+          <LinkedInIcon />
+        </a>
+      </li>
+      <li class="hover:scale-110 box-content">
+        <button class="size-full" id="email" data-confetti-button>
+          <EmailIcon />
+        </button>
+      </li>
+      <li class="hover:scale-110 box-content">
+        <a
+          href="https://github.com/dresan22"
+          target="_blank"
+          class=""
+          id="github"
+        >
+          <GitHubIcon />
+        </a>
+      </li>
+    </ul>
+    <div
+      id="menu-backdrop"
+      class={`
+        absolute  rounded
+        translate-x-[var(--left)] translate-y-[var(--top)]
+        left-0 top-0
+        w-[var(--width)] h-[var(--height)]
+         duration-1000
+        ease-out opacity-0 -z-10
+        blur-2xl
+        `}
+    >
+    </div>
+  </nav>
 </footer>
 <style is:global>
-  :root {
-    --bg-tooltip: transparent;
-    --color-border: white;
-  }
   .tippy-box[data-theme~="tomato"] {
-    background-color: var(--bg-color-0);
+    background-color: transparent;
     color: white;
-    /* padding-inline: 5px;
-    padding-block: 4px; */
-    border: 0px solid var(--color-border);
+    border: 0px solid var(white);
     box-shadow: 0px 0px 0px 2px white inset;
-  }
-  .tippy-box[data-theme~="tomato"][data-placement^="top"]
-    > .tippy-arrow::before {
-    border-top-color: var(--color-border);
+    width: 18ch;
+    padding-bottom: 4px;
+    text-align: center;
   }
   .tippy-box[data-theme~="tomato"][data-placement^="bottom"]
     > .tippy-arrow::before {
-    border-bottom-color: var(--color-border);
-  }
-  .tippy-box[data-theme~="tomato"][data-placement^="left"]
-    > .tippy-arrow::before {
-    border-left-color: var(--color-border);
-  }
-  .tippy-box[data-theme~="tomato"][data-placement^="right"]
-    > .tippy-arrow::before {
-    border-right-color: var(--color-border);
+    border-bottom-color: white;
   }
 </style>
 <script src="../utils/tooltip"></script>
 <script>
   import { fireAll } from "../utils/confetti";
   import { showToast } from "../utils/toaster";
-
+  let clickCounter = 0;
+  let maxClicks = 6;
+  let resetTime = 5000;
   const emailButton = document.getElementById("email");
 
   emailButton.addEventListener("click", () => {
-    navigator.clipboard.writeText("andres.lu22@gmail.com");
-    fireAll();
-    showToast();
+    clickCounter++;
+    if (clickCounter > maxClicks) {
+      fireAll();
+      showToast(`It's fun, isn't it?`);
+    } else {
+      navigator.clipboard.writeText("andres.lu22@gmail.com");
+      fireAll();
+      showToast("Email copied");
+    }
+  });
+
+  setInterval(function () {
+    clickCounter = 0;
+  }, resetTime);
+</script>
+
+<script>
+  import colorObj from "@/utils/colors";
+  window.addEventListener("DOMContentLoaded", (event) => {
+    const firstItem = listItem[0];
+    const { left, top, width, height } = firstItem.getBoundingClientRect();
+
+    // Temporarily disable transition
+    menuBackDrop.style.transition = "none";
+
+    menuBackDrop.style.setProperty("--left", `${left}px`);
+    menuBackDrop.style.setProperty("--top", `${top}px`);
+
+    menuBackDrop.style.opacity = "0";
+    menuBackDrop.style.visibility = "hidden";
+
+    // Re-enable transition after a short delay
+    setTimeout(() => {
+      menuBackDrop.style.transition = "";
+    }, 50);
+  });
+
+  const listItem = document.querySelectorAll("nav li");
+  const menuBackDrop = document.querySelector("#menu-backdrop") as HTMLElement;
+
+  listItem.forEach((item, index) => {
+    item.addEventListener("mouseenter", () => {
+      const { left, top, width, height } = item.getBoundingClientRect();
+
+      menuBackDrop.style.setProperty("--left", `${left + 5}px`);
+      menuBackDrop.style.setProperty("--top", `${top + 5}px`);
+      menuBackDrop.style.setProperty("--width", `${width - 10}px`);
+      menuBackDrop.style.setProperty("--height", `${height - 10}px`);
+      switch (index) {
+        case 0:
+          menuBackDrop.style.backgroundColor = colorObj["letter-a"];
+          break;
+        case 1:
+          menuBackDrop.style.backgroundColor = colorObj["letter-n"];
+          break;
+        case 2:
+          menuBackDrop.style.backgroundColor = colorObj["letter-d"];
+          break;
+        default:
+          menuBackDrop.style.backgroundColor = "white";
+      }
+
+      menuBackDrop.style.opacity = "1";
+      menuBackDrop.style.visibility = "visible";
+    });
+
+    item.addEventListener("mouseleave", () => {
+      menuBackDrop.style.opacity = "0";
+      menuBackDrop.style.visibility = "hidden";
+    });
+  });
+  window.addEventListener("DOMContentLoaded", (event) => {
+    const listItem = document.querySelectorAll("nav li");
+
+    listItem.forEach((item) => {
+      item.classList.add("transition");
+    });
   });
 </script>
