@@ -11,7 +11,7 @@ import "tippy.js/themes/translucent.css";
 <footer>
   <nav class="">
     <ul
-      class="flex justify-center text-white relative [&>li]:size-10 [&>li]:p-6"
+      class="flex justify-center text-white relative [&>li]:size-10 [&>li]:p-6 [&>li]:drop-shadow-[0px_0px_10px_rgba(0,0,0,0.75)]"
     >
       <li class="hover:scale-110 box-content">
         <a
@@ -122,9 +122,13 @@ import "tippy.js/themes/translucent.css";
   listItem.forEach((item, index) => {
     item.addEventListener("mouseenter", () => {
       const { left, top, width, height } = item.getBoundingClientRect();
+      const scrollLeft =
+        window.pageXOffset || document.documentElement.scrollLeft;
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
 
-      menuBackDrop.style.setProperty("--left", `${left + 5}px`);
-      menuBackDrop.style.setProperty("--top", `${top + 5}px`);
+      menuBackDrop.style.setProperty("--left", `${left + scrollLeft + 5}px`);
+      menuBackDrop.style.setProperty("--top", `${top + scrollTop + 5}px`);
       menuBackDrop.style.setProperty("--width", `${width - 10}px`);
       menuBackDrop.style.setProperty("--height", `${height - 10}px`);
       switch (index) {
