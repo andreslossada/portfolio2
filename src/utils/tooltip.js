@@ -1,7 +1,7 @@
 import tippy, { createSingleton } from "tippy.js";
 
 const linkedin = document.getElementById("linkedin");
-const email = document.getElementById("email");
+const email = document.getElementById("email-icon");
 const github = document.getElementById("github");
 
 const tippy1 = tippy(linkedin, {

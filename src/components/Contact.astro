@@ -3,12 +3,9 @@ import Title from "./Title.astro";
 ---
 
 <div
-  class="bg-[--bg-color-3 py-40 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(0,0,0,0.45),rgba(0,0,0,0.15))] relative h-[calc(100dvh+var(--angle-divider))] text-white bottom"
+  class="py-40 bg-[radial-gradient(ellipse_90%_90%_at_50%_-20%,rgba(0,0,0,0.95),rgba(0,0,0,0.045))] relative h-[calc(100dvh+var(--angle-divider))] text-white bottom duration-300"
+  id="parent-contact"
 >
-  <div
-    class="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] -z-10"
-  >
-  </div>
   <Title text="Contact Me" />
   <div class="h-full content-center px-5">
     <section
@@ -105,3 +102,21 @@ import Title from "./Title.astro";
     grid-template-rows: 14% auto 45px;
   }
 </style>
+<script>
+  const parent = document.getElementById("parent-contact");
+  let inputs = document.querySelectorAll("input, textarea");
+
+  inputs.forEach((item) => {
+    item.addEventListener("click", function (event) {
+      // Add the blur effect to the parent
+      parent.classList.add("backdrop-blur-[2px]");
+      // Stop propagation so document click event is not triggered
+      event.stopPropagation();
+    });
+  });
+
+  document.addEventListener("click", function (event) {
+    // Remove the blur effect from the parent
+    parent.classList.remove("backdrop-blur-[2px]");
+  });
+</script>

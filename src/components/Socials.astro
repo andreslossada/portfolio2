@@ -4,7 +4,6 @@ import LinkedInIcon from "./icons/LinkedIn.astro";
 import EmailIcon from "./icons/EmailIcon.astro";
 import "tippy.js/dist/tippy.css";
 import "tippy.js/themes/light-border.css";
-import "tippy.js/themes/translucent.css";
 ---
 
 <!-- TODO: add a limiter to confetti like "we get it" -->
@@ -24,7 +23,7 @@ import "tippy.js/themes/translucent.css";
         </a>
       </li>
       <li class="hover:scale-110 box-content">
-        <button class="size-full" id="email" data-confetti-button>
+        <button class="size-full" id="email-icon" data-confetti-button>
           <EmailIcon />
         </button>
       </li>
@@ -76,7 +75,7 @@ import "tippy.js/themes/translucent.css";
   let clickCounter = 0;
   let maxClicks = 6;
   let resetTime = 5000;
-  const emailButton = document.getElementById("email");
+  const emailButton = document.getElementById("email-icon");
 
   emailButton.addEventListener("click", () => {
     clickCounter++;
