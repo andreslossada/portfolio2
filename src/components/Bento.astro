@@ -49,7 +49,7 @@ const projects = {
 
 <!-- TODO: when hover the bento it dims the background --><!-- rgba(120,119,198,0.45) -->
 <div
-  class="py-40 relative bg-[radial-gradient(ellipse_90%_90%_at_50%_-20%,rgba(0,0,0,0.95),rgba(0,0,0,0.045))] transition duration-700 mt-[var(--h-divider)] z-10"
+  class="py-40 relative bg-[radial-gradient(ellipse_90%_90%_at_50%_-20%,rgba(0,0,0,0.95),rgba(0,0,0,0.045))] duration-700 mt-[var(--h-divider)] z-10"
   id="parent"
 >
   <!-- GRID -->
@@ -68,11 +68,11 @@ const projects = {
     id="child"
     class="w-full max-w-[70vw]
     grid lg:grid-cols-10 auto-rows-[35vh] gap-5
-    mx-auto pt-20 pb-40 text-white h-full place-content-center [&>article]:grid [&>article]:grid-cols-1 [&>article]:place-content-center [&>article]3xl:place-content-center [&>article]:rounded-xl [&>article]:backdrop-blur-m [&>article]:p-5 [&>article]:md:p-10 [&>article]:gap-3 [&>article]:duration-300 [&>article]:overflow-hidden [&_p]:text-xs [&_p]:lg:text-sm [&_p]:2xl:text-lg [&>article>p]:font-normal [&>article]:shadow-lg [&>article]:relative child"
+    mx-auto pt-20 pb-40 text-white h-full place-content-center [&>article]:grid [&>article]:grid-cols-1 [&>article]:place-content-center [&>article]3xl:place-content-center [&>article]:rounded-xl [&>article]:backdrop-blur-m [&>article]:p-5 [&>article]:md:p-10 [&>article]:gap-3 [&>article]:duration-300 [&>article]:overflow-hidden [&_p]:text-xs [&_p]:lg:text-sm [&_p]:2xl:text-lg [&>article>p]:font-normal [&>article]:shadow-lg [&>article]:relative"
   >
     <!-- PROJECT 1: oMNIFOOD ----------------------------------------------->
     <article
-      class="md:col-span-4 bg-gradient-to-r from-orange-200 via-amber-100 to-slate-100 text-[#333] transition duration-700"
+      class="md:col-span-4 bg-gradient-to-r from-orange-200 via-amber-100 to-slate-100 text-[#333]"
     >
       <Image src={projects.omnifood.image} alt="Omnifood logo" class="" />
       <p class="font-['Rubik system-ui'] text-pretty">
@@ -147,14 +147,8 @@ const projects = {
   >
   </div>
 </div>
-<style>
-  :root {
-    --light-background: rgba(0, 0, 0, 0.045);
-    --dark-background: rgba(0, 0, 0, 0.615);
-  }
-</style>
 <script>
-  import colorObj from "@/utils/colors";
+  const parent = document.getElementById("parent");
 
   // -------------------------------------------------
   window.addEventListener("DOMContentLoaded", (event) => {
@@ -181,6 +175,8 @@ const projects = {
 
     articleItems.forEach((item: HTMLElement, index) => {
       item.addEventListener("mouseenter", () => {
+        parent.classList.add("backdrop-blur-[2px]");
+
         const { width, height } = item.getBoundingClientRect();
         const left = item.offsetLeft;
         const top = item.offsetTop;
@@ -213,6 +209,8 @@ const projects = {
       });
 
       item.addEventListener("mouseleave", () => {
+        parent.classList.remove("backdrop-blur-[2px]");
+
         articleItems.forEach((otherItem: HTMLElement) => {
           otherItem.classList.remove("grayscale-[60%]");
         });
@@ -240,18 +238,4 @@ const projects = {
   //   );
   // };
   // -------------------------------------------------
-  const parent = document.getElementById("parent");
-
-  document.getElementById("child").addEventListener("mouseover", function () {
-    parent.classList.add("backdrop-blur-[2px]");
-
-    // document.getElementById("gradient1").style.opacity = "0";
-    // document.getElementById("gradient2").style.opacity = "1";
-  });
-
-  document.getElementById("child").addEventListener("mouseout", function () {
-    parent.classList.remove("backdrop-blur-[2px]");
-    // document.getElementById("gradient1").style.opacity = "1";
-    // document.getElementById("gradient2").style.opacity = "0";
-  });
 </script>
