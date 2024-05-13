@@ -97,68 +97,79 @@ import "tippy.js/themes/translucent.css";
 
 <script>
   import colorObj from "@/utils/colors";
+
   window.addEventListener("DOMContentLoaded", (event) => {
-    const firstItem = listItem[0];
-    const { left, top, width, height } = firstItem.getBoundingClientRect();
+    const listItem = document.querySelectorAll("nav li");
+    const menuBackDrop = document.querySelector(
+      "#menu-backdrop"
+    ) as HTMLElement;
 
-    // Temporarily disable transition
-    menuBackDrop.style.transition = "none";
-
-    menuBackDrop.style.setProperty("--left", `${left}px`);
-    menuBackDrop.style.setProperty("--top", `${top}px`);
-
-    menuBackDrop.style.opacity = "0";
-    menuBackDrop.style.visibility = "hidden";
-
-    // Re-enable transition after a short delay
+    // Delay setting the initial position to allow the browser to restore scroll position
     setTimeout(() => {
-      menuBackDrop.style.transition = "";
-    }, 50);
-  });
-
-  const listItem = document.querySelectorAll("nav li");
-  const menuBackDrop = document.querySelector("#menu-backdrop") as HTMLElement;
-
-  listItem.forEach((item, index) => {
-    item.addEventListener("mouseenter", () => {
-      const { left, top, width, height } = item.getBoundingClientRect();
+      const firstItem = listItem[0] as HTMLElement;
+      const { left, top } = firstItem.getBoundingClientRect();
       const scrollLeft =
         window.pageXOffset || document.documentElement.scrollLeft;
       const scrollTop =
         window.pageYOffset || document.documentElement.scrollTop;
 
-      menuBackDrop.style.setProperty("--left", `${left + scrollLeft + 5}px`);
-      menuBackDrop.style.setProperty("--top", `${top + scrollTop + 5}px`);
-      menuBackDrop.style.setProperty("--width", `${width - 10}px`);
-      menuBackDrop.style.setProperty("--height", `${height - 10}px`);
-      switch (index) {
-        case 0:
-          menuBackDrop.style.backgroundColor = colorObj["letter-a"];
-          break;
-        case 1:
-          menuBackDrop.style.backgroundColor = colorObj["letter-n"];
-          break;
-        case 2:
-          menuBackDrop.style.backgroundColor = colorObj["letter-d"];
-          break;
-        default:
-          menuBackDrop.style.backgroundColor = "white";
-      }
+      // Temporarily disable transition
+      menuBackDrop.style.transition = "none";
 
-      menuBackDrop.style.opacity = "1";
-      menuBackDrop.style.visibility = "visible";
-    });
+      menuBackDrop.style.setProperty("--left", `${left + scrollLeft}px`);
+      menuBackDrop.style.setProperty("--top", `${top + scrollTop}px`);
 
-    item.addEventListener("mouseleave", () => {
       menuBackDrop.style.opacity = "0";
       menuBackDrop.style.visibility = "hidden";
-    });
-  });
-  window.addEventListener("DOMContentLoaded", (event) => {
-    const listItem = document.querySelectorAll("nav li");
 
-    listItem.forEach((item) => {
-      item.classList.add("transition");
+      // Re-enable transition after a short delay
+      setTimeout(() => {
+        menuBackDrop.style.transition = "";
+      }, 50);
+    }, 100);
+
+    listItem.forEach((item, index) => {
+      item.addEventListener("mouseenter", () => {
+        const { left, top, width, height } = item.getBoundingClientRect();
+        const scrollLeft =
+          window.pageXOffset || document.documentElement.scrollLeft;
+        const scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+
+        menuBackDrop.style.setProperty("--left", `${left + scrollLeft + 15}px`);
+        menuBackDrop.style.setProperty("--top", `${top + scrollTop + 15}px`);
+        menuBackDrop.style.setProperty("--width", `${width - 30}px`);
+        menuBackDrop.style.setProperty("--height", `${height - 30}px`);
+        switch (index) {
+          case 0:
+            menuBackDrop.style.backgroundColor = colorObj["letter-a"];
+            break;
+          case 1:
+            menuBackDrop.style.backgroundColor = colorObj["letter-n"];
+            break;
+          case 2:
+            menuBackDrop.style.backgroundColor = colorObj["letter-d"];
+            break;
+          default:
+            menuBackDrop.style.backgroundColor = "white";
+        }
+
+        menuBackDrop.style.opacity = "1";
+        menuBackDrop.style.visibility = "visible";
+      });
+
+      item.addEventListener("mouseleave", () => {
+        menuBackDrop.style.opacity = "0";
+        menuBackDrop.style.visibility = "hidden";
+      });
+    });
+
+    window.addEventListener("DOMContentLoaded", (event) => {
+      const listItem = document.querySelectorAll("nav li");
+
+      listItem.forEach((item) => {
+        item.classList.add("transition");
+      });
     });
   });
 </script>
