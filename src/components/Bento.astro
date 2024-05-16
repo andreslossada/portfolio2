@@ -6,6 +6,7 @@ import ForkifyIcon from "./icons/forkify-icon.png";
 import PathFinderIcon from "./icons/PathIcon.astro";
 import Title from "./Title.astro";
 import ProjectFooter from "./ProjectFooter.astro";
+import Divider from "./Divider.astro";
 
 const projects = {
   omnifood: {
@@ -47,8 +48,9 @@ const projects = {
 };
 ---
 
+<!-- TODO: add wrapper to add shadow on divider -->
 <div
-  class="relative bg-[radial-gradient(ellipse_90%_90%_at_50%_-20%,rgba(0,0,0,0.95),rgba(0,0,0,0.045))] duration-700 mt-[var(--h-divider)] z-10 min-h-screen py-[150px] grid place-items-center middle"
+  class="relative bg-[radial-gradient(ellipse_90%_90%_at_50%_-20%,rgba(0,0,0,0.95),rgba(0,0,0,0.045))] duration-700 z-10 min-h-[calc(100vh+var(--angle-divider))] py-[calc(var(--angle-divider)*2)] grid place-items-center middle"
   id="parent"
 >
   <Title text="Projects" />
@@ -135,6 +137,7 @@ const projects = {
   >
   </div>
 </div>
+<Divider />
 <style is:global>
   @keyframes fade-in {
     100% {

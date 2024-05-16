@@ -1,0 +1,51 @@
+---
+import { darkenColor } from "@/utils/colorBrightness";
+const colorObject = {
+  "letter-a": "#c678dd",
+  "letter-n": "#61aeee",
+  "letter-d": "#98c379",
+};
+const darkenedColorObject = {
+  "letter-a": "#9e19c5",
+  "letter-n": "#fd8a1e",
+  "letter-d": "#4f991b",
+};
+---
+
+<div class="wrapper">
+  <div
+    class=`divider bg-gradient-to-r from-[#c678dd] to-[#9e19c5] h-[calc(var(--angle-divider)+var(--h-divider))] -mt-[var(--angle-divider)]`
+  >
+  </div>
+</div>
+<div class="wrapper">
+  <div
+    class=`divider bg-gradient-to-r from-[#61aeee] to-[#316692] h-[calc(var(--angle-divider)+var(--h-divider))] -mt-[var(--angle-divider)]`
+  >
+  </div>
+</div>
+<div class="wrapper">
+  <div
+    class="divider bg-gradient-to-r from-[#98c379] to-[#4f991b] h-[calc(var(--angle-divider)+var(--h-divider))] -mt-[var(--angle-divider)]"
+  >
+  </div>
+</div>
+<style>
+  .divider {
+    clip-path: polygon(
+      0 0,
+
+      50% var(--angle-divider),
+      100% 0,
+
+      100% calc(100% - var(--angle-divider)),
+      50% 100%,
+
+      0 calc(100% - var(--angle-divider))
+    );
+  }
+  .wrapper {
+    filter: drop-shadow(0px -5px 5px rgba(0, 0, 0, 0.4));
+  }
+</style>
+<script></script>
