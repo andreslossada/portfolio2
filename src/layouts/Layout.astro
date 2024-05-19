@@ -18,17 +18,10 @@ const { title } = Astro.props;
     <!-- TODO: add favicon -->
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
-    />
     <title>{title}</title>
   </head>
   <body>
-    <!-- <div c lass="drop-shadow-3xl relative"> -->
     <slot />
-    <!-- </div> -->
   </body>
   <style is:global>
     :root {
@@ -67,6 +60,7 @@ const { title } = Astro.props;
       --color-6: #56b6c2;
     }
     /*
+      legacy colors
       --letter-a: #f92672;
       --letter-n: #a6e22e;
       --letter-d: #66d9ef;
@@ -97,7 +91,6 @@ const { title } = Astro.props;
 
     html {
       font-family: system-ui;
-      /* -webkit-overflow-scrolling: auto; */
     }
 
     body {
@@ -121,46 +114,6 @@ const { title } = Astro.props;
     body::-webkit-scrollbar-thumb {
       background: var(--sb-thumb-color);
       /* border-radius: 10px; */
-    }
-
-    .top {
-      clip-path: polygon(
-        0 0,
-        100% 0,
-        100% calc(100% - var(--angle-divider)),
-        50% 100%,
-        0 calc(100% - var(--angle-divider))
-      );
-    }
-
-    .bottom {
-      clip-path: polygon(
-        0 0,
-        50% var(--angle-divider),
-        100% 0,
-        100% 100%,
-        0 100%
-      );
-      /* causes glitch with bento hover */
-      margin-top: calc(var(--angle-divider) * -1);
-    }
-
-    .middle {
-      clip-path: polygon(
-        0 0,
-        50% var(--angle-divider),
-        100% 0,
-        100% calc(100% - var(--angle-divider)),
-        50% 100%,
-        0 calc(100% - var(--angle-divider))
-      );
-      margin-top: calc(var(--angle-divider) * -1);
-    }
-
-    body {
-      /* background-image: url("/bg-code.webp");
-      background-attachment: fixed;
-      background-size: contain; */
     }
   </style>
 </html>
