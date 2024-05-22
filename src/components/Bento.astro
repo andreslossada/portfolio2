@@ -210,7 +210,7 @@ const projects = {
         articleBackDrop.style.visibility = "visible";
         articleItems.forEach((otherItem: HTMLElement) => {
           if (otherItem !== item) {
-            otherItem.classList.add("grayscale-[60%]");
+            otherItem.classList.add("grayscale-[60%]", "scale-[.97]");
           }
         });
       });
@@ -219,7 +219,7 @@ const projects = {
         parent.classList.remove("backdrop-blur-[2px]");
 
         articleItems.forEach((otherItem: HTMLElement) => {
-          otherItem.classList.remove("grayscale-[60%]");
+          otherItem.classList.remove("grayscale-[60%]", "scale-[.97]");
         });
         articleBackDrop.style.opacity = "0";
         articleBackDrop.style.visibility = "hidden";
