@@ -554,25 +554,25 @@ import Divider from "./Divider.astro";
     isAnimating = true;
   });
 
-  lastRow.addEventListener("animationend", () => {
-    isAnimating = false;
-  });
-  // RELOAD ANIMATION
+  // RELOAD ANIMATION after being in another tab
   document.addEventListener("visibilitychange", () => {
     if (document.visibilityState === "hidden") {
-      console.log("hidden");
       rows.forEach((row) => {
-        row.classList.remove("first-order", "order", "scramble");
-        // row.classList.add("scramble");
+        row.classList.remove("order", "scramble", "first-order");
+        const element = row as HTMLElement;
+        element.style.animation = "none";
+        element.offsetHeight; /* Trigger reflow to apply the change */
+        element.style.animation = "";
       });
-      document.title = "Come Back!";
     } else if (document.visibilityState === "visible") {
-      document.title = "Welcome Back!";
-      console.log("visible");
+      isAnimating = true;
       rows.forEach((row) => {
-        row.classList.remove("order", "scramble");
         row.classList.add("first-order");
       });
     }
+  });
+
+  lastRow.addEventListener("animationend", () => {
+    isAnimating = false;
   });
 </script>
