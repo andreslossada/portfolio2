@@ -535,6 +535,7 @@ import Divider from "./Divider.astro";
   const rows = document.querySelectorAll(".row");
   const lastRow = rows[rows.length - 4];
   let isAnimating = true;
+
   rows.forEach((row) => {
     row.classList.add("first-order");
   });
@@ -555,5 +556,23 @@ import Divider from "./Divider.astro";
 
   lastRow.addEventListener("animationend", () => {
     isAnimating = false;
+  });
+  // RELOAD ANIMATION
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") {
+      console.log("hidden");
+      rows.forEach((row) => {
+        row.classList.remove("first-order", "order", "scramble");
+        // row.classList.add("scramble");
+      });
+      document.title = "Come Back!";
+    } else if (document.visibilityState === "visible") {
+      document.title = "Welcome Back!";
+      console.log("visible");
+      rows.forEach((row) => {
+        row.classList.remove("order", "scramble");
+        row.classList.add("first-order");
+      });
+    }
   });
 </script>
