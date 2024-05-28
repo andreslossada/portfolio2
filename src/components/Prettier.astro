@@ -536,9 +536,11 @@ import Divider from "./Divider.astro";
   const lastRow = rows[rows.length - 4];
   let isAnimating = true;
 
-  rows.forEach((row) => {
-    row.classList.add("first-order");
-  });
+  if (document.visibilityState === "visible") {
+    rows.forEach((row) => {
+      row.classList.add("first-order");
+    });
+  }
   container.addEventListener("click", () => {
     if (!isAnimating) {
       rows.forEach((row) => {
