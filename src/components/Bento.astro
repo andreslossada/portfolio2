@@ -50,7 +50,7 @@ const projects = {
 
 <!-- TODO: add wrapper to add shadow on divider -->
 <div
-  class="relative bg-[radial-gradient(ellipse_90%_90%_at_50%_-20%,rgba(0,0,0,0.95),rgba(0,0,0,0.045))] duration-700 z-10 min-h-[calc(100vh+var(--angle-divider))] py-[calc(var(--angle-divider)*2)] grid place-items-center middle"
+  class="relative bg-[radial-gradient(ellipse_90%_90%_at_50%_-20%,rgba(0,0,0,0.95),rgba(0,0,0,0.045))] duration-700 z-10 min-h-[calc(100vh+var(--angle-divider))] py-[calc(var(--angle-divider)*2)] grid place-items-center middle inset-shadow"
   id="parent"
 >
   <Title text="Projects" />
@@ -152,6 +152,10 @@ const projects = {
     animation: fade-in linear forwards;
     animation-timeline: view();
     animation-range: 0px 15%;
+  }
+
+  .inset-shadow {
+    box-shadow: inset 0px 0px 150px black;
   }
 </style>
 <script>
