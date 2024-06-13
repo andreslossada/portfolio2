@@ -58,7 +58,7 @@ const projects = {
     id="child"
     class="w-full max-w-[70vw]
     grid lg:grid-cols-10 auto-rows-[35vh] gap-5
-    mx-auto pt-20 text-white h-full place-content-center [&>article]:grid [&>article]:grid-cols-1 [&>article]:place-content-center [&>article]3xl:place-content-center [&>article]:rounded-xl [&>article]:backdrop-blur-m [&>article]:p-5 [&>article]:md:p-10 [&>article]:gap-3 [&>article]:duration-300 [&>article]:overflow-hidden [&_p]:text-xs [&_p]:md:text-base [&_p]:2xl:text-lg [&>article>p]:font-normal [&>article]:shadow-lg [&>article]:relative"
+    mx-auto pt-20 text-white h-full place-content-center [&>article]:grid [&>article]:grid-cols-1 [&>article]:place-content-center [&>article]3xl:place-content-center [&>article]:rounded-xl [&>article]:backdrop-blur-m [&>article]:p-5 [&>article]:md:p-10 [&>article]:gap-3 [&>article]:duration-300 [&>article]:overflow-hidden [&_p]:text-xs [&_p]:md:text-base [&_p]:2xl:text-lg [&>article>p]:font-normal [&>article]:shadow-lg [&>article]:relative [&>article]:grayscale [&>article:hover]:grayscale-0"
   >
     <!-- PROJECT 1: OMNIFOOD ----------------------------------------------->
     <article
@@ -186,7 +186,7 @@ const projects = {
 
     articleItems.forEach((item: HTMLElement, index) => {
       item.addEventListener("mouseenter", () => {
-        parent.classList.add("backdrop-blur-[2px]");
+        parent.classList.add("backdrop-blur-[1px]");
 
         const { width, height } = item.getBoundingClientRect();
         const left = item.offsetLeft;
@@ -212,19 +212,11 @@ const projects = {
 
         articleBackDrop.style.opacity = "1";
         articleBackDrop.style.visibility = "visible";
-        articleItems.forEach((otherItem: HTMLElement) => {
-          if (otherItem !== item) {
-            otherItem.classList.add("grayscale-[60%]");
-          }
-        });
       });
 
       item.addEventListener("mouseleave", () => {
-        parent.classList.remove("backdrop-blur-[2px]");
+        parent.classList.remove("backdrop-blur-[1px]");
 
-        articleItems.forEach((otherItem: HTMLElement) => {
-          otherItem.classList.remove("grayscale-[60%]");
-        });
         articleBackDrop.style.opacity = "0";
         articleBackDrop.style.visibility = "hidden";
       });
