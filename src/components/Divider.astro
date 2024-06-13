@@ -12,21 +12,33 @@ const darkenedColorObject = {
 };
 ---
 
+<style>
+  .test {
+    color: #000000;
+    color: #3f3e3e;
+    color: #636262;
+    color: #8a8787;
+    color: #a4a4a4;
+    color: #c7c5c5;
+    color: #dedcdc;
+  }
+</style>
+<!-- #f92672 -->
 <div class="wrapper">
   <div
-    class=`divider bg-gradient-to-r from-[#c678dd] to-[#9e19c5] h-[calc(var(--angle-divider)+var(--h-divider))] -mt-[var(--angle-divider)]`
+    class=`divider bg-gradient-to-r from-stone-100 to-stone-400 h-[calc(var(--angle-divider)+var(--h-divider))] -mt-[var(--angle-divider)]`
   >
   </div>
 </div>
 <div class="wrapper">
   <div
-    class=`divider bg-gradient-to-r from-[#61aeee] to-[#316692] h-[calc(var(--angle-divider)+var(--h-divider))] -mt-[var(--angle-divider)]`
+    class=`divider bg-gradient-to-r from-stone-400 to-stone-700 h-[calc(var(--angle-divider)+var(--h-divider))] -mt-[var(--angle-divider)]`
   >
   </div>
 </div>
 <div class="wrapper">
   <div
-    class="divider bg-gradient-to-r from-[#98c379] to-[#4f991b] h-[calc(var(--angle-divider)+var(--h-divider))] -mt-[var(--angle-divider)]"
+    class="divider bg-gradient-to-r from-[var(--primary-color)] to-[var(--primary-color-darker)] h-[calc(var(--angle-divider)+var(--h-divider))] -mt-[var(--angle-divider)]"
   >
   </div>
 </div>
@@ -45,7 +57,9 @@ const darkenedColorObject = {
     );
   }
   .wrapper {
-    filter: drop-shadow(0px -5px 5px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(0px -5px 5px rgba(0, 0, 0, 0.7));
   }
 </style>
-<script></script>
+<script>
+  // import colorObj from "@/utils/colors";
+</script>
