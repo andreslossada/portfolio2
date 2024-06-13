@@ -360,7 +360,7 @@ import Divider from "./Divider.astro";
   .cell {
     height: 100%;
     width: calc(var(--size, 2) * var(--unit));
-    background-color: var(--dark);
+    background-color: var(--cell-color);
     border-radius: 444px;
     box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.15);
   }
@@ -433,22 +433,22 @@ import Divider from "./Divider.astro";
   }
 
   .cell.letter-a {
-    background-color: var(--color-1);
+    background-color: var(--primary-color);
   }
   .cell.letter-n {
-    background-color: var(--color-2);
+    background-color: var(--secondary-color);
   }
   .cell.letter-d {
-    background-color: var(--color-3);
+    background-color: var(--tertiary-color);
   }
   .cell.letter-r {
-    background-color: var(--color-4);
+    background-color: var(--fourth-color);
   }
   .cell.letter-e {
-    background-color: var(--color-1);
+    background-color: var(--primary-color);
   }
   .cell.letter-s {
-    background-color: var(--color-2);
+    background-color: var(--secondary-color);
   }
 
   .row:nth-child(1) {

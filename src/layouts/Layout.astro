@@ -39,58 +39,54 @@ const { title } = Astro.props;
   </body>
   <style is:global>
     :root {
-      /* Dark One Pro Darker Colors */
-      --chalky: #e5c07b;
-      --coral: #ef596f;
-      --dark: #5c6370;
-      --error: #f44747;
-      --fountainBlue: #2bbac5;
-      --green: #89ca78;
-      --white: #ffffff;
-      --LightDark: #7f848e;
-      --lightWhite: #abb2bf;
-      --malibu: #61afef;
-      --purple: #d55fde;
-      --whiskey: #d19a66;
-      --deepRed: #be5046;
-      --bg-color-0: #24262e;
-      --bg-color-1: #222537;
-      --bg-color-2: #1f243e;
-      --bg-color-3: #0a0d1d;
+      /* Background Colors */
+      --bg-color-0: #0d1127;
+      /* --cell-color: #282c34; */
+      --cell-color: #344078;
+
+      /* Dimensions */
       --angle-divider: 100px;
       --h-divider: 22px;
-      /* atom one dark */
-      /* keyword */
-      --color-1: #c678dd;
-      /* title function */
-      --color-2: #61aeee;
-      /* string */
-      --color-3: #98c379;
-      /* variable */
-      --color-4: #e6c07b;
-      /* title class */
-      --color-5: #d19a66;
-      /* literal */
-      --color-6: #56b6c2;
+
+      /* Keyword */
+      --primary-color: #f92672;
+      --primary-color-light: #f8649a;
+      --primary-color-dark: #640f2e;
+      --primary-color-darker: #38091a;
+
+      /* Title Function */
+      --secondary-color: #61aeee;
+      --secondary-color-darker: #4378a3;
+
+      /* String */
+      --tertiary-color: #98c379;
+      --tertiary-color-darker: #698f1e;
+
+      /* Variable */
+      --fourth-color: #e6c07b;
+      --fourth-class-color: #d19a66;
+
+      /* Literal */
+      --literal-color: #56b6c2;
     }
-    /*
-      legacy colors
-      --letter-a: #f92672;
-      --letter-n: #a6e22e;
-      --letter-d: #66d9ef;
-      --letter-r: #fd971f;
-      --letter-e: #ae81ff; 
-      --letter-e: #d6d6d6;
-      --letter-s: #e1d74d; 
-      --gray: #5e5e5e; 
-      --gray: rgb(227, 227, 227);
-      --color-1: #ff6188;
-      --color-2: #e87d3e;
-      --color-3: #ffd866;
-      --color-4: #a9dc76;
-      --color-5: #ab9df2;
-      --color-6: #78dce8;
-    */
+
+    /* Legacy Colors (Commented Out)
+--letter-a: #f92672;
+--letter-n: #a6e22e;
+--letter-d: #66d9ef;
+--letter-r: #fd971f;
+--letter-e: #ae81ff;
+--letter-e: #d6d6d6;
+--letter-s: #e1d74d;
+--gray: #5e5e5e;
+--gray: rgb(227, 227, 227);
+--color-1: #ff6188;
+--color-2: #e87d3e;
+--color-3: #ffd866;
+--color-4: #a9dc76;
+--color-5: #ab9df2;
+--color-6: #78dce8;
+*/
     *,
     *::before,
     *::after {
