@@ -1,0 +1,107 @@
+<section class="h-screen content-center">
+  <div class="scroller" data-direction="right" data-speed="slow">
+    <div class="scroller__inner">
+      <div class="cell"></div>
+    </div>
+  </div>
+</section>
+<style>
+  :root {
+    --clr-neutral-100: hsl(0, 0%, 100%);
+    --clr-primary-100: hsl(205, 15%, 58%);
+    --clr-primary-400: hsl(215, 25%, 27%);
+    --clr-primary-800: hsl(217, 33%, 17%);
+    --clr-primary-900: hsl(218, 33%, 9%);
+    --unit: 10px;
+  }
+  .cell {
+    height: var(--unit);
+    width: 100px;
+    background: black;
+    border-radius: var(--unit);
+  }
+  .scroller {
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 2px solid white;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .scroller__inner {
+    border: 2px solid red;
+    padding-block: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .scroller__inner {
+    width: max-content;
+    flex-wrap: nowrap;
+    animation: scroll var(--_animation-duration, 40s)
+      var(--_animation-direction, forwards) linear infinite;
+  }
+
+  .scroller[data-direction="right"] {
+    --_animation-direction: reverse;
+  }
+
+  .scroller[data-direction="left"] {
+    --_animation-direction: forwards;
+  }
+
+  .scroller[data-speed="fast"] {
+    --_animation-duration: 2s;
+  }
+
+  .scroller[data-speed="slow"] {
+    --_animation-duration: 5s;
+  }
+
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+</style>
+
+<script>
+  const scroller = document.querySelector(".scroller");
+
+  // duplicatedScroller
+  const scrollerInner = scroller.querySelector(".scroller__inner");
+  const cell = document.querySelector(".cell") as HTMLDivElement;
+  cell.remove();
+  // for (let j = 0; j < 2; j++) {
+  for (let i = 0; i < 20; i++) {
+    const clonedCell = cell.cloneNode(true) as HTMLDivElement;
+    // width between 20 and 100
+    clonedCell.style.width = `${Math.random() * 300 + 20}px`;
+    clonedCell.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    scrollerInner.appendChild(clonedCell);
+  }
+  const scrollerContent = Array.from(scrollerInner.children);
+
+  const duplicatedContent = scrollerContent
+    .concat(scrollerContent)
+    .concat(scrollerContent)
+    .concat(scrollerContent)
+    .concat(scrollerContent);
+
+  duplicatedContent.forEach((item) => {
+    const duplicatedItem = item.cloneNode(true);
+    scrollerInner.appendChild(duplicatedItem);
+  });
+  // }
+</script>
+
+<!-- duplicatedScroller.setAttribute(
+   "data-direction",
+   Math.random() > 0.5 ? "left" : "right"
+ );
+ duplicatedScroller.setAttribute(
+  "data-speed",
+   Math.random() > 0.5 ? "slow" : "fast"
+ ); -->
