@@ -13,18 +13,13 @@ module.exports = {
     },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "#f92672",
+          foreground: "hsl(var(--primary-color))",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "#61aeee",
+          foreground: "hsl(var(--secondary-color))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -67,7 +62,7 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       dropShadow: {
-        orange: "0px 0px 15px #f59e0b",
+        white: "0px 0px 10px #fff",
         "3xl": "0 35px 35px rgba(0, 0, 0, 0.25)",
         "4xl": [
           "0 35px 35px rgba(0, 0, 0, 0.25)",
