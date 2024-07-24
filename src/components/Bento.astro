@@ -50,7 +50,7 @@ const projects = {
 
 <!-- TODO: add wrapper to add shadow on divider -->
 <div
-  class="relative bg-[radial-gradient(ellipse_90%_90%_at_50%_-20%,rgba(0,0,0,0.95),rgba(0,0,0,0.045))] duration-700 z-10 min-h-[calc(100vh+var(--angle-divider))] py-[calc(var(--angle-divider)*2)] grid place-items-center middle inset-shadow"
+  class="relative bg-[radial-gradient(ellipse_90%_90%_at_50%_-20%,rgba(0,0,0,0.95),rgba(0,0,0,0.045))] min-h-[calc(100vh+var(--angle-divider))] py-[calc(var(--angle-divider)*2)] grid place-items-center middle inset-shadow"
   id="parent"
 >
   <Title text="Projects" />
@@ -58,14 +58,18 @@ const projects = {
     id="child"
     class="w-full max-w-[70vw]
     grid lg:grid-cols-10 auto-rows-[35vh] gap-5
-    mx-auto pt-20 text-white h-full place-content-center [&>article]:grid [&>article]:grid-cols-1 [&>article]:place-content-center [&>article]3xl:place-content-center [&>article]:rounded-xl [&>article]:backdrop-blur-m [&>article]:p-5 [&>article]:md:p-10 [&>article]:gap-3 [&>article]:duration-300 [&>article]:overflow-hidden [&_p]:text-xs [&_p]:md:text-base [&_p]:2xl:text-lg [&>article>p]:font-normal [&>article]:shadow-lg [&>article]:relative [&>article]:grayscale [&>article:hover]:grayscale-0"
+    mx-auto pt-20 text-white h-full place-content-center [&>article]:grid [&>article]:grid-cols-1 [&>article]:place-content-center [&>article]3xl:place-content-center [&>article]:rounded-xl [&>article]:p-5 [&>article]:md:p-10 [&>article]:gap-3 [&>article]:overflow-hidden [&_p]:text-xs [&_p]:md:text-base [&_p]:2xl:text-lg [&>article>p]:font-normal [&>article]:shadow-lg [&>article]:relative [&>article]:"
   >
     <!-- PROJECT 1: OMNIFOOD ----------------------------------------------->
     <article
-      class="md:col-span-4 bg-gradient-to-r from-orange-200 via-amber-100 to-slate-100 text-[#333]"
+      class="md:col-span-4 text-[white] border duration-300 border-primary gradient-transition blurry [&>p]:hover:block transition opacity-10"
     >
-      <Image src={projects.omnifood.image} alt="Omnifood logo" class="" />
-      <p class="font-['Rubik system-ui'] text-pretty">
+      <Image
+        src={projects.omnifood.image}
+        alt="Omnifood logo"
+        class="transition"
+      />
+      <p class="font-['Rubik system-ui'] text-pretty duration-300 transition">
         {projects.omnifood.description}
       </p>
       <ProjectFooter project={projects.omnifood} />
@@ -74,10 +78,10 @@ const projects = {
     <article
       class="bg-gradient-to-b from-blue-100 via-gray-500 to-blue-400 md:col-span-6 text-right text-white"
     >
-      <div class="absolute max-h-full w-full left-[-20%] bottom-0 z-10 grid">
+      <div class="absolute max-h-full w-full left-[-20%] bottom-0 grid">
         <projects.crwn.image />
       </div>
-      <div class="z-20">
+      <div class="">
         <h2 class="text-3xl md:text-6xl drop-shadow-lg">Crwn</h2>
         <p class="font-['Rubik system-ui']">
           {projects.crwn.description}
@@ -123,6 +127,7 @@ const projects = {
       <ProjectFooter project={projects.forkify} />
     </article>
   </section>
+  <!-- Backdrop -->
   <div
     id="article-backdrop"
     class={`
@@ -139,6 +144,29 @@ const projects = {
 </div>
 <Divider />
 <style is:global>
+  .blurry {
+    backdrop-filter: blur(5px);
+  }
+  .blurry:hover {
+    backdrop-filter: none;
+  }
+  .gradient-transition {
+    background: linear-gradient(
+      to right,
+      transparent,
+      transparent,
+      rgba(255, 255, 255, 0.645)
+    );
+    background-size: 400%;
+    background-position: left;
+    transition: background-position 2s ease-out;
+  }
+
+  .gradient-transition:hover {
+    background-position: 100% 0%;
+    backdrop-filter: blur(5px);
+  }
+
   @keyframes fade-in {
     100% {
       opacity: 1;
@@ -164,9 +192,9 @@ const projects = {
   // -------------------------------------------------
   window.addEventListener("DOMContentLoaded", (event) => {
     const articleItems = document.querySelectorAll("section article");
-    const articleBackDrop = document.querySelector(
-      "#article-backdrop"
-    ) as HTMLElement;
+    // const articleBackDrop = document.querySelector(
+    //   "#article-backdrop"
+    // ) as HTMLElement;
 
     setTimeout(() => {
       const firstItem = articleItems[0] as HTMLElement;
@@ -186,7 +214,7 @@ const projects = {
 
     articleItems.forEach((item: HTMLElement, index) => {
       item.addEventListener("mouseenter", () => {
-        parent.classList.add("backdrop-blur-[1px]");
+        // parent.classList.add("backdrop-blur-[1px]");
 
         const { width, height } = item.getBoundingClientRect();
         const left = item.offsetLeft;
@@ -215,7 +243,7 @@ const projects = {
       });
 
       item.addEventListener("mouseleave", () => {
-        parent.classList.remove("backdrop-blur-[1px]");
+        // parent.classList.remove("backdrop-blur-[1px]");
 
         articleBackDrop.style.opacity = "0";
         articleBackDrop.style.visibility = "hidden";
