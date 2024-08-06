@@ -1,107 +1,59 @@
-<section class="h-screen content-center">
-  <div class="scroller" data-direction="right" data-speed="slow">
-    <div class="scroller__inner">
-      <div class="cell"></div>
+<section class="h-screen content-center bg-black">
+  <div
+    class="scroller bg-white overflow-hidden flex align-middle"
+    data-direction="right"
+    data-speed="slow"
+  >
+    <div class="scroller__inner bg-gray-500" id="scroller-inner">
+      <!-- Cells will be inserted here by JavaScript -->
     </div>
   </div>
 </section>
+
 <style>
-  :root {
-    --clr-neutral-100: hsl(0, 0%, 100%);
-    --clr-primary-100: hsl(205, 15%, 58%);
-    --clr-primary-400: hsl(215, 25%, 27%);
-    --clr-primary-800: hsl(217, 33%, 17%);
-    --clr-primary-900: hsl(218, 33%, 9%);
-    --unit: 10px;
-  }
-  .cell {
-    height: var(--unit);
-    width: 100px;
-    background: black;
-    border-radius: var(--unit);
-  }
-  .scroller {
-    overflow: hidden;
-    margin-bottom: 20px;
-    border: 2px solid white;
+  .scroller__inner {
     display: flex;
     gap: 1rem;
-  }
-
-  .scroller__inner {
-    border: 2px solid red;
-    padding-block: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    background: rgba(0, 0, 0, 0.4);
-  }
-
-  .scroller__inner {
-    width: max-content;
-    flex-wrap: nowrap;
-    animation: scroll var(--_animation-duration, 40s)
-      var(--_animation-direction, forwards) linear infinite;
-  }
-
-  .scroller[data-direction="right"] {
-    --_animation-direction: reverse;
-  }
-
-  .scroller[data-direction="left"] {
-    --_animation-direction: forwards;
-  }
-
-  .scroller[data-speed="fast"] {
-    --_animation-duration: 2s;
-  }
-
-  .scroller[data-speed="slow"] {
-    --_animation-duration: 5s;
+    height: 40px;
+    align-items: center;
+    animation: scroll 10s linear infinite;
   }
 
   @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
     to {
-      transform: translate(calc(-50% - 0.5rem));
+      transform: translateX(calc(-50% - 0.5rem));
     }
   }
 </style>
 
 <script>
-  const scroller = document.querySelector(".scroller");
+  // Function to create a single cell
+  const createCell = () => {
+    const cell = document.createElement("div");
+    cell.classList.add("cell", "h-3", "rounded-full");
+    cell.style.width = `${Math.random() * 300 + 20}px`;
+    cell.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    return cell;
+  };
 
-  // duplicatedScroller
-  const scrollerInner = scroller.querySelector(".scroller__inner");
-  const cell = document.querySelector(".cell") as HTMLDivElement;
-  cell.remove();
-  // for (let j = 0; j < 2; j++) {
-  for (let i = 0; i < 20; i++) {
-    const clonedCell = cell.cloneNode(true) as HTMLDivElement;
-    // width between 20 and 100
-    clonedCell.style.width = `${Math.random() * 300 + 20}px`;
-    clonedCell.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-    scrollerInner.appendChild(clonedCell);
-  }
-  const scrollerContent = Array.from(scrollerInner.children);
+  // Create the initial array of cells
+  const cellsArray = Array.from({ length: 15 }, createCell);
 
-  const duplicatedContent = scrollerContent
-    .concat(scrollerContent)
-    .concat(scrollerContent)
-    .concat(scrollerContent)
-    .concat(scrollerContent);
+  // Get the scroller inner element
+  const scrollerInner = document.getElementById("scroller-inner");
 
-  duplicatedContent.forEach((item) => {
-    const duplicatedItem = item.cloneNode(true);
-    scrollerInner.appendChild(duplicatedItem);
-  });
-  // }
+  // Function to append cells array multiple times
+  const appendCells = (times) => {
+    for (let i = 0; i < times; i++) {
+      cellsArray.forEach((cell) => {
+        scrollerInner.appendChild(cell.cloneNode(true));
+      });
+    }
+  };
+
+  // Append cells array 3 times
+  appendCells(4);
 </script>
-
-<!-- duplicatedScroller.setAttribute(
-   "data-direction",
-   Math.random() > 0.5 ? "left" : "right"
- );
- duplicatedScroller.setAttribute(
-  "data-speed",
-   Math.random() > 0.5 ? "slow" : "fast"
- ); -->

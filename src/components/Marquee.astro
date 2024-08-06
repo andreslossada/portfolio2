@@ -1,0 +1,39 @@
+---
+
+---
+
+<section class="h-screen content-center bg-black">
+  <div id="marquee"></div>
+</section>
+<style>
+  #marquee {
+    overflow: hidden;
+    margin: 0;
+    padding: 7px 0;
+    font-size: 20px;
+    color: #ffffff;
+  }
+  .cell {
+    height: 10px;
+    width: 100px;
+    background: gray;
+    border-radius: 100px;
+    color: white;
+  }
+</style>
+<script>
+  import { Marquee, loop, type LoopReturn } from "dynamic-marquee";
+  const $marquee = document.getElementById("marquee");
+
+  const marquee = new Marquee($marquee, {
+    rate: 100,
+    startOnScreen: true,
+    pauseOnHover: true,
+  });
+
+  const $cell = document.createElement("div");
+  $cell.classList.add("cell");
+  $cell.textContent = "testing123";
+
+  loop(marquee, [() => "item 1", () => "item 2"]);
+</script>

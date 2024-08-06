@@ -64,8 +64,8 @@ import "tippy.js/themes/light-border.css";
   .tippy-box[data-theme~="tomato"] {
     background-color: transparent;
     color: white;
-    border: 0px solid var(white);
-    box-shadow: 0px 0px 0px 2px white inset;
+    border-top: 2px solid white;
+    /* box-shadow: 0px 0px 0px 1px white inset; */
     width: 18ch;
     padding-bottom: 4px;
     text-align: center;
@@ -73,6 +73,7 @@ import "tippy.js/themes/light-border.css";
   .tippy-box[data-theme~="tomato"][data-placement^="bottom"]
     > .tippy-arrow::before {
     border-bottom-color: white;
+    margin-top: -1px;
   }
 </style>
 <script src="../utils/tooltip"></script>
