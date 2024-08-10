@@ -12,6 +12,9 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Fira Code"],
+      },
       colors: {
         primary: {
           DEFAULT: "#f92672",
