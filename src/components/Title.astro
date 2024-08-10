@@ -1,10 +1,8 @@
 ---
-const { text } = Astro.props;
+const { text, class: className } = Astro.props;
 ---
 
-<div
-  class="title grid place-content-center text-white font-bold drop-shadow-[0px_0px_20px_#00000094] font-sans"
->
+<div class=`title grid place-content-center text-white font-bold  ${className}`>
   <h2 class="">{text}</h2>
 </div>
 
