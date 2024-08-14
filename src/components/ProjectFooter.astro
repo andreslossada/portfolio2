@@ -9,31 +9,25 @@ import ReactIcon from "@/assets/icons/ReactIcon.astro";
 const { project } = Astro.props;
 ---
 
-<footer
-  class="flex justify-between absolute bottom-1 h-[37px] w-full px-5 mb-2"
->
-  <section class="flex gap-3 drop-shadow-xl mt-auto z-10">
-    <a
-      href={project.github}
-      target="_blank"
-      class="h-[28px] w-[28px] md:h-[37px] md:w-[37px] hover:scale-110 hover:drop-shadow-lg duration-200"
-      aria-label=`github ${project.title}`
-    >
-      <GitHubIcon />
-    </a>
-    <a
-      href={project.link}
-      target="_blank"
-      class="h-[28px] w-[28px] md:h-[37px] md:w-[37px] hover:scale-110 hover:drop-shadow-lg duration-200"
-      aria-label=`demo ${project.title}`
-    >
-      <LinkIcon />
-    </a>
-  </section>
-  <section class="flex gap-1 items-end z-10">
-    <HTMLIcon />
-    <CSSIcon />
-    <JSIcon />
-    {project.tech.includes("React") && <ReactIcon />}
-  </section>
+<footer class="flex justify-between absolute bottom-1 w-full px-5">
+  <div class="triangle bg-slate-500 z-10 opacity-20 pointer-events-none"></div>
+  <a
+    href={project.github}
+    target="_blank"
+    class="size-11 hover:scale-110 hover:drop-shadow-lg duration-200 absolute left-3 bottom-1"
+    aria-label=`github ${project.title}`
+  >
+    <GitHubIcon />
+  </a>
 </footer>
+
+<style>
+  .triangle {
+    position: absolute;
+    bottom: -15px;
+    left: -20px;
+    width: 130px;
+    height: 110px;
+    clip-path: polygon(0 100%, 100% 100%, 0 0);
+  }
+</style>
