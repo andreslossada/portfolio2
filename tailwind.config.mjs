@@ -24,6 +24,14 @@ module.exports = {
           DEFAULT: "#61aeee",
           foreground: "hsl(var(--secondary-color))",
         },
+        dark: {
+          DEFAULT: "#0a0d1e",
+          foreground: "hsl(var(--dark))",
+        },
+        light: {
+          DEFAULT: "#344078",
+          foreground: "hsl(var(--light))",
+        },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
@@ -44,11 +52,6 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-      },
-      borderRadius: {
-        lg: "4px",
-        md: "2px)",
-        sm: "1px)",
       },
       keyframes: {
         "accordion-down": {
