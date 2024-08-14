@@ -2,14 +2,14 @@
 const { text, class: className } = Astro.props;
 ---
 
-<div class=`title grid place-content-center text-white font-bold  ${className}`>
+<div
+  class=`title grid place-content-center text-slate-300 font-semibold  ${className} drop-shadow-lg text-7xl`
+>
   <h2 class="">{text}</h2>
 </div>
 
 <style>
   h2 {
-    font-size: 40px;
-    text-shadow: rgba(21, 21, 21, 0.256) 0px 0px 20px;
     /* background-color: #00000094; */
   }
 </style>
