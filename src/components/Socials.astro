@@ -11,7 +11,7 @@ import ResumeIcon from "@/assets/icons/ResumeIcon.astro";
 <footer>
   <nav class="">
     <ul
-      class="flex justify-center text-slate-400 relative [&>li]:size-8 [&>li]:p-5 [&>li]:transition"
+      class="flex justify-center text-slate-400 relative [&>li]:size-8 [&>li]:p-5 [&>li]:transition [&>li]:duration-400"
     >
       <li class="hover:scale-110 hover:text-slate-100 box-content">
         <a
@@ -169,7 +169,7 @@ import ResumeIcon from "@/assets/icons/ResumeIcon.astro";
             menuBackDrop.style.backgroundColor = colorObj["tertiary"];
             break;
           default:
-            menuBackDrop.style.backgroundColor = "white";
+            menuBackDrop.style.backgroundColor = "fourth";
         }
 
         menuBackDrop.style.opacity = "1";

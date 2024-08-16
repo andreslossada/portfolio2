@@ -3,7 +3,7 @@ var colorObj = {
   primary: "#f92672",
   secondary: "#61aeee",
   tertiary: "#98c379",
-  forth: "#e6c07b",
+  fourth: "#e6c07b",
   // dark: "#0a0d1e",
   // light: "#344078",
   // muted: "#7f7f7f",
