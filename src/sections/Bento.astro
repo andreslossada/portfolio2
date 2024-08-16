@@ -3,7 +3,7 @@ import PathFinderIcon from "@/assets/icons/PathIcon.astro";
 import Title from "../components/Title.astro";
 import ProjectFooter from "../components/ProjectFooter.astro";
 import Divider from "../components/Divider.astro";
-import Card from "@/components/Card.astro";
+import Card from "@/components/GlowCard.astro";
 import FoodIcon from "@/assets/icons/Food.astro";
 import TieIcon from "@/assets/icons/TieIcon.astro";
 import ForkIcon from "@/assets/icons/Forkicon.astro";
@@ -54,7 +54,7 @@ const projects = {
 
 <!-- TODO: add wrapper to add shadow on divider -->
 <section
-  class="relative min-h-[calc(100vh+var(--angle-divider))] py-[calc(var(--angle-divider)*2)] grid place-items-center middle inset-shadow bg-black bg-opacity-40"
+  class="relative min-h-[calc(100vh+var(--angle-divider))] py-[calc(var(--angle-divider)*2)] grid place-items-center middle inset-shadow bg-black bg-opacity-70"
   id="parent"
 >
   <Title text="Projects" />
@@ -143,7 +143,7 @@ const projects = {
     </Card>
   </div>
 </section>
-<Divider />
+<!-- <Divider /> -->
 <style is:global>
   @keyframes fade-in {
     100% {
