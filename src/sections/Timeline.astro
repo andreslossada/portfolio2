@@ -1,4 +1,5 @@
 ---
+import SimpleCard from "@/components/SimpleCard.astro";
 import Divider from "../components/Divider.astro";
 import Title from "../components/Title.astro";
 ---
@@ -7,95 +8,133 @@ import Title from "../components/Title.astro";
 <div
   class="py-[200px] bg-dark bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.25),rgba(255,255,255,0))] relative middle z-50"
 >
+  <Divider />
+
   <div
-    class="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] -top-[var(--h-divider)"
+    class="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] -top-[var(--h-divider) -z-10"
   >
   </div>
-  <Title text="Experience" />
-  <ul class="mt-10">
-    <li style="--accent-color:var(--color-5)">
-      <div class="date">2023</div>
-      <div class="title">Scale AI</div>
-      <div class="subtitle">AI Trainer</div>
+  <div class="mt-20">
+    <Title text="02.Experience" />
+  </div>
 
-      <div class="descr">
-        Proficiently reviewed and enhanced JavaScript code to ensure
-        functionality, efficiency, and adherence to coding best practices.
-        Maintained an up-to-date knowledge of the latest coding best practices
-        and industry standards, cultivating a deep understanding of evolving
-        technologies to improve project outcomes. Collaborated closely with team
-        members to uphold code quality and consistency across projects.
-      </div>
-      <footer>Skills: TypeScript · JavaScript</footer>
+  <ul class="mt-20">
+    <li style="--accent-color:var(--color-5)">
+      <div class="date">2024</div>
+      <SimpleCard>
+        <div class="title">Scale AI</div>
+        <div class="subtitle">AI Trainer</div>
+
+        <div class="descr">
+          Proficiently reviewed and enhanced JavaScript code to ensure
+          functionality, efficiency, and adherence to coding best practices.
+          Maintained an up-to-date knowledge of the latest coding best practices
+          and industry standards, cultivating a deep understanding of evolving
+          technologies to improve project outcomes. Collaborated closely with
+          team members to uphold code quality and consistency across projects.
+        </div>
+        <footer>Skills: TypeScript · JavaScript</footer>
+      </SimpleCard>
     </li>
     <li style="--accent-color:var(--color-2)">
       <div class="date">2022</div>
-      <div class="title">Cloudnonic Corp.</div>
-      <div class="subtitle">Fullstack Developer</div>
+      <SimpleCard>
+        <div class="title">Cloudnonic Corp.</div>
+        <div class="subtitle">Fullstack Developer</div>
 
-      <div class="descr">
-        Developed and maintained code for in-house and client websites.
-        Including a financial application designed to streamline bank
-        documentation processes, enhance efficiency, and elevate user
-        experience. Writing and maintaining clean, efficient, and
-        well-documented code in accordance with best practices. Additionally,
-        entails the creation of reusable and modular components that can be
-        applied across various sections of the application. Colaborating with
-        colleagues of diverse cultures to ensure code quality.
-      </div>
-      <footer>
-        Skills: TypeScript · Material-UI · formik · React.js · JavaScript ·
-        Redux.js
-      </footer>
+        <div class="descr">
+          Developed and maintained code for in-house and client websites.
+          Including a financial application designed to streamline bank
+          documentation processes, enhance efficiency, and elevate user
+          experience. Writing and maintaining clean, efficient, and
+          well-documented code in accordance with best practices. Additionally,
+          entails the creation of reusable and modular components that can be
+          applied across various sections of the application. Colaborating with
+          colleagues of diverse cultures to ensure code quality.
+        </div>
+        <footer>
+          Skills: TypeScript · Material-UI · formik · React.js · JavaScript ·
+          Redux.js
+        </footer>
+      </SimpleCard>
     </li>
     <li style="--accent-color:var(--color-3)">
       <div class="date">2021</div>
-      <div class="title">Foodwize</div>
-      <div class="subtitle">Frontend Developer</div>
+      <SimpleCard>
+        <div class="title">Foodwize</div>
+        <div class="subtitle">Frontend Developer</div>
 
-      <div class="descr">
-        Tasked with developing and debugging ReactJS-based web applications,
-        including the creation of new reusable UI components and functionalities
-        such as custom hooks. Works within an agile development environment
-        using the SCRUM methodology.
-      </div>
-      <footer>Skills: HTML5 · React.js · JavaScript</footer>
+        <div class="descr">
+          Tasked with developing and debugging ReactJS-based web applications,
+          including the creation of new reusable UI components and
+          functionalities such as custom hooks. Works within an agile
+          development environment using the SCRUM methodology.
+        </div>
+        <footer>Skills: HTML5 · React.js · JavaScript</footer>
+      </SimpleCard>
     </li>
     <li style="--accent-color:var(--color-4)">
       <div class="date">2018</div>
-      <div class="title">Hack Academy</div>
-      <div class="subtitle">Web Development</div>
+      <SimpleCard>
+        <div class="title">Hack Academy</div>
+        <div class="subtitle">Web Development</div>
 
-      <div class="descr">
-        Attended Hack Academy, a dynamic and immersive learning environment
-        specializing in cutting-edge technology education. Successfully
-        completed a comprehensive web development program, gaining proficiency
-        in HTML, CSS, JavaScript, and other essential tools. Acquired hands-on
-        experience in designing and implementing responsive and interactive web
-        applications. The rigorous curriculum at Hack Academy fostered a strong
-        foundation in coding principles, problem-solving, and collaborative
-        development.
-      </div>
-      <footer>Skills: HTML · JavaScript · CSS</footer>
+        <div class="descr">
+          Attended Hack Academy, a dynamic and immersive learning environment
+          specializing in cutting-edge technology education. Successfully
+          completed a comprehensive web development program, gaining proficiency
+          in HTML, CSS, JavaScript, and other essential tools. Acquired hands-on
+          experience in designing and implementing responsive and interactive
+          web applications. The rigorous curriculum at Hack Academy fostered a
+          strong foundation in coding principles, problem-solving, and
+          collaborative development.
+        </div>
+        <footer>Skills: HTML · JavaScript · CSS</footer>
+      </SimpleCard>
     </li>
     <li style="--accent-color:var(--color-1)">
       <div class="date">2017</div>
-      <div class="title">Nueva Esparta University</div>
-      <div class="subtitle">Assistant Software Engineer</div>
+      <SimpleCard>
+        <div class="title">Nueva Esparta University</div>
+        <div class="subtitle">Assistant Software Engineer</div>
 
-      <div class="descr">
-        Assisted staff responsible for the management and upkeep of servers, as
-        well as database administration. Developed and maintained various
-        modules within the academic system. Provided support to students and
-        administrative staff regarding the university platform.
-      </div>
-      <footer>Skills: PHP · pgAdmin · PostgreSQL</footer>
+        <div class="descr">
+          Assisted staff responsible for the management and upkeep of servers,
+          as well as database administration. Developed and maintained various
+          modules within the academic system. Provided support to students and
+          administrative staff regarding the university platform.
+        </div>
+        <footer>Skills: PHP · pgAdmin · PostgreSQL</footer>
+      </SimpleCard>
     </li>
   </ul>
 </div>
-<Divider />
+<div class="wrapper">
+  <div
+    class="divider bg-gradient-to-r from-dark via-slate-300 to-dark h-[calc(var(--angle-divider)+5px)] -mt-[calc(var(--angle-divider)+3px)]"
+  >
+  </div>
+</div>
+
+<!-- <Divider /> -->
 
 <style>
+  .divider {
+    clip-path: polygon(
+      0 0,
+
+      50% var(--angle-divider),
+      100% 0,
+
+      100% calc(100% - var(--angle-divider)),
+      50% 100%,
+
+      0 calc(100% - var(--angle-divider))
+    );
+  }
+  .wrapper {
+    filter: drop-shadow(-0px -5px 5px rgba(0, 0, 0, 0.7));
+  }
   /* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"); */
   @keyframes slide-in {
     100% {
@@ -112,8 +151,9 @@ import Title from "../components/Title.astro";
     transform: translateX(100%);
   }
   :root {
-    --color: rgba(30, 30, 30);
-    --bgColor: rgba(245, 245, 245);
+    --color: blue;
+    --bgColor: theme(colors.slate.500);
+    --accent-color: red;
   }
 
   h1 {
@@ -138,7 +178,7 @@ import Title from "../components/Title.astro";
     content: "";
     grid-column: 1;
     grid-row: 1 / span 20;
-    background: rgb(225, 225, 225);
+    background: theme(colors.slate.400);
     border-radius: calc(var(--line-w) / 2);
   }
 
@@ -171,9 +211,9 @@ import Title from "../components/Title.astro";
     margin-inline: calc(var(--inlineP) * -1);
 
     text-align: center;
-    background-color: var(--accent-color);
+    background-color: transparent;
 
-    color: white;
+    color: theme(colors.slate.300);
     font-size: 1.25rem;
     font-weight: 700;
 
@@ -189,8 +229,8 @@ import Title from "../components/Title.astro";
     content: "";
     width: var(--inlineP);
     aspect-ratio: 1;
-    background: var(--accent-color);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2) 100%, transparent);
+    background: transparent;
+    background-image: linear-gradient(rgba(0, 0, 0, 0) 100%, transparent);
     position: absolute;
     top: 100%;
 
@@ -213,16 +253,6 @@ import Title from "../components/Title.astro";
     right: calc(100% + var(--col-gap) + var(--line-w) / 2);
   }
 
-  /* title descr */
-  ul li .title,
-  ul li footer,
-  ul li .subtitle,
-  ul li .descr {
-    background: var(--bgColor);
-    position: relative;
-    padding-inline: 1.5rem;
-    /* border-radius: 0 0 20px 20px; */
-  }
   ul li .title {
     overflow: hidden;
     padding-block-start: 1.5rem;
@@ -235,29 +265,22 @@ import Title from "../components/Title.astro";
   }
 
   /* shadows */
-  ul li .title::before,
+
   ul li .descr::before {
     content: "";
     position: absolute;
     width: 90%;
     height: 0.5rem;
-    background: rgba(0, 0, 0, 0.5);
+    background: theme(colors.slate.600);
     left: 50%;
     border-radius: 50%;
-    filter: blur(4px);
-    transform: translate(-50%, 50%);
-  }
-  ul li .title::before {
-    bottom: calc(100% + 0.125rem);
+    /* filter: blur(4px); */
+    transform: translate(-50%, 70%);
   }
 
   ul li .descr::before {
     z-index: -1;
     bottom: 0.25rem;
-  }
-
-  footer {
-    padding-bottom: 1rem;
   }
 
   @media (min-width: 40rem) {
