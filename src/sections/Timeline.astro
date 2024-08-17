@@ -150,17 +150,13 @@ import Title from "../components/Title.astro";
   ul li:nth-child(even) {
     transform: translateX(100%);
   }
-  :root {
-    --color: blue;
-    --bgColor: theme(colors.slate.500);
-    --accent-color: red;
-  }
 
   h1 {
     text-align: center;
   }
 
   ul {
+    --bgColor: theme(colors.slate.500);
     --col-gap: 2rem;
     --row-gap: 2rem;
     --line-w: 0.25rem;
@@ -201,7 +197,7 @@ import Title from "../components/Title.astro";
     scale: 0.7;
     animation: slide-in linear forwards;
     animation-timeline: view();
-    animation-range: 0px 20%;
+    animation-range: 100px 20%;
   }
 
   /* date */
@@ -255,7 +251,6 @@ import Title from "../components/Title.astro";
 
   ul li .title {
     overflow: hidden;
-    padding-block-start: 1.5rem;
     padding-block-end: 1rem;
     font-weight: 500;
   }

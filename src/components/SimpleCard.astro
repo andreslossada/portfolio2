@@ -1,8 +1,22 @@
 <div class="simple-card text-slate-300">
-  <slot />
+  <div class="simple-card-content">
+    <slot />
+  </div>
 </div>
 
 <style>
+  .simple-card-content {
+    background-image: radial-gradient(
+      rgba(255, 255, 255, 0.15) 1px,
+      transparent 1px
+    );
+    background-position: 50% 50%;
+    background-size: 1.1rem 1.1rem;
+    z-index: 2;
+    padding-block: 1rem;
+    padding-inline: 1rem;
+  }
+
   .simple-card {
     /* height: 300px; */
     position: relative;
