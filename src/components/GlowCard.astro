@@ -10,10 +10,6 @@ const { width, height = "h-[35vh]", link } = Astro.props;
   </div>
 </div>
 <style is:global>
-  :root {
-    --bg-color: rgb(20, 20, 20);
-    --card-color: rgb(23, 23, 23);
-  }
   #cards {
   }
 
@@ -59,7 +55,7 @@ const { width, height = "h-[35vh]", link } = Astro.props;
   .card::after {
     background: radial-gradient(
       600px circle at var(--mouse-x) var(--mouse-y),
-      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.9),
       transparent 40%
     );
     z-index: 1;
