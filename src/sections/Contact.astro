@@ -6,7 +6,7 @@ import Title from "../components/Title.astro";
   class="py-40 bg-[radial-gradient(ellipse_90%_90%_at_50%_-20%,rgba(0,0,0,0.95),rgba(0,0,0,0.045))] relative h-[calc(100dvh+var(--angle-divider))] text-white bottom duration-1000 inset-shadow bg-black bg-opacity-60"
   id="parent-contact"
 >
-  <Title text="Contact Me" />
+  <Title text="03.Contact Me" />
   <div class="h-full content-center px-5">
     <section
       class="bg-dark overflow-hidden h-[65dvh] lg:w-[50dvw] mx-[auto] rounded shadow-[rgba(0,0,0,0.2)] shadow-xl content-center"
@@ -109,7 +109,7 @@ import Title from "../components/Title.astro";
   inputs.forEach((item) => {
     item.addEventListener("click", function (event) {
       // Add the blur effect to the parent
-      parent.classList.add("backdrop-blur-[1px]");
+      parent.classList.add("backdrop-blur-[2px]");
       // Stop propagation so document click event is not triggered
       event.stopPropagation();
     });
@@ -117,6 +117,6 @@ import Title from "../components/Title.astro";
 
   document.addEventListener("click", function (event) {
     // Remove the blur effect from the parent
-    parent.classList.remove("backdrop-blur-[1px]");
+    parent.classList.remove("backdrop-blur-[2px]");
   });
 </script>
