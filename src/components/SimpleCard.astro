@@ -1,17 +1,13 @@
-<div class="simple-card">
-  <div class="simple-card-content">
-    <h3>Valuable Info</h3>
-    <h1>The worst thing about coding is the dementors</h1>
-  </div>
+<div class="simple-card text-slate-300">
+  <slot />
 </div>
 
 <style>
   .simple-card {
-    width: 640px;
-    height: 300px;
+    /* height: 300px; */
     position: relative;
-    background-color: rgb(16 16 16);
-    border: 1px solid rgb(255 255 255 / 5%);
+    background-color: theme(colors.slate.900);
+    border: 1px solid theme(colors.slate.800);
     border-radius: 1.5rem;
     padding: 1rem;
   }
@@ -26,7 +22,11 @@
     transition: top, opacity;
     transition-duration: 600ms;
     transition-timing-function: ease;
-    background: linear-gradient(transparent, var(--primary-color), transparent);
+    background: linear-gradient(
+      transparent,
+      theme(colors.slate.500),
+      transparent
+    );
     opacity: 0;
   }
 
