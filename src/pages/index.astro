@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Timeline from "../sections/Timeline.astro";
-import Prettier from "../sections/Prettier.astro";
+import Hero from "../sections/Hero.astro";
 import Bento from "../sections/Bento.astro";
 import Contact from "../sections/Contact.astro";
 import BgCode from "../components/bg-code.astro";
@@ -13,7 +13,7 @@ import MarqueeBg from "../components/Marquee.astro";
 <Layout title="Andres Lossada">
   <!-- <CellBg /> -->
   <BgCode />
-  <Prettier />
+  <Hero />
   <Bento />
   <Timeline />
   <Contact />
@@ -22,10 +22,6 @@ import MarqueeBg from "../components/Marquee.astro";
 <script>
   import Lenis from "lenis";
   const lenis = new Lenis();
-
-  lenis.on("scroll", (e) => {
-    console.log(e);
-  });
 
   function raf(time) {
     lenis.raf(time);
