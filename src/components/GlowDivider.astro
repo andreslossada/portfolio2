@@ -1,0 +1,25 @@
+<div class="relative wrapper z-10">
+  <div
+    class="divider bg-gradient-to-r from-dark via-slate-300 to-dark h-[calc(var(--angle-divider)+5px)] -mt-[calc(var(--angle-divider)+3px)]"
+  >
+  </div>
+</div>
+<style>
+  .divider {
+    clip-path: polygon(
+      0 0,
+
+      50% var(--angle-divider),
+      100% 0,
+
+      100% calc(100% - var(--angle-divider)),
+      50% 100%,
+
+      0 calc(100% - var(--angle-divider))
+    );
+  }
+  .wrapper {
+    filter: drop-shadow(-0px -5px 5px rgba(0, 0, 0, 0.7));
+    /* z-index: 132132; */
+  }
+</style>
