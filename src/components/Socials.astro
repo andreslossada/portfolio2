@@ -8,11 +8,22 @@ import ResumeIcon from "@/assets/icons/ResumeIcon.astro";
 ---
 
 <!-- TODO: add a limiter to confetti like "we get it" -->
-<footer>
-  <nav class="">
+<footer class="flex justify-center">
+  <nav class="inline-block">
     <ul
-      class="flex justify-center text-slate-300 relative [&>li]:size-8 [&>li]:p-5 [&>li]:transition [&>li]:duration-400"
+      class="flex justify-center text-slate-300 relative [&>li]:size-8 [&>li]:p-5 [&>li]:transition [&>li]:duration-400 w-full"
     >
+      <div
+        id="menu-backdrop"
+        class="absolute rounded
+        translate-x-[var(--left)] translate-y-[var(--top)]
+        left-0 top-0
+        w-[var(--width)] h-[var(--height)]
+         duration-1000
+        ease-out opacity-0 -z-[11412421412]
+        blur-2xl"
+      >
+      </div>
       <li class="hover:scale-110 hover:text-slate-100 box-content">
         <a
           href="https://www.linkedin.com/in/andreslossada"
@@ -57,37 +68,9 @@ import ResumeIcon from "@/assets/icons/ResumeIcon.astro";
         </a>
       </li>
     </ul>
-    <div
-      id="menu-backdrop"
-      class={`
-        absolute  rounded
-        translate-x-[var(--left)] translate-y-[var(--top)]
-        left-0 top-0
-        w-[var(--width)] h-[var(--height)]
-         duration-1000
-        ease-out opacity-0 -z-10
-        blur-2xl
-        `}
-    >
-    </div>
   </nav>
 </footer>
-<style is:global>
-  .tippy-box[data-theme~="tomato"] {
-    background-color: transparent;
-    color: white;
-    border-top: 2px solid white;
-    /* box-shadow: 0px 0px 0px 1px white inset; */
-    width: 18ch;
-    padding-bottom: 4px;
-    text-align: center;
-  }
-  .tippy-box[data-theme~="tomato"][data-placement^="bottom"]
-    > .tippy-arrow::before {
-    border-bottom-color: white;
-    margin-top: -1px;
-  }
-</style>
+<style></style>
 <script>
   import { fireAll } from "../utils/confetti";
   import { showToast } from "../utils/toaster";
@@ -122,42 +105,23 @@ import ResumeIcon from "@/assets/icons/ResumeIcon.astro";
       "#menu-backdrop"
     ) as HTMLElement;
 
-    // Delay setting the initial position to allow the browser to restore scroll position
-    setTimeout(() => {
-      const firstItem = listItem[0] as HTMLElement;
-      const { left, top } = firstItem.getBoundingClientRect();
-      const scrollLeft =
-        window.pageXOffset || document.documentElement.scrollLeft;
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
-
-      // Temporarily disable transition
-      menuBackDrop.style.transition = "none";
-
-      menuBackDrop.style.setProperty("--left", `${left + scrollLeft}px`);
-      menuBackDrop.style.setProperty("--top", `${top + scrollTop}px`);
-
-      menuBackDrop.style.opacity = "0";
-      menuBackDrop.style.visibility = "hidden";
-
-      // Re-enable transition after a short delay
-      setTimeout(() => {
-        menuBackDrop.style.transition = "";
-      }, 50);
-    }, 100);
-
     listItem.forEach((item, index) => {
       item.addEventListener("mouseenter", () => {
-        const { left, top, width, height } = item.getBoundingClientRect();
-        const scrollLeft =
-          window.pageXOffset || document.documentElement.scrollLeft;
-        const scrollTop =
-          window.pageYOffset || document.documentElement.scrollTop;
+        const parentRect = item.parentElement.getBoundingClientRect();
+        const itemRect = item.getBoundingClientRect();
 
-        menuBackDrop.style.setProperty("--left", `${left + scrollLeft + 15}px`);
-        menuBackDrop.style.setProperty("--top", `${top + scrollTop + 15}px`);
-        menuBackDrop.style.setProperty("--width", `${width - 30}px`);
-        menuBackDrop.style.setProperty("--height", `${height - 30}px`);
+        // Calculate the correct position relative to the parent
+        const adjustedLeft =
+          itemRect.left - parentRect.left + item.parentElement.scrollLeft;
+        const adjustedTop =
+          itemRect.top - parentRect.top + item.parentElement.scrollTop;
+        console.log(`🚀 ~ adjustedLeft:`, parentRect.left, itemRect.left);
+
+        menuBackDrop.style.setProperty("--left", `${adjustedLeft}px`);
+        menuBackDrop.style.setProperty("--top", `${adjustedTop}px`);
+        menuBackDrop.style.setProperty("--width", `${itemRect.width}px`);
+        menuBackDrop.style.setProperty("--height", `${itemRect.height}px`);
+
         switch (index) {
           case 0:
             menuBackDrop.style.backgroundColor = colorObj["secondary"];
@@ -169,7 +133,7 @@ import ResumeIcon from "@/assets/icons/ResumeIcon.astro";
             menuBackDrop.style.backgroundColor = colorObj["tertiary"];
             break;
           default:
-            menuBackDrop.style.backgroundColor = "fourth";
+            menuBackDrop.style.backgroundColor = colorObj["fourth"];
         }
 
         menuBackDrop.style.opacity = "1";
@@ -179,14 +143,6 @@ import ResumeIcon from "@/assets/icons/ResumeIcon.astro";
       item.addEventListener("mouseleave", () => {
         menuBackDrop.style.opacity = "0";
         menuBackDrop.style.visibility = "hidden";
-      });
-    });
-
-    window.addEventListener("DOMContentLoaded", (event) => {
-      const listItem = document.querySelectorAll("nav li");
-
-      listItem.forEach((item) => {
-        item.classList.add("transition");
       });
     });
   });
