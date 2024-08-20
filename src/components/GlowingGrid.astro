@@ -1,0 +1,90 @@
+<!--  -->
+<div id="followDiv"></div>
+<style is:global>
+  #followDiv {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(194, 194, 194, 0.549);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    /* display: none; */
+    z-index: -1;
+    filter: blur(150px);
+    opacity: 0; /* Initially invisible */
+    transition:
+      opacity 0.7s ease,
+      transform 0.7s ease;
+  }
+  #gridSection {
+    display: grid;
+    /* height: 100%;
+    width: 100%; */
+    grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+    grid-gap: 1px;
+    /* background-color: theme(colors.dark.DEFAULT); */
+  }
+
+  .grid-square {
+    background-color: theme(colors.dark.DEFAULT);
+    aspect-ratio: 1;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+<script>
+  // Get the grid section and set the size for each square
+  const gridSection = document.getElementById("gridSection");
+  const squareSize = 44; // Minimum square size in pixels
+
+  // Calculate the number of rows and columns to fill the screen with squares
+  const rows = Math.floor(window.innerHeight / (squareSize + 1)); // 2px gap
+  const columns = Math.floor(window.innerWidth / (squareSize + 1)); // 2px gap
+  const totalSquares = rows * columns;
+
+  // Create and append squares to the grid section
+  for (let i = 0; i < totalSquares; i++) {
+    const square = document.createElement("div");
+    square.classList.add("grid-square");
+    gridSection.appendChild(square);
+  }
+
+  // Cursor-following div and related variables
+  const followDiv = document.getElementById("followDiv");
+  let mouseX = 0,
+    mouseY = 0; // Cursor position
+  let posX = 0,
+    posY = 0; // Position of followDiv
+  const delay = 0.02; // Delay factor (0 < delay < 1)
+
+  // Update cursor position on mouse move within the grid section
+  gridSection.addEventListener("mousemove", (event) => {
+    const rect = gridSection.getBoundingClientRect();
+    mouseX = event.clientX - rect.left;
+    mouseY = event.clientY - rect.top;
+
+    // Display followDiv when cursor is inside the grid section
+    followDiv.style.opacity = "1";
+  });
+
+  // Hide followDiv when cursor leaves the grid section
+  gridSection.addEventListener("mouseleave", () => {
+    // followDiv.style.display = "none";
+    followDiv.style.opacity = "0";
+  });
+
+  // Update followDiv position with a delay for smooth following effect
+  function updatePosition() {
+    posX += (mouseX - posX) * delay;
+    posY += (mouseY - posY) * delay;
+
+    followDiv.style.left = `${posX}px`;
+    followDiv.style.top = `${posY}px`;
+
+    requestAnimationFrame(updatePosition); // Continuously update position
+  }
+
+  // Start the animation loop
+  updatePosition();
+</script>
