@@ -11,13 +11,15 @@
 }
 .dark {
   --bg-color: #0a0d1e;
+  --light-dark: theme(colors.slate.800);
   --cell-color: #344078;
   --text-color: theme(colors.slate.200);
 }
 
 .darker {
-  --cell-color: #282c34;
   --bg-color: #000;
+  --light-dark: theme(colors.neutral.800);
+  --cell-color: #282c34;
   --text-color: theme(colors.neutral.400);
 }
 

@@ -11,7 +11,7 @@ import Title from "../components/Title.astro";
   <Divider />
 
   <div
-    class="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] -top-[var(--h-divider) -z-10"
+    class="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_0%,#000_70%,transparent_110%)] -top-[var(--h-divider) -z-10"
   >
   </div>
   <div class="mt-20">
@@ -156,7 +156,7 @@ import Title from "../components/Title.astro";
   }
 
   ul {
-    --bgColor: theme(colors.slate.500);
+    /* --bgColor: theme(colors.slate.500); */
     --col-gap: 2rem;
     --row-gap: 2rem;
     --line-w: 0.25rem;
@@ -174,7 +174,7 @@ import Title from "../components/Title.astro";
     content: "";
     grid-column: 1;
     grid-row: 1 / span 20;
-    background: theme(colors.slate.400);
+    background: var(--text-color);
     border-radius: calc(var(--line-w) / 2);
   }
 
@@ -240,7 +240,7 @@ import Title from "../components/Title.astro";
     position: absolute;
     width: 2rem;
     aspect-ratio: 1;
-    background: var(--bgColor);
+    background: var(--text-color);
     border: 0.3rem solid var(--accent-color);
     border-radius: 50%;
     top: 50%;
@@ -264,13 +264,13 @@ import Title from "../components/Title.astro";
   ul li .descr::before {
     content: "";
     position: absolute;
-    width: 90%;
+    width: 80%;
     height: 0.5rem;
-    background: theme(colors.slate.600);
+    background: var(--text-color);
     left: 50%;
     border-radius: 50%;
     /* filter: blur(4px); */
-    transform: translate(-50%, 70%);
+    transform: translate(-50%, 65%);
   }
 
   ul li .descr::before {

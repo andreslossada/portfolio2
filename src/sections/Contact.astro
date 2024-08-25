@@ -12,7 +12,9 @@ import Title from "../components/Title.astro";
     <section
       class="bg-[--bg-color] overflow-hidden h-[65dvh] lg:w-[50dvw] mx-[auto] rounded-lg shadow-[rgba(0,0,0,0.2)] shadow-xl content-center"
     >
-      <header class="h-[50px] w-full bg-slate-800 pb-2 flex justify-between">
+      <header
+        class="h-[50px] w-full bg-[--light-dark] pb-2 flex justify-between"
+      >
         <!-- TAB -->
         <div
           class="relative px-3 bg-[--bg-color] h-full r ml-8 mt-3 content-center rounded-t-lg"
@@ -23,7 +25,7 @@ import Title from "../components/Title.astro";
             >
             </div>
             <div
-              class="absolute bg-slate-800 bottom-[4px] -left-[16px] size-4 rounded-br-lg"
+              class="absolute bg-[--light-dark] bottom-[4px] -left-[16px] size-4 rounded-br-lg"
             >
             </div>
             <div
@@ -31,7 +33,7 @@ import Title from "../components/Title.astro";
             >
             </div>
             <div
-              class="absolute bg-slate-800 bottom-[4px] -right-[16px] size-4 rounded-bl-lg"
+              class="absolute bg-[--light-dark] bottom-[4px] -right-[16px] size-4 rounded-bl-lg"
             >
             </div>
           </div>
@@ -76,7 +78,7 @@ import Title from "../components/Title.astro";
               type="email"
               id="email"
               name="email"
-              class="rounded my-2 self-start w-1/2 bg-slate-800 p-2 outline-none"
+              class="rounded my-2 self-start w-1/2 bg-[--light-dark] p-2 outline-none"
               required
             />
           </div>
@@ -85,14 +87,14 @@ import Title from "../components/Title.astro";
             <textarea
               id="message"
               name="message"
-              class="rounded-lg resize-none my-2 w-full h-[calc(100%-60px)] bg-slate-800 p-3 outline-none"
+              class="rounded-lg resize-none my-2 w-full h-[calc(100%-60px)] bg-[--light-dark] p-3 outline-none"
               required></textarea>
           </div>
           <div class="flex">
             <input
               type="submit"
               value="Send"
-              class="rounded bg-slate-400 px-6 text-slate-900 py-2 ml-auto self-start cursor-pointer hover:shadow-slate-500 hover:shadow-lg duration-100 drop-shadow hover:scale-105"
+              class="rounded bg-[--light-dark] px-6 text-[--text-color] py-2 ml-auto self-start cursor-pointer hover:shadow-[--light-dark] hover:shadow-lg duration-100 drop-shadow hover:scale-105"
             />
           </div>
         </form>
