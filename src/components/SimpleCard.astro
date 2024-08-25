@@ -1,4 +1,4 @@
-<div class="simple-card text-slate-300">
+<div class="simple-card text-[--text-color] transition">
   <div class="simple-card-content">
     <slot />
   </div>
@@ -20,8 +20,8 @@
   .simple-card {
     /* height: 300px; */
     position: relative;
-    background-color: theme(colors.slate.900);
-    border: 1px solid theme(colors.slate.800);
+    background-color: var(--bg-color);
+    border: 1px solid theme(colors.neutral.800);
     border-radius: 1.5rem;
     padding: 1rem;
   }
@@ -38,7 +38,7 @@
     transition-timing-function: ease;
     background: linear-gradient(
       transparent,
-      theme(colors.slate.500),
+      theme(colors.neutral.500),
       transparent
     );
     opacity: 0;

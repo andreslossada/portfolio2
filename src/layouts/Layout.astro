@@ -4,6 +4,8 @@ interface Props {
   title: string;
 }
 const { title } = Astro.props;
+
+import Settings from "../components/Settings.astro";
 ---
 
 <!doctype html>
@@ -31,6 +33,7 @@ const { title } = Astro.props;
   </head>
   <body class="bg-gray-900">
     <slot />
+    <Settings />
   </body>
   <style is:global>
     /* grainEffect.css */
@@ -38,7 +41,7 @@ const { title } = Astro.props;
     :root {
       /* Background Colors */
       /* --bg-color-0: #0a0d1e; */
-      --cell-color: #282c34;
+      /* --cell-color: #282c34; */
       /* --cell-color: #344078; */
 
       /* Dimensions */

@@ -2,6 +2,7 @@
 import Title from "../components/Title.astro";
 ---
 
+<!-- TODO: check why the different transition durations in this compoenent --><!-- TODO: also check text color -->
 <div
   class="py-40 bg-[radial-gradient(ellipse_90%_90%_at_50%_-20%,rgba(0,0,0,0.95),rgba(0,0,0,0.045))] relative h-[calc(100dvh+var(--angle-divider))] text-white bottom duration-1000 inset-shadow bg-black bg-opacity-60"
   id="parent-contact"
@@ -9,21 +10,25 @@ import Title from "../components/Title.astro";
   <Title text="03.Contact Me" />
   <div class="h-full content-center px-5">
     <section
-      class="bg-dark overflow-hidden h-[65dvh] lg:w-[50dvw] mx-[auto] rounded-lg shadow-[rgba(0,0,0,0.2)] shadow-xl content-center"
+      class="bg-[--bg-color] overflow-hidden h-[65dvh] lg:w-[50dvw] mx-[auto] rounded-lg shadow-[rgba(0,0,0,0.2)] shadow-xl content-center"
     >
       <header class="h-[50px] w-full bg-slate-800 pb-2 flex justify-between">
         <!-- TAB -->
         <div
-          class="relative px-3 bg-dark h-full r ml-8 mt-3 content-center rounded-t-lg"
+          class="relative px-3 bg-[--bg-color] h-full r ml-8 mt-3 content-center rounded-t-lg"
         >
           <div>
-            <div class="absolute bg-dark bottom-[4px] -left-[16px] size-4">
+            <div
+              class="absolute bg-[--bg-color] bottom-[4px] -left-[16px] size-4"
+            >
             </div>
             <div
               class="absolute bg-slate-800 bottom-[4px] -left-[16px] size-4 rounded-br-lg"
             >
             </div>
-            <div class="absolute bg-dark bottom-[4px] -right-[16px] size-4">
+            <div
+              class="absolute bg-[--bg-color] bottom-[4px] -right-[16px] size-4"
+            >
             </div>
             <div
               class="absolute bg-slate-800 bottom-[4px] -right-[16px] size-4 rounded-bl-lg"

@@ -1,0 +1,93 @@
+---
+import SettingsIcon from "@/assets/icons/SettingsIcon.astro";
+---
+
+<div
+  class="fixed left-0 bottom-0 size-[30vh] rounded-tr-full group z-50"
+  id="settings"
+>
+  <div
+    class="dropdown absolute bottom-8 left-3 group-hover:translate-x-[20px] group-hover:translate-y-[-20px] ease-out transition grid gap-4 duration-1000"
+    data-dropdown
+  >
+    <div class="text-neutral-100 dropdown-menu">
+      <form class="login-form grid gap-4">
+        <label for="dark" class="flex items-center gap-3">
+          <input type="radio" name="theme" id="dark" />
+          <span>Dark</span>
+        </label>
+        <label for="darker" class="flex items-center gap-3">
+          <input type="radio" name="theme" id="darker" />
+          <span>Darker</span>
+        </label>
+      </form>
+    </div>
+    <button
+      class="size-12 hover:scale-110 hover:drop-shadow-lg 0 text-neutral-400 hover:text-slate-100 transition"
+      aria-label="Settings"
+      data-dropdown-button
+    >
+      <SettingsIcon />
+    </button>
+  </div>
+</div>
+<style>
+  .dropdown-menu {
+    position: absolute;
+    left: 0;
+    bottom: calc(100% + 1rem);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition:
+      opacity 150ms ease-in-out,
+      transform 150ms ease-in-out;
+  }
+  .dropdown.active > .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+
+    pointer-events: auto;
+  }
+</style>
+<script>
+  const settings = document.getElementById("settings");
+  const dropdown = document.querySelector("[data-dropdown]");
+
+  document.addEventListener("click", (e: any) => {
+    const button = e.target.closest("button[data-dropdown-button]");
+    const currentDropdown = e.target.closest("[data-dropdown]");
+    if (button) {
+      currentDropdown.classList.toggle("active");
+    } else {
+      // console.log("non button");
+    }
+  });
+
+  settings.addEventListener("mouseleave", () => {
+    dropdown.classList.remove("active");
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const darkModeRadio = document.getElementById("dark");
+    const darkerModeRadio = document.getElementById("darker");
+
+    const applyTheme = (theme) => {
+      document.documentElement.classList.remove("dark", "darker");
+      if (theme) {
+        document.documentElement.classList.add(theme);
+      }
+      localStorage.setItem("theme", theme);
+    };
+
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      applyTheme(savedTheme);
+      if (savedTheme === "dark") darkModeRadio.checked = true;
+      if (savedTheme === "darker") darkerModeRadio.checked = true;
+    }
+
+    darkModeRadio.addEventListener("change", () => applyTheme("dark"));
+    darkerModeRadio.addEventListener("change", () => applyTheme("darker"));
+  });
+</script>

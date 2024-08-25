@@ -7,11 +7,11 @@ import "tippy.js/themes/light-border.css";
 import ResumeIcon from "@/assets/icons/ResumeIcon.astro";
 ---
 
-<!-- TODO: add a limiter to confetti like "we get it" -->
+<!-- TODO: add a limiter to confetti like "we get it" --><!-- TODO: change icons to be fill instead of outlined -->
 <footer class="flex justify-center">
   <nav class="inline-block">
     <ul
-      class="flex justify-center text-neutral-400 relative [&>li]:size-8 [&>li]:p-5 [&>li]:transition [&>li]:duration-400 w-full"
+      class="flex justify-center text-[--text-color] relative [&>li]:size-8 [&>li]:p-5 [&>li]:transition [&>li]:duration-400 w-full"
     >
       <div
         id="menu-backdrop"
@@ -115,7 +115,6 @@ import ResumeIcon from "@/assets/icons/ResumeIcon.astro";
           itemRect.left - parentRect.left + item.parentElement.scrollLeft;
         const adjustedTop =
           itemRect.top - parentRect.top + item.parentElement.scrollTop;
-        console.log(`🚀 ~ adjustedLeft:`, parentRect.left, itemRect.left);
 
         menuBackDrop.style.setProperty("--left", `${adjustedLeft}px`);
         menuBackDrop.style.setProperty("--top", `${adjustedTop}px`);

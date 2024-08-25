@@ -6,7 +6,7 @@ import Title from "../components/Title.astro";
 
 <!-- TODO: fix divider -->
 <div
-  class="py-[200px] bg-black bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.25),rgba(255,255,255,0))] relative middle z-50"
+  class="py-[200px] bg-[--bg-color] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.25),rgba(255,255,255,0))] relative middle z-50 transition"
 >
   <Divider />
 
@@ -111,7 +111,7 @@ import Title from "../components/Title.astro";
 </div>
 <div class="wrapper">
   <div
-    class="divider bg-gradient-to-r from-dark via-slate-300 to-dark h-[calc(var(--angle-divider)+5px)] -mt-[calc(var(--angle-divider)+3px)]"
+    class="divider bg-gradient-to-r from-[--bg-color] via-[--text-color] to-[--bg-color] h-[calc(var(--angle-divider)+5px)] -mt-[calc(var(--angle-divider)+3px)]"
   >
   </div>
 </div>

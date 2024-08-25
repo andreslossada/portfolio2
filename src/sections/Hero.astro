@@ -5,14 +5,15 @@ import Divider from "../components/Divider.astro";
 import PrettierName from "@/components/PrettierName.astro";
 import GlowDivider from "@/components/GlowDivider.astro";
 import GlowingGrid from "@/components/GlowingGrid.astro";
+import Settings from "@/components/Settings.astro";
 ---
 
 <div
-  class="bg-[radial-gradient(ellipse_40%_80%_at_50%_-20%,rgba(255,255,255,0.05),rgba(255,255,255,0))] absolute h-screen w-full pointer-events-none z-30"
+  class="bg-[radial-gradient(ellipse_40%_80%_at_50%_-20%,rgba(255,255,255,0.05),rgba(255,255,255,0))] absolute h-screen w-full pointer-events-none z-30 transition duration-1000"
 >
 </div>
 <header
-  class="bg-[radial-gradient(ellipse_40%_80%_at_50%_-20%,rgba(255,255,255,0.07),rgba(255,255,255,0))] relative overflow-hidden bg-black h-[calc(100dvh+var(--angle-divider))] top z-20 grid place-items-center"
+  class="bg-[radial-gradient(ellipse_40%_80%_at_50%_-20%,rgba(255,255,255,0.07),rgba(255,255,255,0))] relative overflow-hidden bg-[--bg-color] h-[calc(100dvh+var(--angle-divider))] top z-20 grid place-items-center"
   id="gridSection"
 >
   <!-- <div class="bg-grid absolute inset-0"></div> -->

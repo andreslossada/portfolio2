@@ -9,7 +9,17 @@
   padding: 0;
   box-sizing: border-box;
 }
+.dark {
+  --bg-color: #0a0d1e;
+  --cell-color: #344078;
+  --text-color: theme(colors.slate.200);
+}
 
+.darker {
+  --cell-color: #282c34;
+  --bg-color: #000;
+  --text-color: theme(colors.neutral.400);
+}
 
 .toastify {
   padding: 12px 20px;
