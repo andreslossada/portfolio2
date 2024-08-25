@@ -1,33 +1,33 @@
-<!--  -->
+<!-- <div
+  class="bg-[radial-gradient(ellipse_40%_80%_at_50%_-20%,rgba(255,255,255,0.05),rgba(255,255,255,0))] h-[calc(100dvh+var(--angle-divider))]"
+>
+</div> -->
 <div id="followDiv"></div>
 <style is:global>
   #followDiv {
     position: absolute;
     width: 200px;
     height: 200px;
-    background-color: rgba(194, 194, 194, 0.549);
+    background-color: rgba(194, 194, 194, 0.185);
     border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%);
-    /* display: none; */
+
     z-index: -1;
     filter: blur(150px);
-    opacity: 0; /* Initially invisible */
+    opacity: 0;
     transition:
       opacity 0.7s ease,
       transform 0.7s ease;
   }
   #gridSection {
     display: grid;
-    /* height: 100%;
-    width: 100%; */
     grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
-    grid-gap: 1px;
-    /* background-color: theme(colors.dark.DEFAULT); */
+    grid-gap: 2px;
   }
 
   .grid-square {
-    background-color: theme(colors.dark.DEFAULT);
+    background-color: theme(colors.black);
     aspect-ratio: 1;
     width: 100%;
     height: 100%;
@@ -37,10 +37,11 @@
   // Get the grid section and set the size for each square
   const gridSection = document.getElementById("gridSection");
   const squareSize = 44; // Minimum square size in pixels
+  const gap = 3; // Gap size in pixels
 
   // Calculate the number of rows and columns to fill the screen with squares
-  const rows = Math.floor(window.innerHeight / (squareSize + 1)); // 2px gap
-  const columns = Math.floor(window.innerWidth / (squareSize + 1)); // 2px gap
+  const rows = Math.floor(window.innerHeight / squareSize);
+  const columns = Math.floor(window.innerWidth / squareSize);
   const totalSquares = rows * columns;
 
   // Create and append squares to the grid section
@@ -56,7 +57,7 @@
     mouseY = 0; // Cursor position
   let posX = 0,
     posY = 0; // Position of followDiv
-  const delay = 0.02; // Delay factor (0 < delay < 1)
+  const delay = 0.9; // Delay factor (0 < delay < 1)
 
   // Update cursor position on mouse move within the grid section
   gridSection.addEventListener("mousemove", (event) => {

@@ -11,7 +11,7 @@ import ResumeIcon from "@/assets/icons/ResumeIcon.astro";
 <footer class="flex justify-center">
   <nav class="inline-block">
     <ul
-      class="flex justify-center text-slate-300 relative [&>li]:size-8 [&>li]:p-5 [&>li]:transition [&>li]:duration-400 w-full"
+      class="flex justify-center text-neutral-400 relative [&>li]:size-8 [&>li]:p-5 [&>li]:transition [&>li]:duration-400 w-full"
     >
       <div
         id="menu-backdrop"
@@ -124,7 +124,7 @@ import ResumeIcon from "@/assets/icons/ResumeIcon.astro";
 
         switch (index) {
           case 0:
-            menuBackDrop.style.backgroundColor = colorObj["secondary"];
+            menuBackDrop.style.backgroundColor = colorObj["fourth"];
             break;
           case 1:
             menuBackDrop.style.backgroundColor = colorObj["primary"];
@@ -133,7 +133,7 @@ import ResumeIcon from "@/assets/icons/ResumeIcon.astro";
             menuBackDrop.style.backgroundColor = colorObj["tertiary"];
             break;
           default:
-            menuBackDrop.style.backgroundColor = colorObj["fourth"];
+            menuBackDrop.style.backgroundColor = colorObj["secondary"];
         }
 
         menuBackDrop.style.opacity = "1";

@@ -7,16 +7,17 @@ import GlowDivider from "@/components/GlowDivider.astro";
 import GlowingGrid from "@/components/GlowingGrid.astro";
 ---
 
+<div
+  class="bg-[radial-gradient(ellipse_40%_80%_at_50%_-20%,rgba(255,255,255,0.05),rgba(255,255,255,0))] absolute h-screen w-full pointer-events-none z-30"
+>
+</div>
 <header
-  class="relative overflow-hidden bg-dark h-[calc(100dvh+var(--angle-divider))] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.25),rgba(255,255,255,0))] top z-20 grid place-items-center"
+  class="bg-[radial-gradient(ellipse_40%_80%_at_50%_-20%,rgba(255,255,255,0.07),rgba(255,255,255,0))] relative overflow-hidden bg-black h-[calc(100dvh+var(--angle-divider))] top z-20 grid place-items-center"
   id="gridSection"
 >
+  <!-- <div class="bg-grid absolute inset-0"></div> -->
   <GlowingGrid />
-  <!-- grid layout  -->
-  <!-- <div
-      class="absolute -z-10 inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"
-    >
-    </div> -->
+
   <div
     class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
   >
@@ -26,3 +27,20 @@ import GlowingGrid from "@/components/GlowingGrid.astro";
   </div>
 </header>
 <GlowDivider />
+<style>
+  /* legacy grid */
+  .bg-grid {
+    background-image: linear-gradient(
+        to right,
+        rgba(79, 79, 79, 0.18) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgba(79, 79, 79, 0.18) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(
+      ellipse 80% 50% at 50% 0%,
+      #000 70%,
+      transparent 110%
+    );
+  }
+</style>
