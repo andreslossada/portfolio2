@@ -22,14 +22,20 @@ import SettingsIcon from "@/assets/icons/SettingsIcon.astro";
         </label>
       </form>
     </div>
+    <!-- <div class="relative border size-12 border-red-500"> -->
+    <div
+      class="size-[200%] left-[-50%] top-[-50%] pointer-events-none absolute rounded-full blur-2xl bg-[--secondary-color] group-hover:opacity-100 opacity-0 duration-1000 transition ease-out"
+    >
+    </div>
     <button
-      class="size-12 hover:scale-110 hover:drop-shadow-lg 0 text-neutral-400 hover:text-slate-100 transition"
+      class="size-12 hover:scale-110 hover:drop-shadow-lg 0 text-[--text-color] hover:text-slate-100 transition z-10"
       aria-label="Settings"
       data-dropdown-button
     >
       <SettingsIcon />
     </button>
   </div>
+  <!-- </div> -->
 </div>
 <style>
   .dropdown-menu {
