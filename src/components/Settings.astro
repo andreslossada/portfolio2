@@ -91,6 +91,12 @@ import SettingsIcon from "@/assets/icons/SettingsIcon.astro";
       applyTheme(savedTheme);
       if (savedTheme === "dark") darkModeRadio.checked = true;
       if (savedTheme === "darker") darkerModeRadio.checked = true;
+    } else {
+      // Set default theme if no theme is found in local storage
+      const defaultTheme = "dark"; // or "darker"
+      applyTheme(defaultTheme);
+      darkModeRadio.checked = defaultTheme === "dark";
+      darkerModeRadio.checked = defaultTheme === "darker";
     }
 
     darkModeRadio.addEventListener("change", () => applyTheme("dark"));
