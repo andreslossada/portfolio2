@@ -10,11 +10,11 @@ const { project } = Astro.props;
 ---
 
 <footer class="flex justify-between absolute bottom-1 w-full px-5">
-  <div class="triangle bg-slate-500 z-10 opacity-20 pointer-events-none"></div>
+  <div class="triangle bg-slate-100 z-10 opacity-20 pointer-events-none"></div>
   <a
     href={project.github}
     target="_blank"
-    class="size-11 hover:scale-110 hover:drop-shadow-lg duration-200 absolute left-3 bottom-1"
+    class="size-11 hover:scale-110 hover:drop-shadow-lg absolute duration-200 left-3 bottom-1"
     aria-label=`github ${project.title}`
   >
     <GitHubIcon />

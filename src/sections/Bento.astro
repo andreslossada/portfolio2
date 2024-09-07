@@ -54,7 +54,7 @@ const projects = {
 
 <!-- TODO: add wrapper to add shadow on divider -->
 <section
-  class="relative min-h-[calc(100vh+200px)] py-[calc(var(--angle-divider)*2)] grid place-items-center inset-shadow bg-black bg-opacity-70 -mt-[var(--angle-divider)]"
+  class="relative min-h-[calc(100vh+200px)] py-[calc(var(--angle-divider)*2)] grid place-items-center inset-shadow bg-black bg-opacity-70 -mt-[var(--angle-divider)] duration-1000"
   id="parent"
 >
   <Title text="01.Projects" />
@@ -70,7 +70,7 @@ const projects = {
         target="_blank"
         class="h-full w-full relative p-10 grid content-center"
       >
-        <div class="absolute right-[0%] top-0 grid opacity-25 size-[60%]">
+        <div class="right-[-20%] top-0 opacity-0 size-[80%] absolute" data-icon>
           <projects.omnifood.icon />
         </div>
         <h2 class="text-6xl">{projects.omnifood.title}</h2>
@@ -88,7 +88,10 @@ const projects = {
         target="_blank"
         class="h-full w-full relative p-10 grid content-center"
       >
-        <div class="absolute right-[-5%] top-0 grid opacity-25 size-[50%]">
+        <div
+          class="absolute right-[-20%] top-0 grid opacity-0 size-[60%]"
+          data-icon
+        >
           <projects.crwn.icon />
         </div>
         <h2 class="text-6xl">{projects.crwn.title}</h2>
@@ -106,7 +109,10 @@ const projects = {
         target="_blank"
         class="h-full w-full relative p-10 grid content-center"
       >
-        <div class="absolute right-[0%] top-0 grid opacity-25 size-[40%]">
+        <div
+          class="absolute right-[0%] top-0 grid opacity-0 size-[60%]"
+          data-icon
+        >
           <projects.pathfinder.icon />
         </div>
         <h2 class="text-6xl">{projects.pathfinder.title}</h2>
@@ -123,7 +129,10 @@ const projects = {
         target="_blank"
         class="h-full w-full relative p-10 grid content-center"
       >
-        <div class="absolute right-[0%] top-0 grid opacity-25 size-[80%]">
+        <div
+          class="absolute right-[-20%] top-0 grid opacity-0 size-[100%]"
+          data-icon
+        >
           <projects.forkify.icon />
         </div>
         <h2 class="text-6xl">{projects.forkify.title}</h2>
@@ -137,26 +146,12 @@ const projects = {
 </section>
 <!-- <Divider /> -->
 <style is:global>
-  @keyframes fade-in {
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
   section .card {
     cursor: pointer;
-    transform: translateY(100px);
-    opacity: 0;
-    animation: fade-in linear forwards;
-    animation-timeline: view();
-    animation-range: 200px 300px;
   }
 
   .inset-shadow {
     box-shadow: inset 0px 0px 150px black;
-  }
-  section {
-    transition: all 1s ease;
   }
 </style>
 <script>
@@ -169,5 +164,30 @@ const projects = {
     item.addEventListener("mouseleave", () => {
       parent.classList.remove("backdrop-blur-[2px]");
     });
+  });
+</script>
+
+<script>
+  import { inView, animate } from "motion";
+  const cards = document.querySelectorAll(".card > *");
+  console.log(`🚀 ~ cards:`, cards);
+
+  cards.forEach((item) => {
+    const icon = item.querySelector("[data-icon]");
+    inView(
+      item,
+      () => {
+        animate(
+          icon,
+          {
+            opacity: 0.1,
+            y: [100, 0],
+          },
+          { duration: 0.7 }
+        );
+      },
+
+      { amount: "all" }
+    );
   });
 </script>
