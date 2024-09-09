@@ -73,8 +73,8 @@ const projects = {
         <div class="right-[-20%] top-0 opacity-0 size-[80%] absolute" data-icon>
           <projects.omnifood.icon />
         </div>
-        <h2 class="text-6xl">{projects.omnifood.title}</h2>
-        <p class="text-pretty">
+        <h2 class="text-6xl [&>*]:opacity-0">{projects.omnifood.title}</h2>
+        <p class="text-pretty [&>*]:opacity-0">
           {projects.omnifood.description}
         </p>
         <ProjectFooter project={projects.omnifood} />
@@ -94,8 +94,8 @@ const projects = {
         >
           <projects.crwn.icon />
         </div>
-        <h2 class="text-6xl">{projects.crwn.title}</h2>
-        <p class="text-pretty">
+        <h2 class="text-6xl [&>*]:opacity-0">{projects.crwn.title}</h2>
+        <p class="text-pretty [&>*]:opacity-0">
           {projects.crwn.description}
         </p>
         <ProjectFooter project={projects.crwn} />
@@ -110,13 +110,13 @@ const projects = {
         class="h-full w-full relative p-10 grid content-center"
       >
         <div
-          class="absolute right-[0%] top-0 grid opacity-0 size-[60%]"
+          class="absolute right-[-10%] top-0 grid opacity-0 size-[50%]"
           data-icon
         >
           <projects.pathfinder.icon />
         </div>
-        <h2 class="text-6xl">{projects.pathfinder.title}</h2>
-        <p class="text-pretty">
+        <h2 class="text-6xl [&>*]:opacity-0">{projects.pathfinder.title}</h2>
+        <p class="text-pretty [&>*]:opacity-0">
           {projects.pathfinder.description}
         </p>
         <ProjectFooter project={projects.pathfinder} />
@@ -135,8 +135,8 @@ const projects = {
         >
           <projects.forkify.icon />
         </div>
-        <h2 class="text-6xl">{projects.forkify.title}</h2>
-        <p class="text-pretty">
+        <h2 class="text-6xl [&>*]:opacity-0">{projects.forkify.title}</h2>
+        <p class="text-pretty [&>*]:opacity-0">
           {projects.forkify.description}
         </p>
         <ProjectFooter project={projects.forkify} />
@@ -168,22 +168,50 @@ const projects = {
 </script>
 
 <script>
-  import { inView, animate } from "motion";
+  import { inView, animate, stagger } from "motion";
+  import SplitType from "split-type";
+
   const cards = document.querySelectorAll(".card > *");
-  console.log(`🚀 ~ cards:`, cards);
 
   cards.forEach((item) => {
+    const title = item.querySelector("h2");
+    const description = item.querySelector("p");
+    const splitedTitle = new SplitType(title, {
+      types: "chars",
+    });
+
+    const splitedDescription = new SplitType(description, {
+      types: "chars",
+    });
+
     const icon = item.querySelector("[data-icon]");
+
+    const footer = item.querySelector("footer");
     inView(
       item,
       () => {
         animate(
+          splitedTitle.chars,
+          { opacity: [0, 1] },
+          { delay: stagger(0.05) }
+        );
+
+        animate(
+          splitedDescription.chars,
+          { opacity: [0, 1] },
+          { delay: stagger(0.004) }
+        );
+
+        animate(
           icon,
-          {
-            opacity: 0.1,
-            y: [100, 0],
-          },
-          { duration: 0.7 }
+          { opacity: [0, 0.1], y: [-50, 0] },
+          { delay: 0.5, easing: "ease-out", duration: 0.7 }
+        );
+
+        animate(
+          footer,
+          { opacity: [0, 1], y: [30, 0], x: [-30, 0] },
+          { delay: 0.5, easing: "ease-out", duration: 0.7 }
         );
       },
 

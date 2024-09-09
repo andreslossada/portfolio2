@@ -74,32 +74,30 @@ import SettingsIcon from "@/assets/icons/SettingsIcon.astro";
     dropdown.classList.remove("active");
   });
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const darkModeRadio = document.getElementById("dark");
-    const darkerModeRadio = document.getElementById("darker");
+  const darkModeRadio = document.getElementById("dark");
+  const darkerModeRadio = document.getElementById("darker");
 
-    const applyTheme = (theme) => {
-      document.documentElement.classList.remove("dark", "darker");
-      if (theme) {
-        document.documentElement.classList.add(theme);
-      }
-      localStorage.setItem("theme", theme);
-    };
-
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-      applyTheme(savedTheme);
-      if (savedTheme === "dark") darkModeRadio.checked = true;
-      if (savedTheme === "darker") darkerModeRadio.checked = true;
-    } else {
-      // Set default theme if no theme is found in local storage
-      const defaultTheme = "dark"; // or "darker"
-      applyTheme(defaultTheme);
-      darkModeRadio.checked = defaultTheme === "dark";
-      darkerModeRadio.checked = defaultTheme === "darker";
+  const applyTheme = (theme) => {
+    document.documentElement.classList.remove("dark", "darker");
+    if (theme) {
+      document.documentElement.classList.add(theme);
     }
+    localStorage.setItem("theme", theme);
+  };
 
-    darkModeRadio.addEventListener("change", () => applyTheme("dark"));
-    darkerModeRadio.addEventListener("change", () => applyTheme("darker"));
-  });
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    applyTheme(savedTheme);
+    if (savedTheme === "dark") darkModeRadio.checked = true;
+    if (savedTheme === "darker") darkerModeRadio.checked = true;
+  } else {
+    // Set default theme if no theme is found in local storage
+    const defaultTheme = "dark"; // or "darker"
+    applyTheme(defaultTheme);
+    darkModeRadio.checked = defaultTheme === "dark";
+    darkerModeRadio.checked = defaultTheme === "darker";
+  }
+
+  darkModeRadio.addEventListener("change", () => applyTheme("dark"));
+  darkerModeRadio.addEventListener("change", () => applyTheme("darker"));
 </script>
