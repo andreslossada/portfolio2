@@ -13,7 +13,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["Fira Code"],
+        // sans: ["Fira Code"],
       },
       colors: {
         primary: {
@@ -69,7 +69,6 @@ module.exports = {
       },
       dropShadow: {
         white: "0px 0px 10px #fff",
-
       },
       shadow: {
         orange: "0px 0px 15px #f59e0b",
