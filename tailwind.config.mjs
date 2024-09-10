@@ -13,7 +13,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        // sans: ["Fira Code"],
+        sans: ["Fira Code", "system-ui", "sans-serif"],
       },
       colors: {
         primary: {
